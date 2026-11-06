@@ -1,6 +1,6 @@
 {
   "_comment": "Source allowlist for the Defense Strategy Brief. NOTHING outside sources with status 'approved' is ingested. Re-verify ratings monthly (the alert workflow sends a reminder). status: approved | pending_user_decision | excluded.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "ratings_checked_on": "2026-11-06",
   "policy": {
     "inclusion_rule": "Default: a news outlet is approved if at least 2 of 3 raters (AllSides, Ad Fontes Media, Media Bias/Fact Check) rate it Center/least-biased AND high factual reliability. The owner may approve exceptions; those carry approval_basis 'user_override' and the email footer discloses that the allowlist includes owner-approved exceptions.",
@@ -873,7 +873,7 @@
       "name": "Christian Science Monitor",
       "tier": "general",
       "owner_group": "Christian Science Publishing Society",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "ratings_pass_count": 3,
       "ratings": {
         "allsides": {
@@ -897,14 +897,15 @@
         }
       },
       "feeds": [],
-      "notes": "Passes all 3 raters. Some articles are behind a metered paywall, so those stories would be summarized from the feed excerpt."
+      "notes": "Passes all 3 raters. Some articles are behind a metered paywall, so those stories would be summarized from the feed excerpt.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "defenseone",
       "name": "Defense One",
       "tier": "trade",
       "owner_group": "Government Executive Media Group (GovExec)",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 2,
       "ratings": {
         "allsides": {
@@ -923,15 +924,23 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": [],
-      "notes": "Passes 2 of 3 (the third rater has no rating). Defense trade coverage."
+      "feeds": [
+        {
+          "url": "https://www.defenseone.com/rss/all/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (23 items, latest 2026-11-05)"
+        }
+      ],
+      "notes": "Passes 2 of 3 (the third rater has no rating). Defense trade coverage.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "thehill",
       "name": "The Hill",
       "tier": "general",
       "owner_group": "Nexstar Media Group",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 2,
       "ratings": {
         "allsides": {
@@ -954,15 +963,23 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": [],
-      "notes": "Passes 2 of 3. Same owner as NewsNation. The Hill publishes a lot of opinion, which the URL exclusions remove."
+      "feeds": [
+        {
+          "url": "https://thehill.com/policy/defense/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (16 items, latest 2026-11-06)"
+        }
+      ],
+      "notes": "Passes 2 of 3. Same owner as NewsNation. The Hill publishes a lot of opinion, which the URL exclusions remove.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "newsnation",
       "name": "NewsNation",
       "tier": "general",
       "owner_group": "Nexstar Media Group",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 2,
       "ratings": {
         "allsides": {
@@ -984,15 +1001,23 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": [],
-      "notes": "Passes 2 of 3. Same owner as The Hill."
+      "feeds": [
+        {
+          "url": "https://www.newsnationnow.com/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (20 items, latest 2026-11-06; general news, so the relevance filter narrows it)"
+        }
+      ],
+      "notes": "Passes 2 of 3. Same owner as The Hill.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "federalnewsnetwork",
       "name": "Federal News Network",
       "tier": "trade",
       "owner_group": "Hubbard Broadcasting",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -1011,14 +1036,15 @@
         }
       },
       "feeds": [],
-      "notes": "Single rater. Covers the DoD workforce, budget and acquisition."
+      "notes": "Single rater. Covers the DoD workforce, budget and acquisition.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "militarycom",
       "name": "Military.com",
       "tier": "trade",
       "owner_group": "Monster Worldwide",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -1038,14 +1064,15 @@
         }
       },
       "feeds": [],
-      "notes": "The raters disagree: MBFC qualifies it, AllSides rates it Lean Left."
+      "notes": "The raters disagree: MBFC qualifies it, AllSides rates it Lean Left.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "taskandpurpose",
       "name": "Task & Purpose",
       "tier": "trade",
       "owner_group": "Recurrent Ventures",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 0,
       "ratings": {
         "allsides": {
@@ -1063,71 +1090,86 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": [],
-      "notes": "Fails: MBFC Left-Center. Same owner as TWZ."
+      "feeds": [
+        {
+          "url": "https://taskandpurpose.com/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (18 items, latest 2026-11-02)"
+        }
+      ],
+      "notes": "Fails: MBFC Left-Center. Same owner as TWZ.",
+      "approval_basis": "user_override"
     },
     {
       "id": "cbo",
       "name": "Congressional Budget Office",
       "tier": "primary",
       "owner_group": "CBO",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Cost estimates for the NDAA and defense bills, long-term defense budget and shipbuilding analyses. Feed not yet tested."
+      "notes": "Cost estimates for the NDAA and defense bills, long-term defense budget and shipbuilding analyses. Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "dodig",
       "name": "DoW Office of Inspector General",
       "tier": "primary",
       "owner_group": "DoW OIG",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Audits and evaluations of the Department (independent oversight within DoW). Feed not yet tested."
+      "notes": "Audits and evaluations of the Department (independent oversight within DoW). Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "services",
       "name": "Military service news sites (army.mil, navy.mil, af.mil, spaceforce.mil, marines.mil)",
       "tier": "primary",
       "owner_group": "Military services",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Official service announcements. High volume; best restricted to press releases. Feed not yet tested."
+      "notes": "Official service announcements. High volume; best restricted to press releases. Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "combatant_commands",
       "name": "Combatant command press releases (INDOPACOM, NORTHCOM, SOUTHCOM, EUCOM, CENTCOM)",
       "tier": "primary",
       "owner_group": "Combatant commands",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Official operational statements, e.g. strikes, exercises, deployments. Feed not yet tested."
+      "notes": "Official operational statements, e.g. strikes, exercises, deployments. Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "state_pm",
       "name": "State Department: Bureau of Political-Military Affairs and arms sales notices; DSCA major arms sales",
       "tier": "primary",
       "owner_group": "State/DSCA",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Foreign military sales notifications (burden-sharing, allied arms). Feed not yet tested."
+      "notes": "Foreign military sales notifications (burden-sharing, allied arms). Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "congress_bills",
       "name": "Congress.gov API: NDAA and defense appropriations bill actions",
       "tier": "primary",
       "owner_group": "Library of Congress",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Official bill status; same free API key as CRS. Feed not yet tested."
+      "notes": "Official bill status; same free API key as CRS. Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     },
     {
       "id": "federal_register",
       "name": "Federal Register: Defense Department and DFARS documents",
       "tier": "primary",
       "owner_group": "Office of the Federal Register",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [],
-      "notes": "Rules and notices (acquisition rules, policy changes). Official API, no key. Feed not yet tested."
+      "notes": "Rules and notices (acquisition rules, policy changes). Official API, no key. Feed not yet tested.",
+      "exclusion_reason": "Offered as a candidate on 2026-11-06; not selected by owner."
     }
   ]
 }
