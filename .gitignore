@@ -1,0 +1,7 @@
+.env
+*.sqlite
+*.sqlite-journal
+data/
+n8n_data/
+ollama_data/
+.DS_Store
