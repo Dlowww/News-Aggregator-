@@ -1,9 +1,9 @@
 {
   "_comment": "Source allowlist for the Defense Strategy Brief. NOTHING outside sources with status 'approved' is ingested. Re-verify ratings monthly (the alert workflow sends a reminder). status: approved | pending_user_decision | excluded.",
-  "version": "1.0.0-proposal",
+  "version": "1.1.0",
   "ratings_checked_on": "2026-11-06",
   "policy": {
-    "inclusion_rule": "A news outlet is approved only if at least 2 of 3 raters (AllSides, Ad Fontes Media, Media Bias/Fact Check) rate it Center/least-biased AND high factual reliability.",
+    "inclusion_rule": "Default: a news outlet is approved if at least 2 of 3 raters (AllSides, Ad Fontes Media, Media Bias/Fact Check) rate it Center/least-biased AND high factual reliability. The owner may approve exceptions; those carry approval_basis 'user_override' and the email footer discloses that the allowlist includes owner-approved exceptions.",
     "rater_thresholds": {
       "allsides": "Bias rating 'Center' (AllSides publishes no reliability score, so a Center rating counts as one qualifying rating)",
       "adfontes": "Overall bias between -6.0 and +6.0 ('Middle') AND overall reliability >= 40.0 ('Reliable, Analysis/Fact Reporting' or higher)",
@@ -14,7 +14,8 @@
       "min_independent_outlets": 2,
       "primary_source_qualifies_alone": true,
       "independence_key": "owner_group",
-      "_comment": "Outlets with the same owner_group count as ONE outlet when corroborating a story. Stories from a single outlet go to the 'Single-source reports' section."
+      "_comment": "Outlets with the same owner_group count as ONE outlet. Research-tier sources (RAND, CSIS) publish analysis, not event reporting, so they do not count toward the 2-outlet threshold; they appear as supporting context.",
+      "research_tier_counts": false
     },
     "balance_flag_threshold": 0.5,
     "exclusions": {
@@ -79,7 +80,17 @@
       "max_full_text_fetches_per_run": 60,
       "never_bypass_paywalls": true,
       "fallback": "If full text is unavailable or disallowed, summarize from the feed snippet and mark the story 'based on excerpt'."
-    }
+    },
+    "html_list_exclude_type_labels": [
+      "Commentary",
+      "Newsletter",
+      "Transcript",
+      "Podcast",
+      "Event",
+      "Video",
+      "Op-Ed",
+      "Opinion"
+    ]
   },
   "sources": [
     {
@@ -87,7 +98,7 @@
       "name": "Reuters",
       "tier": "wire",
       "owner_group": "Thomson Reuters",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "ratings_pass_count": 3,
       "ratings": {
         "allsides": {
@@ -118,7 +129,8 @@
         "result": "DEAD",
         "detail": "reutersagency.com/feed/ returns 404. Reuters no longer offers public RSS and has no official replacement feed."
       },
-      "notes": "Passes all 3 raters but has no public feed. Options: (a) leave it out; (b) add an unofficial Google News RSS query restricted to site:reuters.com. Option (b) uses a third-party aggregator, so it is not an official alternative. Awaiting your decision."
+      "notes": "Passes all 3 raters but has no public feed. Options: (a) leave it out; (b) add an unofficial Google News RSS query restricted to site:reuters.com. Option (b) uses a third-party aggregator, so it is not an official alternative. Awaiting your decision.",
+      "exclusion_reason": "No public feed; owner chose to drop (2026-11-06)."
     },
     {
       "id": "bbc",
@@ -164,7 +176,8 @@
           "tested_on": "2026-11-06",
           "result": "OK (25 items, latest 2026-11-06)"
         }
-      ]
+      ],
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "defensenews",
@@ -204,7 +217,8 @@
           "result": "OK (redirects to /feed/; 10 items, latest 2026-11-05)"
         }
       ],
-      "notes": "Same publisher as Military Times. Both count as one outlet for corroboration."
+      "notes": "Same publisher as Military Times. Both count as one outlet for corroboration.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "militarytimes",
@@ -242,7 +256,8 @@
           "result": "OK (redirects to /feed/; 10 items, latest 2026-11-06)"
         }
       ],
-      "notes": "Same publisher as Defense News. Both count as one outlet for corroboration."
+      "notes": "Same publisher as Defense News. Both count as one outlet for corroboration.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "stripes",
@@ -283,14 +298,15 @@
           "result": "OK (65 items; newest item 2026-11-05)"
         }
       ],
-      "feed_replacement": "stripes.com/arc/outboundfeeds/rss/ is dead (returns a search page). Replaced with the official subscribe.stripes.com feed."
+      "feed_replacement": "stripes.com/arc/outboundfeeds/rss/ is dead (returns a search page). Replaced with the official subscribe.stripes.com feed.",
+      "approval_basis": "ratings_rule"
     },
     {
       "id": "ap",
       "name": "Associated Press",
       "tier": "wire",
       "owner_group": "Associated Press",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -314,15 +330,36 @@
         }
       },
       "rater_disagreement": "Ad Fontes rates AP Middle/Reliable. AllSides (Lean Left) and MBFC (Left-Center) do not. Fails the 2-of-3 rule.",
-      "feeds": [],
-      "notes": "Excluded by the rule unless you override. AP also has no official public RSS, so a feed would need checking."
+      "feeds": [
+        {
+          "url": "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (30 items, latest 2026-11-05; links go to apnews.com)"
+        },
+        {
+          "url": "https://flipboard.com/@associatedpress/international-news-miluvhmaz.rss",
+          "type": "rss",
+          "tested_on": "not yet",
+          "result": "Listed by Feeder; same AP Flipboard account as the tested U.S. feed"
+        },
+        {
+          "url": "https://flipboard.com/@associatedpress/politics-h8vn14lnz.rss",
+          "type": "rss",
+          "tested_on": "not yet",
+          "result": "Listed by Feeder; same AP Flipboard account"
+        }
+      ],
+      "notes": "Excluded by the rule unless you override. AP also has no official public RSS, so a feed would need checking.",
+      "approval_basis": "user_override",
+      "feed_note": "AP's own apnews.com RSS ended in 2024. These feeds come from AP's verified Flipboard account (AP-curated, hosted by Flipboard). Each item links to apnews.com."
     },
     {
       "id": "afp",
       "name": "Agence France-Presse (AFP)",
       "tier": "wire",
       "owner_group": "AFP",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -345,14 +382,15 @@
         }
       },
       "rater_disagreement": "Ad Fontes qualifies AFP. MBFC rates it Left-Center (it was 'Least Biased' in 2021). AllSides does not rate it. Fails the 2-of-3 rule.",
-      "feeds": []
+      "feeds": [],
+      "exclusion_reason": "Fails 2-of-3 rule; not approved by owner."
     },
     {
       "id": "npr",
       "name": "NPR",
       "tier": "general",
       "owner_group": "NPR",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -375,14 +413,22 @@
         }
       },
       "rater_disagreement": "Ad Fontes rates NPR Middle/Reliable. AllSides and MBFC rate it left of center. Fails the 2-of-3 rule.",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://feeds.npr.org/1122/rss.xml",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK ('NPR Topics: National Security', 10 items, latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "rand",
       "name": "RAND Corporation",
       "tier": "research",
       "owner_group": "RAND",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -402,14 +448,24 @@
         }
       },
       "rater_disagreement": "MBFC rates RAND Least Biased. AllSides rates it Lean Left. Ad Fontes does not rate it.",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.rand.org/pubs/new.xml",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (20 items, latest 2026-11-05; all RAND topics, so the relevance filter does the narrowing)"
+        }
+      ],
+      "approval_basis": "user_override",
+      "notes": "RAND commentary (/pubs/commentary/) is dropped by the /commentary/ URL exclusion.",
+      "counts_for_corroboration": false
     },
     {
       "id": "airandspaceforces",
       "name": "Air & Space Forces Magazine",
       "tier": "trade",
       "owner_group": "Air & Space Forces Association",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -428,14 +484,22 @@
         }
       },
       "rater_disagreement": "No disagreement: only one rater covers it, so it cannot meet the 2-of-3 rule. Published by a service association.",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.airandspaceforces.com/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "defensescoop",
       "name": "DefenseScoop",
       "tier": "trade",
       "owner_group": "Scoop News Group",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -455,14 +519,22 @@
         }
       },
       "rater_disagreement": "No disagreement: only MBFC rates it (and qualifies it).",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://defensescoop.com/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (10 items, latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "usni",
       "name": "USNI News",
       "tier": "trade",
       "owner_group": "U.S. Naval Institute",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -482,14 +554,22 @@
         }
       },
       "rater_disagreement": "No disagreement: only MBFC rates it (and qualifies it).",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://news.usni.org/feed",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "twz",
       "name": "The War Zone (TWZ)",
       "tier": "trade",
       "owner_group": "Recurrent Ventures",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -508,14 +588,22 @@
         }
       },
       "rater_disagreement": "No disagreement: only MBFC rates it.",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.twz.com/feed",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "csis",
       "name": "Center for Strategic and International Studies (CSIS)",
       "tier": "research",
       "owner_group": "CSIS",
-      "status": "pending_user_decision",
+      "status": "approved",
       "ratings_pass_count": 1,
       "ratings": {
         "allsides": {
@@ -534,14 +622,27 @@
         }
       },
       "rater_disagreement": "No disagreement: only MBFC rates it.",
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.csis.org/analysis",
+          "type": "html_list",
+          "selector": "a[href^='/analysis/']",
+          "type_label_selector": "content type label shown on each card",
+          "tested_on": "2026-11-06",
+          "result": "OK (page lists dated items with type labels; latest 2026-11-05). csis.org has no RSS. Fetched through an anti-bot proxy, so CSIS may block plain clients; to be re-tested from your machine."
+        }
+      ],
+      "approval_basis": "user_override",
+      "robots": "Allowed (/analysis not disallowed; query strings other than ?page= are disallowed, so the workflow fetches only the bare path)",
+      "notes": "Items labeled Commentary, Newsletter, Transcript or Podcast are skipped (opinion/non-report content).",
+      "counts_for_corroboration": false
     },
     {
       "id": "breakingdefense",
       "name": "Breaking Defense",
       "tier": "trade",
       "owner_group": "Breaking Media",
-      "status": "excluded",
+      "status": "approved",
       "ratings_pass_count": 0,
       "ratings": {
         "allsides": {
@@ -560,14 +661,22 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://breakingdefense.com/feed/",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (16 items, latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "pbs",
       "name": "PBS NewsHour",
       "tier": "general",
       "owner_group": "PBS",
-      "status": "excluded",
+      "status": "approved",
       "ratings_pass_count": 0,
       "ratings": {
         "allsides": {
@@ -589,7 +698,21 @@
           "checked": "2026-11-06"
         }
       },
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.pbs.org/newshour/feeds/rss/politics",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (20 items, latest 2026-11-05)"
+        },
+        {
+          "url": "https://www.pbs.org/newshour/feeds/rss/world",
+          "type": "rss",
+          "tested_on": "2026-11-06",
+          "result": "OK (20 items, latest 2026-11-05)"
+        }
+      ],
+      "approval_basis": "user_override"
     },
     {
       "id": "war_releases",
@@ -605,7 +728,8 @@
           "result": "OK (latest 2026-11-06)"
         }
       ],
-      "robots": "Allowed (war.gov/robots.txt does not disallow /News/ article paths)"
+      "robots": "Allowed (war.gov/robots.txt does not disallow /News/ article paths)",
+      "approval_basis": "primary_source"
     },
     {
       "id": "war_transcripts",
@@ -620,7 +744,8 @@
           "tested_on": "2026-11-06",
           "result": "OK (20 items, latest 2026-10-28)"
         }
-      ]
+      ],
+      "approval_basis": "primary_source"
     },
     {
       "id": "war_speeches",
@@ -635,7 +760,8 @@
           "tested_on": "2026-11-06",
           "result": "Listed on war.gov/News/RSS"
         }
-      ]
+      ],
+      "approval_basis": "primary_source"
     },
     {
       "id": "war_news",
@@ -651,14 +777,15 @@
           "result": "Listed on war.gov/News/RSS"
         }
       ],
-      "notes": "Stories written by the Department about itself. Labeled 'Primary source' in the email."
+      "notes": "Stories written by the Department about itself. Labeled 'Primary source' in the email.",
+      "approval_basis": "primary_source"
     },
     {
       "id": "war_contracts",
       "name": "U.S. Department of War: Contract Announcements",
       "tier": "primary",
       "owner_group": "U.S. Department of War",
-      "status": "pending_user_decision",
+      "status": "excluded",
       "feeds": [
         {
           "url": "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max=10",
@@ -667,7 +794,8 @@
           "result": "Listed on war.gov/News/RSS"
         }
       ],
-      "notes": "Daily contract digests over $7.5M. These are long and high-volume. Recommendation: off by default, or used only to corroborate acquisition stories."
+      "notes": "Daily contract digests over $7.5M. These are long and high-volume. Recommendation: off by default, or used only to corroborate acquisition stories.",
+      "exclusion_reason": "Owner chose to keep contract announcements off (2026-11-06)."
     },
     {
       "id": "gao",
@@ -683,7 +811,8 @@
           "result": "OK (18 items, latest 2026-11-05). Fetched through an anti-bot proxy, so gao.gov may block plain clients; to be re-tested from your machine."
         }
       ],
-      "notes": "All GAO reports. The topic relevance filter keeps the defense ones."
+      "notes": "All GAO reports. The topic relevance filter keeps the defense ones.",
+      "approval_basis": "primary_source"
     },
     {
       "id": "crs",
@@ -699,7 +828,8 @@
           "result": "Requires a free api.data.gov key (CONGRESS_API_KEY in .env)."
         }
       ],
-      "notes": "CRS publishes no official RSS feed. The official alternative is the Congress.gov API, which needs a free key."
+      "notes": "CRS publishes no official RSS feed. The official alternative is the Congress.gov API, which needs a free key.",
+      "approval_basis": "primary_source"
     },
     {
       "id": "hasc",
@@ -717,7 +847,8 @@
         }
       ],
       "notes": "Releases come from the committee majority (chair) unless marked bipartisan, and the email will say so.",
-      "robots": "Allowed (list and article pages not disallowed in robots.txt, checked 2026-11-06)"
+      "robots": "Allowed (list and article pages not disallowed in robots.txt, checked 2026-11-06)",
+      "approval_basis": "primary_source"
     },
     {
       "id": "sasc",
@@ -734,7 +865,269 @@
           "result": "Page reachable. No RSS found, so the press-release list page is parsed."
         }
       ],
-      "robots": "Allowed (list and article pages not disallowed in robots.txt, checked 2026-11-06)"
+      "robots": "Allowed (list and article pages not disallowed in robots.txt, checked 2026-11-06)",
+      "approval_basis": "primary_source"
+    },
+    {
+      "id": "csmonitor",
+      "name": "Christian Science Monitor",
+      "tier": "general",
+      "owner_group": "Christian Science Publishing Society",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 3,
+      "ratings": {
+        "allsides": {
+          "bias": "Center",
+          "url": "https://www.allsides.com/news-source/christian-science-monitor-media-bias",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": -2.52,
+          "reliability": 44.23,
+          "category": "Middle / Reliable",
+          "url": "https://adfontesmedia.com/christian-science-monitor-bias-and-reliability/",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Least Biased",
+          "factual": "High",
+          "rater_last_updated": "2026-10-16",
+          "url": "https://mediabiasfactcheck.com/christian-science-monitor/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Passes all 3 raters. Some articles are behind a metered paywall, so those stories would be summarized from the feed excerpt."
+    },
+    {
+      "id": "defenseone",
+      "name": "Defense One",
+      "tier": "trade",
+      "owner_group": "Government Executive Media Group (GovExec)",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 2,
+      "ratings": {
+        "allsides": {
+          "bias": "Center",
+          "url": "https://www.allsides.com/news-source/defense-one-media-bias",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": "Not found",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Least Biased",
+          "factual": "High",
+          "url": "https://mediabiasfactcheck.com/defense-one/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Passes 2 of 3 (the third rater has no rating). Defense trade coverage."
+    },
+    {
+      "id": "thehill",
+      "name": "The Hill",
+      "tier": "general",
+      "owner_group": "Nexstar Media Group",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 2,
+      "ratings": {
+        "allsides": {
+          "bias": "Center (Dec 2025 blind survey result: Lean Left)",
+          "url": "https://www.allsides.com/news-source/hill-media-bias",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": -1.65,
+          "reliability": 41.57,
+          "category": "Middle / Reliable",
+          "url": "https://adfontesmedia.com/hill-bias-and-reliability/",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Least Biased",
+          "factual": "Mostly Factual",
+          "url": "https://mediabiasfactcheck.com/the-hill/",
+          "fails_threshold": "factual below High",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Passes 2 of 3. Same owner as NewsNation. The Hill publishes a lot of opinion, which the URL exclusions remove."
+    },
+    {
+      "id": "newsnation",
+      "name": "NewsNation",
+      "tier": "general",
+      "owner_group": "Nexstar Media Group",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 2,
+      "ratings": {
+        "allsides": {
+          "bias": "Center",
+          "url": "https://www.allsides.com/news-source/newsnation-media-bias",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": 0.95,
+          "reliability": 41.78,
+          "category": "Middle / Reliable",
+          "url": "https://adfontesmedia.com/newsnation-now-bias-reliability/",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Right-Center",
+          "factual": "(not captured)",
+          "url": "https://mediabiasfactcheck.com/newsnation/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Passes 2 of 3. Same owner as The Hill."
+    },
+    {
+      "id": "federalnewsnetwork",
+      "name": "Federal News Network",
+      "tier": "trade",
+      "owner_group": "Hubbard Broadcasting",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 1,
+      "ratings": {
+        "allsides": {
+          "bias": "Not rated",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": "Not rated",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Least Biased",
+          "factual": "High",
+          "url": "https://mediabiasfactcheck.com/federal-news-radio/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Single rater. Covers the DoD workforce, budget and acquisition."
+    },
+    {
+      "id": "militarycom",
+      "name": "Military.com",
+      "tier": "trade",
+      "owner_group": "Monster Worldwide",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 1,
+      "ratings": {
+        "allsides": {
+          "bias": "Lean Left",
+          "url": "https://www.allsides.com/news-source/militarycom-media-bias",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": "Not found",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Least Biased",
+          "factual": "High",
+          "url": "https://mediabiasfactcheck.com/military-com/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "The raters disagree: MBFC qualifies it, AllSides rates it Lean Left."
+    },
+    {
+      "id": "taskandpurpose",
+      "name": "Task & Purpose",
+      "tier": "trade",
+      "owner_group": "Recurrent Ventures",
+      "status": "pending_user_decision",
+      "ratings_pass_count": 0,
+      "ratings": {
+        "allsides": {
+          "bias": "Not rated",
+          "checked": "2026-11-06"
+        },
+        "adfontes": {
+          "bias": "Not rated",
+          "checked": "2026-11-06"
+        },
+        "mbfc": {
+          "bias": "Left-Center",
+          "factual": "High (raised 2026-08-17)",
+          "url": "https://mediabiasfactcheck.com/task-and-purpose/",
+          "checked": "2026-11-06"
+        }
+      },
+      "feeds": [],
+      "notes": "Fails: MBFC Left-Center. Same owner as TWZ."
+    },
+    {
+      "id": "cbo",
+      "name": "Congressional Budget Office",
+      "tier": "primary",
+      "owner_group": "CBO",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Cost estimates for the NDAA and defense bills, long-term defense budget and shipbuilding analyses. Feed not yet tested."
+    },
+    {
+      "id": "dodig",
+      "name": "DoW Office of Inspector General",
+      "tier": "primary",
+      "owner_group": "DoW OIG",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Audits and evaluations of the Department (independent oversight within DoW). Feed not yet tested."
+    },
+    {
+      "id": "services",
+      "name": "Military service news sites (army.mil, navy.mil, af.mil, spaceforce.mil, marines.mil)",
+      "tier": "primary",
+      "owner_group": "Military services",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Official service announcements. High volume; best restricted to press releases. Feed not yet tested."
+    },
+    {
+      "id": "combatant_commands",
+      "name": "Combatant command press releases (INDOPACOM, NORTHCOM, SOUTHCOM, EUCOM, CENTCOM)",
+      "tier": "primary",
+      "owner_group": "Combatant commands",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Official operational statements, e.g. strikes, exercises, deployments. Feed not yet tested."
+    },
+    {
+      "id": "state_pm",
+      "name": "State Department: Bureau of Political-Military Affairs and arms sales notices; DSCA major arms sales",
+      "tier": "primary",
+      "owner_group": "State/DSCA",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Foreign military sales notifications (burden-sharing, allied arms). Feed not yet tested."
+    },
+    {
+      "id": "congress_bills",
+      "name": "Congress.gov API: NDAA and defense appropriations bill actions",
+      "tier": "primary",
+      "owner_group": "Library of Congress",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Official bill status; same free API key as CRS. Feed not yet tested."
+    },
+    {
+      "id": "federal_register",
+      "name": "Federal Register: Defense Department and DFARS documents",
+      "tier": "primary",
+      "owner_group": "Office of the Federal Register",
+      "status": "pending_user_decision",
+      "feeds": [],
+      "notes": "Rules and notices (acquisition rules, policy changes). Official API, no key. Feed not yet tested."
     }
   ]
 }
