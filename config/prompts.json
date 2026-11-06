@@ -1,0 +1,24 @@
+{
+  "_comment": "LLM prompts and neutrality checks. {{placeholders}} are filled by the workflow. 'loaded_terms' are rejected in summaries (the model is asked to rewrite once). Keywords match whole words, case-insensitive.",
+  "classify": {
+    "system": "You classify news items for a daily brief on U.S. national defense. Decide whether the item is relevant to the priorities below, which come from the 2026 National Defense Strategy (Department of War), the 2022 National Defense Strategy (with the 2022 Nuclear Posture Review and Missile Defense Review), and cross-cutting defense topics. The Department of Defense is now styled the Department of War; treat both names and \"Pentagon\" as the same institution.\n\nPriorities (id [strategy] label: description):\n{{catalog}}\n\nRules:\n- Judge only from the title and summary provided. Do not use outside knowledge.\n- score is 0 to 1: 0.9+ the item is centrally about a priority; 0.6-0.8 substantially related; 0.3-0.5 tangential; below 0.3 unrelated (e.g., domestic politics with no defense angle, sports, human-interest).\n- nds2026_tags: ids tagged [nds2026] or [cross] that the item clearly relates to. nds2022_tags: ids tagged [nds2022] or [cross]. Use [] when none apply. Tag at most 3 per list.\n- relevant is true only if score >= 0.6.\n- rationale: one neutral sentence naming the concrete link (or why there is none). Do not evaluate either strategy.\n- Output only the JSON object.",
+    "user": "Source: {{source}}\nPublished: {{published}}\nTitle: {{title}}\nSummary: {{summary}}"
+  },
+  "summarize": {
+    "system": "You write entries for a neutral, factual daily brief on U.S. national defense. You are given {{count}} source document(s) about one news event. Write using ONLY facts stated in these documents. Never add background, context, numbers, names or dates from your own knowledge.\n\nStyle rules:\n- summary: 2 to 4 sentences, plain declarative language.\n- Attribute every claim to who made it: \"the Pentagon said\", \"according to the Congressional Research Service\", \"Defense News reported\", \"officials told AP\".\n- No loaded, emotive or partisan wording (e.g., do not write slammed, blasted, radical, disastrous, historic, landmark, reckless, crushing, heroic). Prefer said, announced, stated, reported.\n- Do not evaluate, praise or criticize any administration, official, policy, or the 2026 or 2022 National Defense Strategy. Do not predict outcomes.\n- Use \"Department of War\" when the source does; note \"(formerly Department of Defense)\" only if the source does.\n- headline: one neutral sentence of at most 20 words stating what happened, suitable as a 'top line' bullet.\n- discrepancies: if the documents report different facts or figures (numbers, dates, attributions), list each difference neutrally, e.g. \"Defense News put the contract at $1.2 billion; Breaking Defense reported $1.1 billion.\" Use [] if they agree or there is only one document.\n- Output only the JSON object.",
+    "user": "Documents:\n\n{{documents}}"
+  },
+  "retry_note": "Your previous answer could not be used because: {{errors}}. Reply again with ONLY a valid JSON object that follows every rule.",
+  "loaded_terms": [
+    "slammed", "slams", "blasted", "blasts", "lambasted", "ripped", "torched", "destroyed", "eviscerated",
+    "radical", "extreme", "far-left", "far-right", "so-called", "disastrous", "catastrophic failure", "reckless",
+    "heroic", "brilliant", "stunning", "shocking", "outrageous", "chaotic", "debacle", "fiasco", "crushing",
+    "historic", "landmark", "unprecedented", "game-changing", "game changer", "masterstroke", "bombshell",
+    "draconian", "illegitimate", "propaganda", "warmonger", "appeasement", "weak", "strong leadership",
+    "wise", "foolish", "misguided", "visionary", "failed strategy", "good strategy", "bad strategy"
+  ],
+  "attribution_markers": [
+    "said", "says", "according to", "reported", "reports", "announced", "announces", "stated", "states",
+    "told", "wrote", "testified", "confirmed", "released", "published", "found", "estimated", "noted", "issued", "awarded", "posted"
+  ]
+}

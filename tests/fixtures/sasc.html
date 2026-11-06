@@ -1,0 +1,2584 @@
+<!DOCTYPE html><html lang="en" class="no-js template--press_releases"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style rel="stylesheet" type="text/css">@charset "utf-8";
+
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+
+.fb_reposition { overflow: hidden; position: relative; }
+
+.fb_invisible { display: none; }
+
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+
+.fb_reset > div { overflow: hidden; }
+
+@keyframes fb_transform { 
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+
+.fb_dialog_close_icon { background: url("https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+
+.fb_dialog_close_icon:hover { background: url("https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+
+.fb_dialog_close_icon:active { background: url("https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+
+.fb_dialog_iframe { line-height: 0; }
+
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: 700; margin: 0px; }
+
+.fb_dialog_content .dialog_title > span { background: url("https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif") 5px 50% no-repeat; float: left; padding: 5px 0px 7px 26px; }
+
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat rgb(255, 255, 255); min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); inset: 0px; min-height: 100%; position: absolute; width: 100%; z-index: 10000; }
+
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: rgb(255, 255, 255) 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: 700 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; color: rgb(255, 255, 255); font: 700 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: 700; line-height: 18px; text-align: center; vertical-align: middle; }
+
+.fb_dialog_content .dialog_content { background: url("https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-style: none solid; border-color: currentcolor rgb(74, 74, 74); border-image: none; height: 150px; }
+
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: none; height: 40px; }
+
+#fb_dialog_loader_close { float: left; }
+
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+
+@keyframes rotateSpinner { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fb_iframe_widget { display: inline-block; position: relative; }
+
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+
+.fb_iframe_widget iframe { position: absolute; }
+
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+
+.fb_iframe_widget_lift { z-index: 1; }
+
+.fb_iframe_widget_fluid { display: inline; }
+
+.fb_iframe_widget_fluid span { width: 100%; }</style>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      <meta name="page-title" content="Press">
+      <title>Press | U.S. Senate Committee on Armed Services</title>
+      <link rel="canonical" href="https://www.armed-services.senate.gov/press-releases">
+
+      <link rel="shortcut icon" href="https://www.armed-services.senate.gov/assets/images/favicon.ico">
+      <link href="https://www.armed-services.senate.gov/assets/images/favicon.ico" rel="Icon" type="image/x-icon">
+      <link rel="apple-touch-icon" sizes="180x180" href="https://www.armed-services.senate.gov/assets/images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="https://www.armed-services.senate.gov/assets/images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="https://www.armed-services.senate.gov/assets/images/favicon-16x16.png">
+      <link rel="manifest" href="https://www.armed-services.senate.gov/assets/images/site.webmanifest">
+      <link rel="mask-icon" href="https://www.armed-services.senate.gov/assets/images/safari-pinned-tab.svg" color="#29313D">
+      <meta name="apple-mobile-web-app-title" content="U.S. Senate Committee on Armed Services">
+      <meta name="application-name" content="U.S. Senate Committee on Armed Services">
+      <meta name="msapplication-TileColor" content="#F3F2E9">
+      <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+      <meta name="theme-color" content="#F3F2E9">
+      <meta name="google-site-verification" content="add [google-site-verification] value to preference">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Press | United States Senate Committee on Armed Services">
+
+<meta property="twitter:image" content="https://www.armed-services.senate.gov/assets/images/sharelogo.jpg">
+
+<meta name="twitter:description" content="United States Senate Committee on Armed Services">
+
+
+<meta property="og:url" content="https://www.armed-services.senate.gov/press-releases">
+
+<meta property="og:title" content="Press | United States Senate Committee on Armed Services">
+
+<meta property="og:image" content="https://www.armed-services.senate.gov/assets/images/sharelogo.jpg">
+
+<meta property="og:description" content="United States Senate Committee on Armed Services">
+
+      
+
+
+<script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script>
+  if (!application) var application = {};
+  application = {
+    "config": {
+      "tinymce": {
+        "plugins": {
+          "selectvideo": {
+            "player": "jwplayer", // should be set to "legacy" or "jwplayer" currently
+            "youtube": true, // set to true to write the youtube tags for youtube videos
+            "width": "100%", // set width and height on the containing element
+            "height": "100%",
+            "tracking": true
+          }
+        }
+      }
+    },
+    "fn": { // deprecated mootools 1.2 stuff that we'll probably still use once we upgrade fully to 1.3
+      "defined": function (obj) {
+        return (obj != undefined);
+      },
+      "check": function (obj) {
+        return !!(obj || obj === 0);
+      }
+    },
+    "form": {
+      "processed": "null",
+    },
+    "friendly_urls": false,
+    "siteroot": "https://www.armed-services.senate.gov/",
+    "theme": "",
+    "webroot": "https://www.armed-services.senate.gov/",
+    "assetWebroot": "https://www.armed-services.senate.gov/",
+  };
+</script>
+
+    
+      <link rel="stylesheet" type="text/css" href="https://www.armed-services.senate.gov/styles/common.css?1793753904">
+
+      <script src="https://www.armed-services.senate.gov/scripts/global.js?1793753904"></script>
+      <script src="https://www.armed-services.senate.gov/scripts/gsap.js?1793753904"></script>
+
+      <script>
+        $.ajaxSetup({ cache: true });
+        function getScripts(scripts, callback) {
+          function next(i) {
+            if (i >= scripts.length) {
+              if (typeof callback === 'function') callback();
+              return;
+            }
+            $.getScript(scripts[i])
+              .done(() => next(i + 1))
+              .fail(function() {
+                console.error('getScript failed:', scripts[i]);
+              });
+          }
+          next(0);
+        }
+      </script>
+
+      <script>
+        var initForm = function() {
+          getScripts([
+            'https://www.armed-services.senate.gov/scripts/mootools.min.js?1793753904',
+            'https://www.armed-services.senate.gov/scripts/form/Forms_Builder.js?1793753904'
+          ], function() {
+            creativengine_forms_builder.init();
+
+            // fix for bootstrap tooltip hide/mootools hide collision
+            $$('form input,form select,form textarea, input, .nav-tabs li a').each(function (item) {
+              if (typeof item.hide == 'function') {
+                item.hide = null;
+              }
+            });
+
+            Element.implement({
+              'slide': function (how, mode) {
+                return this;
+              }
+            });
+          })
+        }
+      </script>
+
+
+      <script type="text/javascript">
+        var gRecaptchaReady = function () {
+          let textarea = document.getElementById("g-recaptcha-response");
+          if (!textarea)
+            return;
+          textarea.setAttribute("aria-hidden", "true");
+          textarea.setAttribute("aria-label", "do not use");
+          textarea.setAttribute("aria-readonly", "true");
+        }
+
+        window.getStuckHeaderHeight = function () {
+          var siteHeader = document.querySelector('.SiteHeader');
+          var siteHeaderHeight = (siteHeader)
+            ? siteHeader.offsetHeight
+            : 0;
+          var mobileHeader = document.querySelector('.MobileHeader');
+          var mobileHeaderHeight = (mobileHeader)
+            ? mobileHeader.offsetHeight
+            : 0;
+
+          // Returns the height of either desktop or mobile header because the hidden header will return 0
+          return siteHeaderHeight + mobileHeaderHeight;
+        }
+
+        window.requestAnimationFrame = window.requestAnimationFrame.bind(window);
+        //gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        window.refreshScrollTriggers = () => {
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.getAll().forEach(t => t.refresh());
+          }
+        };
+        window.killScrollTriggers = () => {
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+          }
+        };
+      </script>
+
+      
+      
+      <script>
+        window.top['site_path'] = "D6BF7A7C-0318-467C-CD77-09E65BA5E5DB";
+        window.top['SAM_META'] = {
+          jquery: "",
+          bootstrap: {
+            major: ""
+          }
+        };
+      </script>
+      
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&amp;family=Red+Hat+Display:ital,wght@0,900;1,900&amp;display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://www.armed-services.senate.gov/assets/styles/font-awesome.min.css">
+
+  <script src="https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EP31dbb9c60e404ba1aa6e746d49be6f29/AppMeasurement_Module_ActivityMap.min.js" async=""></script></head>
+
+  
+
+  <body data-transition="wrapper" class="body--internal body--press_releases" id="newsroom">
+    <!-- in sen-n -->
+    <!--stopindex-->
+          <div class="SiteLayout d-flex flex-column">
+          <div class="SiteLayout__alert">
+            <a href="https://www.armed-services.senate.gov/press-releases#aria-skip-nav" class="SkipNav sr-only sr-only-focusable">Skip to content</a>
+
+<div class="NewsAlert">
+  <div class="NewsAlert__container NewsAlert__container--absolute container">
+    <div class="NewsAlert__iconContainer">
+        <div class="NewsAlert__icon" aria-hidden="true">
+          <svg class="NewsAlert__iconShape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M50,5A45,45,0,1,0,95,50,45,45,0,0,0,50,5Zm4.3,70H45.7V66.4h8.6Zm3.17-43.6L54.25,61.9H45.75L42.53,31.4V25H57.47Z"></path>
+          </svg>
+        </div>
+    </div>
+  </div>
+
+
+</div>
+
+    <script>
+      window.upcomingHearings = [];
+    </script>
+
+  <div id="react-hearings-alert">
+    
+  </div>
+
+  <script>
+    getScripts([
+      'https://www.armed-services.senate.gov/scripts/vendor/react.production.min.js?1793753904',
+      'https://www.armed-services.senate.gov/scripts/vendor/react-dom.production.min.js?1793753904',
+    ], function () {
+      getScripts([
+        'https://www.armed-services.senate.gov/scripts/liveHearings.js?1793753904',
+      ], function () {
+        var container = document.getElementById('react-hearings-alert');
+
+        setupLiveHearings({
+          liveAlertContainer: container,
+          upcomingHearings: window.upcomingHearings,
+          config: {
+            timezone: 'America/New_York'
+          }
+        });
+      });
+    });
+  </script>
+
+            
+          </div>
+
+        <div class="SiteLayout__container d-flex flex-column flex-grow-1">
+            <div class="SiteLayout__navigation">
+                <div class="pin-spacer pin-spacer-SiteHeader" style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: auto; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1889px; height: 535px; padding: 0px;"><div class="SiteLayout__siteHeader" style="translate: none; rotate: none; scale: none; left: 8px; top: 0px; margin: 0px; max-width: 1889px; width: 1889px; max-height: 536px; height: 536px; padding: 0px; box-sizing: border-box; position: fixed; transform: translate(0px, 0px);">
+
+
+<div class="SiteHeader">
+  <div class="SiteHeader__background"></div>
+      <div class="SiteHeader__backgroundShadow"></div>
+
+  <div class="SiteHeader__layout">
+    
+
+    
+    <div class="SiteHeader__main">
+      <div class="SiteHeader__logoContainer js-siteLogo">
+        <a class="SiteHeader__logoLink" href="https://www.armed-services.senate.gov/" aria-label="U.S. Senate Committee on Armed Services Logo goes to Home Page">
+          <div class="SiteHeader__logo">
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140">
+	<path fill="#29313d" d="M234.82,38.7a7.24,7.24,0,0,1-.49,2.77,5.43,5.43,0,0,1-1.38,2,5.84,5.84,0,0,1-2.18,1.24,10.15,10.15,0,0,1-5.78,0,5.84,5.84,0,0,1-2.18-1.24,5.43,5.43,0,0,1-1.38-2,7.24,7.24,0,0,1-.49-2.77V26.47h2.41V38.29a5.17,5.17,0,0,0,1.07,3.59,5.7,5.7,0,0,0,6.92,0,5.22,5.22,0,0,0,1.07-3.59V26.47h2.41Z"></path>
+	<path fill="#29313d" d="M253.31,26.47h2.44l9.65,14.38h.05V26.47h2.26V44.69H265.3l-9.68-14.36h-.05V44.69h-2.26Z"></path>
+	<path fill="#29313d" d="M286.48,26.47h2.41V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M311.76,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M336.76,26.47h12.8v2.1h-10.4V34.2h9v2.1h-9v6.29h10.66v2.1H336.76Z"></path>
+	<path fill="#29313d" d="M367.26,26.47h6.89a9,9,0,0,1,3.6.66A6.71,6.71,0,0,1,380.27,29a7.81,7.81,0,0,1,1.47,2.92,13.84,13.84,0,0,1,.48,3.75,12.48,12.48,0,0,1-.5,3.6,7.93,7.93,0,0,1-1.5,2.85A6.75,6.75,0,0,1,377.71,44a8.5,8.5,0,0,1-3.56.68h-6.89Zm2.41,16.12h4.07a6.44,6.44,0,0,0,2.74-.52,4.7,4.7,0,0,0,1.82-1.46,6.1,6.1,0,0,0,1-2.25,13.12,13.12,0,0,0,.31-2.91,11.78,11.78,0,0,0-.32-2.83,6.15,6.15,0,0,0-1-2.16,4.56,4.56,0,0,0-1.76-1.39,6,6,0,0,0-2.58-.5h-4.28Z"></path>
+	<path fill="#29313d" d="M433.57,31.82a4.16,4.16,0,0,0-.43-1.73,3.43,3.43,0,0,0-1-1.2,4.41,4.41,0,0,0-1.46-.71,6.83,6.83,0,0,0-1.78-.23,8.2,8.2,0,0,0-1.35.13,4.66,4.66,0,0,0-1.32.44,2.68,2.68,0,0,0-1,.84,2.14,2.14,0,0,0-.4,1.33,2.09,2.09,0,0,0,.5,1.45,3.74,3.74,0,0,0,1.31.89,9.87,9.87,0,0,0,1.85.57c.7.14,1.41.3,2.13.46s1.42.36,2.12.59a6.5,6.5,0,0,1,1.86.94,4.56,4.56,0,0,1,1.31,1.54,5,5,0,0,1,.5,2.37,5,5,0,0,1-.62,2.52,5.37,5.37,0,0,1-1.6,1.75,7.2,7.2,0,0,1-2.24,1,9.63,9.63,0,0,1-2.56.34,12.87,12.87,0,0,1-3-.34,7.32,7.32,0,0,1-2.49-1.1,6,6,0,0,1-1.76-2,6.9,6.9,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.14,6.14,0,0,0,3.82,1.09,6.53,6.53,0,0,0,1.67-.21,4.28,4.28,0,0,0,1.44-.64,3.3,3.3,0,0,0,1-1.12,3.35,3.35,0,0,0,.39-1.67,2.24,2.24,0,0,0-.5-1.52A4,4,0,0,0,432,37.1a10.16,10.16,0,0,0-1.86-.6L428,36q-1.08-.23-2.13-.54a6.59,6.59,0,0,1-1.86-.84,4.33,4.33,0,0,1-1.3-1.36,4,4,0,0,1-.5-2.1,4.48,4.48,0,0,1,.57-2.3,5,5,0,0,1,1.52-1.61,6.71,6.71,0,0,1,2.1-1,8.47,8.47,0,0,1,2.34-.32,10.37,10.37,0,0,1,2.66.33,6.79,6.79,0,0,1,2.23,1,5.59,5.59,0,0,1,1.61,1.77,6.79,6.79,0,0,1,.85,2.56Z"></path>
+	<path fill="#29313d" d="M458.16,28.57h-5.48v-2.1h13.37v2.1h-5.49V44.69h-2.4Z"></path>
+	<path fill="#29313d" d="M486.64,26.47h2.56l6.61,18.22h-2.59l-2-5.58h-6.91l-2.1,5.58h-2.59Zm1.28,3h-.05L485.1,37h5.43Z"></path>
+	<path fill="#29313d" d="M514.91,28.57h-5.48v-2.1H522.8v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M539.91,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29H553v2.1H539.91Z"></path>
+	<path fill="#29313d" d="M581.86,31.82a4,4,0,0,0-.43-1.73,3.41,3.41,0,0,0-1-1.2,4.56,4.56,0,0,0-1.47-.71,6.7,6.7,0,0,0-1.77-.23,8.31,8.31,0,0,0-1.36.13,4.7,4.7,0,0,0-1.31.44,2.8,2.8,0,0,0-1,.84,2.2,2.2,0,0,0-.39,1.33,2.09,2.09,0,0,0,.49,1.45,3.84,3.84,0,0,0,1.31.89,10.22,10.22,0,0,0,1.86.57c.7.14,1.41.3,2.12.46s1.43.36,2.13.59a6.5,6.5,0,0,1,1.86.94,4.65,4.65,0,0,1,1.3,1.54,4.9,4.9,0,0,1,.5,2.37,5,5,0,0,1-.61,2.52,5.48,5.48,0,0,1-1.6,1.75,7.31,7.31,0,0,1-2.24,1,9.7,9.7,0,0,1-2.57.34,12.85,12.85,0,0,1-3-.34,7.38,7.38,0,0,1-2.5-1.1,6,6,0,0,1-1.75-2,6.63,6.63,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.09,6.09,0,0,0,3.81,1.09,6.67,6.67,0,0,0,1.68-.21,4.23,4.23,0,0,0,1.43-.64,3.33,3.33,0,0,0,1-1.12,3.46,3.46,0,0,0,.38-1.67,2.24,2.24,0,0,0-.5-1.52,3.86,3.86,0,0,0-1.31-.95,9.81,9.81,0,0,0-1.85-.6L576.28,36c-.72-.15-1.42-.33-2.12-.54a6.59,6.59,0,0,1-1.86-.84A4.36,4.36,0,0,1,571,33.3a4,4,0,0,1-.5-2.1,4.49,4.49,0,0,1,.58-2.3,5,5,0,0,1,1.51-1.61,6.71,6.71,0,0,1,2.1-1A8.57,8.57,0,0,1,577,26a10.5,10.5,0,0,1,2.67.33,6.89,6.89,0,0,1,2.23,1,5.84,5.84,0,0,1,1.61,1.77,6.61,6.61,0,0,1,.84,2.56Z"></path>
+	<path fill="#29313d" d="M635.78,31.82a4.16,4.16,0,0,0-.44-1.73,3.31,3.31,0,0,0-1-1.2,4.37,4.37,0,0,0-1.47-.71,6.7,6.7,0,0,0-1.77-.23,8.1,8.1,0,0,0-1.35.13,4.66,4.66,0,0,0-1.32.44,2.8,2.8,0,0,0-1,.84,2.2,2.2,0,0,0-.39,1.33,2.09,2.09,0,0,0,.5,1.45,3.79,3.79,0,0,0,1.3.89,10.22,10.22,0,0,0,1.86.57c.7.14,1.41.3,2.13.46s1.42.36,2.12.59a6.5,6.5,0,0,1,1.86.94,4.68,4.68,0,0,1,1.31,1.54,5,5,0,0,1,.5,2.37A5,5,0,0,1,638,42a5.37,5.37,0,0,1-1.6,1.75,7.2,7.2,0,0,1-2.24,1,9.63,9.63,0,0,1-2.56.34,12.87,12.87,0,0,1-3-.34,7.24,7.24,0,0,1-2.49-1.1,5.87,5.87,0,0,1-1.76-2,6.9,6.9,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.14,6.14,0,0,0,3.82,1.09,6.53,6.53,0,0,0,1.67-.21,4.28,4.28,0,0,0,1.44-.64,3.3,3.3,0,0,0,1-1.12,3.46,3.46,0,0,0,.38-1.67,2.2,2.2,0,0,0-.5-1.52,3.81,3.81,0,0,0-1.3-.95,10.16,10.16,0,0,0-1.86-.6L630.19,36c-.71-.15-1.42-.33-2.12-.54a6.59,6.59,0,0,1-1.86-.84,4.22,4.22,0,0,1-1.3-1.36,3.89,3.89,0,0,1-.5-2.1,4.48,4.48,0,0,1,.57-2.3,5.06,5.06,0,0,1,1.51-1.61,6.93,6.93,0,0,1,2.1-1,8.59,8.59,0,0,1,2.35-.32,10.42,10.42,0,0,1,2.66.33,6.79,6.79,0,0,1,2.23,1,5.59,5.59,0,0,1,1.61,1.77,6.79,6.79,0,0,1,.85,2.56Z"></path>
+	<path fill="#29313d" d="M656.27,26.47h12.8v2.1H658.68V34.2h9v2.1h-9v6.29h10.65v2.1H656.27Z"></path>
+	<path fill="#29313d" d="M686.77,26.47h2.44l9.65,14.38h0V26.47h2.26V44.69h-2.41l-9.68-14.36H689V44.69h-2.26Z"></path>
+	<path fill="#29313d" d="M725,26.47h2.56l6.61,18.22h-2.59l-2-5.58h-6.91l-2.1,5.58h-2.59Zm1.28,3h-.05L723.5,37h5.43Z"></path>
+	<path fill="#29313d" d="M753.31,28.57h-5.48v-2.1H761.2v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M778.31,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29h10.65v2.1H778.31Z"></path>
+	<path fill="#29313d" d="M845.16,32.1a5.11,5.11,0,0,0-.78-1.69,5.9,5.9,0,0,0-1.32-1.32,5.8,5.8,0,0,0-1.71-.84,6.33,6.33,0,0,0-2-.3,6.42,6.42,0,0,0-2.93.63,5.92,5.92,0,0,0-2.05,1.68,7.25,7.25,0,0,0-1.19,2.43,11.18,11.18,0,0,0,0,5.78,7.09,7.09,0,0,0,1.2,2.43,5.92,5.92,0,0,0,2.05,1.68,6.44,6.44,0,0,0,2.94.63,6.1,6.1,0,0,0,2.2-.39,5.3,5.3,0,0,0,1.81-1.1,5.83,5.83,0,0,0,1.3-1.71,6.64,6.64,0,0,0,.67-2.2l2.51.3A8.57,8.57,0,0,1,846.78,41a8.48,8.48,0,0,1-1.94,2.22,8.79,8.79,0,0,1-2.55,1.4,8.47,8.47,0,0,1-2.9.5,10.08,10.08,0,0,1-3.82-.69,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3,12.32,12.32,0,0,1,0-7.78,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,10.08,10.08,0,0,1,3.82-.69,10.69,10.69,0,0,1,2.8.36,8,8,0,0,1,2.4,1.06,7.4,7.4,0,0,1,1.87,1.75,7.64,7.64,0,0,1,1.21,2.46Z"></path>
+	<path fill="#29313d" d="M865,35.58a11.75,11.75,0,0,1,.62-3.89,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,11,11,0,0,1,7.66,0,8,8,0,0,1,2.89,2,8.55,8.55,0,0,1,1.82,3,12.32,12.32,0,0,1,0,7.78,8.55,8.55,0,0,1-1.82,3,8,8,0,0,1-2.89,2,11,11,0,0,1-7.66,0,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3A11.75,11.75,0,0,1,865,35.58Zm2.61,0a11,11,0,0,0,.38,2.89,7.25,7.25,0,0,0,1.19,2.43,6,6,0,0,0,2,1.68,6.44,6.44,0,0,0,2.94.63,6.35,6.35,0,0,0,2.92-.63,5.94,5.94,0,0,0,2-1.68,7.29,7.29,0,0,0,1.21-2.43,10.9,10.9,0,0,0,0-5.78,7.29,7.29,0,0,0-1.21-2.43,5.94,5.94,0,0,0-2-1.68,6.35,6.35,0,0,0-2.92-.63,6.44,6.44,0,0,0-2.94.63,6,6,0,0,0-2,1.68A7.25,7.25,0,0,0,868,32.69,11,11,0,0,0,867.62,35.58Z"></path>
+	<path fill="#29313d" d="M901.35,26.47h3.18l5.58,14.79,5.58-14.79h3.18V44.69h-2.41V30h-.05l-5.33,14.66h-1.94L903.81,30h0V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M937.51,26.47h3.18l5.58,14.79,5.59-14.79H955V44.69h-2.4V30h-.06l-5.32,14.66h-2L940,30h-.05V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M973.88,26.47h2.41V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M999.16,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M1028.26,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M1053.26,26.47h12.8v2.1h-10.4V34.2h9v2.1h-9v6.29h10.66v2.1h-13.06Z"></path>
+	<path fill="#29313d" d="M1083.76,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29h10.65v2.1h-13.06Z"></path>
+	<path fill="#29313d" d="M1135.67,35.58a11.5,11.5,0,0,1,.63-3.89,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,10.95,10.95,0,0,1,7.65,0,8,8,0,0,1,2.9,2,8.55,8.55,0,0,1,1.82,3,12.51,12.51,0,0,1,0,7.78,8.55,8.55,0,0,1-1.82,3,8,8,0,0,1-2.9,2,10.95,10.95,0,0,1-7.65,0,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3A11.5,11.5,0,0,1,1135.67,35.58Zm2.62,0a11,11,0,0,0,.38,2.89,7.07,7.07,0,0,0,1.19,2.43,5.92,5.92,0,0,0,2.05,1.68,6.42,6.42,0,0,0,2.93.63,6.32,6.32,0,0,0,2.92-.63,6,6,0,0,0,2-1.68,7.09,7.09,0,0,0,1.2-2.43,10.64,10.64,0,0,0,0-5.78,7.09,7.09,0,0,0-1.2-2.43,6,6,0,0,0-2-1.68,6.32,6.32,0,0,0-2.92-.63,6.42,6.42,0,0,0-2.93.63,5.92,5.92,0,0,0-2.05,1.68,7.07,7.07,0,0,0-1.19,2.43A11,11,0,0,0,1138.29,35.58Z"></path>
+	<path fill="#29313d" d="M1171.94,26.47h2.43L1184,40.85h0V26.47h2.26V44.69h-2.41l-9.68-14.36h-.06V44.69h-2.25Z"></path>
+	<path fill="#374d6c" d="M250.71,111.33H218.28l-5.57,11.31H194.63l30.58-59.08H244l30.57,59.08H256.29Zm-6-12.24L234.5,78.16,224.19,99.09Z"></path>
+	<path fill="#374d6c" d="M333,122.64,317.35,104H300v18.65H282.8V63.56h41.47c15.12,0,26.86,6.67,26.86,20.17,0,9.88-6.25,16.12-15.54,18.82L353,122.64ZM323,91.5c6.16,0,10.64-1.69,10.64-7.43s-4.48-7.43-10.64-7.43H299.86V91.5Z"></path>
+	<path fill="#374d6c" d="M445.64,63.56v59.08H428.49V84.91l-23.56,28.87h-.85L380.52,84.91v37.73H363.88V63.56h18.84l22.21,28.36,22.38-28.36Z"></path>
+	<path fill="#374d6c" d="M524.27,109.48v13.16H461.18V63.56h62.16V76.73H478.15v9.7H515.4V99H478.15v10.47Z"></path>
+	<path fill="#374d6c" d="M606.53,93.1c0,18.57-14.45,29.54-37.16,29.54h-33V63.56h33C592.08,63.56,606.53,74.53,606.53,93.1ZM589,93.1c0-10.47-8.28-15.87-21-15.87H553.57V109H568C580.68,109,589,103.57,589,93.1Z"></path>
+	<path fill="#374d6c" d="M707.53,104.16c0,12.15-11.23,20.42-32.68,20.42-15.2,0-28-4.13-37.25-11.56l9-10.64c7,5.91,16.72,9.21,28.55,9.21,10.13,0,15.2-1.86,15.2-5.74s-4.73-5.07-16.89-6.08C655.93,98.25,640,94.37,640,81.2c0-12.66,13.68-19.58,32.43-19.58,12.67,0,24.32,3,32.43,8.77l-8.7,10.72c-6.58-4.64-14.52-6.5-23.73-6.58-6.93,0-15.29,1.1-15.29,5.32,0,4,6.84,4.47,17.4,5.32C693.85,86.77,707.53,90.57,707.53,104.16Z"></path>
+	<path fill="#374d6c" d="M782,109.48v13.16H718.93V63.56H781.1V76.73H735.91v9.7h37.25V99H735.91v10.47Z"></path>
+	<path fill="#374d6c" d="M844.27,122.64,828.64,104H811.25v18.65H794.1V63.56h41.47c15.12,0,26.86,6.67,26.86,20.17,0,9.88-6.25,16.12-15.54,18.82l17.4,20.09Zm-10-31.14c6.17,0,10.64-1.69,10.64-7.43s-4.47-7.43-10.64-7.43H811.16V91.5Z"></path>
+	<path fill="#374d6c" d="M883.79,63.56,903.3,106.1l19.43-42.54h18.41l-29,59.08H894.1L865.21,63.56Z"></path>
+	<path fill="#374d6c" d="M949.33,122.64V63.56h17.23v59.08Z"></path>
+	<path fill="#374d6c" d="M1034.72,101.54l14.78,7.6c-5.49,8.69-17.4,15.44-33.36,15.44-22.3,0-37.33-11.56-37.33-31.48s15-31.48,38-31.48c15.29,0,27.11,6.92,32.44,15.36l-14.87,7.6c-3.88-6.08-9.88-9-17.82-9-12.16,0-20.27,6.16-20.27,17.47s8.11,17.47,20.27,17.47C1024.5,110.57,1030.58,107.87,1034.72,101.54Z"></path>
+	<path fill="#374d6c" d="M1122.81,109.48v13.16h-63.09V63.56h62.16V76.73h-45.19v9.7h37.25V99h-37.25v10.47Z"></path>
+	<path fill="#374d6c" d="M1200,104.16c0,12.15-11.23,20.42-32.69,20.42-15.2,0-28-4.13-37.24-11.56l9-10.64c7,5.91,16.72,9.21,28.54,9.21,10.14,0,15.21-1.86,15.21-5.74s-4.73-5.07-16.9-6.08c-17.56-1.52-33.53-5.4-33.53-18.57,0-12.66,13.69-19.58,32.44-19.58,12.66,0,24.32,3,32.43,8.77l-8.7,10.72c-6.59-4.64-14.53-6.5-23.73-6.58-6.93,0-15.29,1.1-15.29,5.32,0,4,6.84,4.47,17.4,5.32C1186.32,86.77,1200,90.57,1200,104.16Z"></path>
+	<path fill="#374d6c" d="M111.91,82.24s8.85-3.37,3.9-12.6c-3.34-6.22-.9-9.93-.9-9.93L175.18,0s2.84,6.48-7.85,17.67l11.44-8.45a34.25,34.25,0,0,1-6.41,15c-5.13,3.06-10.31,6-15.68,8.74a61.77,61.77,0,0,0,18.15-8.63L180,21.39s-3.23,13.17-11.69,15.66l10.45-3a24.41,24.41,0,0,1-6,9.73c-5.72,2.3-11.46,4.52-17.36,6.42a56.55,56.55,0,0,0,14-3.49L178,44.26S174.79,53,166.34,55.44s10.44-2,10.44-2S172.11,60.53,166.52,64c-4.06.51-8.13.94-12.23,1.21a61,61,0,0,0,19.4-.77,28.51,28.51,0,0,1-9.84,9.35l8.35-.08s-4.23,5.26-8.45,8c-5.05.46-10.1.83-15.19,1a59.79,59.79,0,0,0,18.05.23l2.71-.15S160.62,93,154.65,93.46l7.5.23s-5,6-9.41,7.68L149.6,99.2c-5-3.26-10-6.58-14.77-10.21a61.73,61.73,0,0,0,15.76,12.47l4.9,3.36s-13.26,2.92-19.22-3.57l7.29,8a24.41,24.41,0,0,1-11.36-1c-4.6-4.11-9.13-8.29-13.43-12.75a56.48,56.48,0,0,0,9.31,11l6,6.59s-9.24.94-15.2-5.54,6.4,8.48,6.4,8.48l-13.37-4.35Z"></path>
+	<path fill="#374d6c" d="M68.1,82.24s-8.85-3.37-3.9-12.6c3.34-6.22.9-9.93.9-9.93L4.83,0S2,6.48,12.68,17.67L1.24,9.22a34.25,34.25,0,0,0,6.41,15c5.13,3.06,10.31,6,15.68,8.74A61.77,61.77,0,0,1,5.18,24.3L0,21.39S3.23,34.56,11.69,37.05l-10.45-3a24.41,24.41,0,0,0,6,9.73c5.72,2.3,11.47,4.52,17.37,6.42a56.63,56.63,0,0,1-14-3.49L2,44.26S5.22,53,13.68,55.44s-10.45-2-10.45-2S7.9,60.53,13.49,64c4.06.51,8.13.94,12.23,1.21a61,61,0,0,1-19.4-.77,28.51,28.51,0,0,0,9.84,9.35l-8.35-.08s4.23,5.26,8.46,8c5,.46,10.09.83,15.18,1a59.78,59.78,0,0,1-18,.23l-2.71-.15S19.4,93,25.36,93.46l-7.5.23s5,6,9.41,7.68l3.15-2.17c5-3.26,10-6.58,14.76-10.21a61.56,61.56,0,0,1-15.76,12.47l-4.89,3.36s13.25,2.92,19.21-3.57l-7.29,8a24.46,24.46,0,0,0,11.37-1c4.59-4.11,9.12-8.29,13.42-12.75a56.13,56.13,0,0,1-9.31,11l-6,6.59s9.24.94,15.2-5.54-6.39,8.48-6.39,8.48l13.36-4.35Z"></path>
+	<path fill="#374d6c" d="M100,79.53l-.24-1.26-3.1-12.21-3.8-4.86a2.49,2.49,0,0,0-1.92-1l-6.71-.1a2.5,2.5,0,0,0-1.92.86l-.7.8a2.19,2.19,0,0,1-.92.64L76.36,64a2.91,2.91,0,0,0-1.68,3.87l.78,1.85L76.65,68a1.26,1.26,0,0,1,1-.54l4.8-.5L84,73.26l-2.52,6.27Z"></path>
+	<path fill="#aa8e49" d="M71.08,82.44v9.68h37.86V82.44Zm6.54,7.16-1.51-1.06L74.54,89.6l.53-1.78-1.44-1.11h1.82L76.11,85l.6,1.74h1.81l-1.43,1.11Zm7,0-1.52-1.06L81.51,89.6,82,87.82,80.6,86.71h1.81L83.07,85l.61,1.74h1.81l-1.43,1.11Zm7,0L90,88.54,88.48,89.6,89,87.82l-1.45-1.11h1.82L90,85l.6,1.74h1.82L91,87.82Zm7,0L97,88.54,95.44,89.6,96,87.82l-1.45-1.11h1.82L97,85l.6,1.74h1.81L98,87.82Zm7,0L104,88.54l-1.56,1.06.53-1.78-1.44-1.11h1.82L104,85l.61,1.74h1.81L105,87.82Z"></path>
+	<path fill="#aa8e49" d="M77,118.22l-2.34-1.6a8.21,8.21,0,0,1-3.55-6.75V94H77Z"></path>
+	<polygon fill="#aa8e49" points="84.96 124.3 79.08 119.96 79.08 93.97 84.96 93.97 84.96 124.3"></polygon>
+	<polygon fill="#aa8e49" points="92.95 125.94 90.08 128.15 87.07 125.94 87.07 93.97 92.95 93.97 92.95 125.94"></polygon>
+	<polygon fill="#aa8e49" points="100.94 119.96 95.06 124.3 95.06 93.97 100.94 93.97 100.94 119.96"></polygon>
+	<path fill="#aa8e49" d="M105.39,116.62l-2.34,1.6V94h5.89v15.91A8.21,8.21,0,0,1,105.39,116.62Z"></path>
+	<path fill="#374d6c" d="M102.07,129.44c.26,1.8.35,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19h-1.63A.19.19,0,0,0,102.07,129.44Z"></path>
+	<path fill="#374d6c" d="M99.16,129.44c.26,1.8.35,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19H99.35A.19.19,0,0,0,99.16,129.44Z"></path>
+	<path fill="#374d6c" d="M96.25,129.44c.26,1.8.36,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19H96.44A.19.19,0,0,0,96.25,129.44Z"></path>
+	<path fill="#374d6c" d="M105.26,119.76a67.94,67.94,0,0,1-1.55,8.24h-7.8s-.17.09-.36-1.06Z"></path>
+	<path fill="#374d6c" d="M42.18,135.94l13.58-3.82-1.48,2.52,20-1.34a.66.66,0,0,1,.71.56h0a.67.67,0,0,1-.62.78l-19.72,1.17L57,139.74Z"></path>
+	<path fill="#374d6c" d="M77.89,129.44c-.26,1.8-.36,4.56-.54,6.46a4.41,4.41,0,0,1-1.48-3.27c-.06-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19h1.62A.2.2,0,0,1,77.89,129.44Z"></path>
+	<path fill="#374d6c" d="M80.8,129.44c-.26,1.8-.36,4.56-.54,6.46a4.46,4.46,0,0,1-1.49-3.27c0-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19H80.6A.2.2,0,0,1,80.8,129.44Z"></path>
+	<path fill="#374d6c" d="M83.7,129.44c-.25,1.8-.35,4.56-.53,6.46a4.46,4.46,0,0,1-1.49-3.27c-.05-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19h1.62A.19.19,0,0,1,83.7,129.44Z"></path>
+	<path fill="#374d6c" d="M74.17,130.64l-18.11-2.45,4.56-3.65-13.24,2.14L58,132.05l-2.17-2.82,18.09,2.94a.77.77,0,1,0,.23-1.53Z"></path>
+	<rect fill="#374d6c" x="85.06" y="130.95" width="10.68" height="1.18"></rect>
+	<rect fill="#374d6c" x="85.06" y="133.3" width="10.68" height="1.18"></rect>
+	<path fill="#374d6c" d="M106.59,131.55l15-.85.33-1.09,18.49-2.05-3.86,3,3.61,2.73-18.45-.42-.12-.92-14.91.76a.56.56,0,0,1-.6-.56h0A.56.56,0,0,1,106.59,131.55Z"></path>
+	<path fill="#374d6c" d="M106.39,133.73l32.91,1-3.15,2.22,3.11,3.1-15.43-.38-2.26-3.89-15.23-.92a.53.53,0,0,1-.5-.55h0A.53.53,0,0,1,106.39,133.73Z"></path>
+	<path fill="#374d6c" d="M74.7,119.76A69.1,69.1,0,0,0,76.24,128h7.81s.17.09.35-1.06Z"></path>
+	<polygon fill="#aa8e49" points="92.05 7.21 89.96 1.22 87.69 7.21 81.44 7.21 86.41 11.05 84.58 17.15 89.96 13.53 95.19 17.15 93.36 11.05 98.29 7.21 92.05 7.21"></polygon>
+	<polygon fill="#aa8e49" points="73.64 19.57 71.56 13.58 69.29 19.57 63.03 19.57 68.01 23.41 66.18 29.51 71.56 25.89 76.79 29.51 74.96 23.41 79.89 19.57 73.64 19.57"></polygon>
+	<polygon fill="#aa8e49" points="80.83 40.83 78.75 34.84 76.48 40.83 70.22 40.83 75.2 44.67 73.37 50.77 78.75 47.15 83.98 50.77 82.15 44.67 87.07 40.83 80.83 40.83"></polygon>
+	<polygon fill="#aa8e49" points="103.55 40.83 101.47 34.84 99.2 40.83 92.94 40.83 97.91 44.67 96.08 50.77 101.47 47.15 106.69 50.77 104.87 44.67 109.79 40.83 103.55 40.83"></polygon>
+	<polygon fill="#aa8e49" points="110.73 19.57 108.65 13.58 106.39 19.57 100.13 19.57 105.1 23.41 103.27 29.51 108.65 25.89 113.88 29.51 112.06 23.41 116.98 19.57 110.73 19.57"></polygon>
+</svg>          </div>
+        </a>
+      </div>
+    </div>
+
+    <div id="js-site-header" class="SiteHeader__main">
+      <div class="SiteHeader__nav SiteHeader__navLinkContainer h-100 ml-auto">
+        <div class="SiteHeader__navItem h-100">
+
+<div class="SiteNav h-100">
+    
+      <nav aria-label="Site Navigation" class="SiteNav__layout h-100">
+        <div class="SiteNav__main  h-100">
+          <ul class="SiteNav__linkList">
+
+                
+
+
+                <li class="SiteNav__item SiteNav__item--dropdown">
+                  <a class="SiteNav__link align-items-center" data-transition-selected-if="/about" data-transition-selected-class="SiteNav__link--selected" href="https://www.armed-services.senate.gov/about" tabindex="0">About</a>
+
+                    <ul class="SiteNav__dropdown">
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/about/membership" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/about/membership" href="https://www.armed-services.senate.gov/about/membership" tabindex="0">Members</a>
+                          </li>
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/about/committee-staff" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/about/committee-staff" href="https://www.armed-services.senate.gov/about/committee-staff" tabindex="0">Committee Staff</a>
+                          </li>
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/about/history" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/about/history" href="https://www.armed-services.senate.gov/about/history" tabindex="0">History/Jurisdiction</a>
+                          </li>
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/about/committee-rules" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/about/committee-rules" href="https://www.armed-services.senate.gov/about/committee-rules" tabindex="0">Rules</a>
+                          </li>
+                    </ul>
+                </li>
+
+                
+
+
+                <li class="SiteNav__item">
+                  <a class="SiteNav__link align-items-center" data-transition-selected-if="/subcommittees" data-transition-selected-class="SiteNav__link--selected" href="https://www.armed-services.senate.gov/subcommittees" tabindex="0">Subcommittees</a>
+
+                </li>
+
+                
+
+
+                <li class="SiteNav__item">
+                  <a class="SiteNav__link align-items-center" data-transition-selected-if="/hearings" data-transition-selected-class="SiteNav__link--selected" href="https://www.armed-services.senate.gov/hearings" tabindex="0">Hearings</a>
+
+                </li>
+
+                
+
+
+                <li class="SiteNav__item SiteNav__item--dropdown">
+                  <a class="SiteNav__link align-items-center" data-transition-selected-if="/committee-actions" data-transition-selected-class="SiteNav__link--selected" href="https://www.armed-services.senate.gov/committee-actions" tabindex="0">Committee Actions</a>
+
+                    <ul class="SiteNav__dropdown">
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/committee-actions/legislation" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/committee-actions/legislation" href="https://www.armed-services.senate.gov/committee-actions/legislation" tabindex="0">Legislation</a>
+                          </li>
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/committee-actions/nominations" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/committee-actions/nominations" href="https://www.armed-services.senate.gov/committee-actions/nominations" tabindex="0">Nominations</a>
+                          </li>
+
+
+                          <li class="SiteNav__dropdownItem">
+                            <a class="SiteNav__dropdownLink" data-transition-selected-if="/committee-actions/library" data-transition-selected-class="SiteNav__dropdownLink--selected" data-transition-selected-nestedif="/committee-actions/library" href="https://www.armed-services.senate.gov/committee-actions/library" tabindex="0">Library</a>
+                          </li>
+                    </ul>
+                </li>
+
+                
+
+
+                <li class="SiteNav__item">
+                  <a class="SiteNav__link align-items-center SiteNav__link--selected" data-transition-selected-if="/press-releases" data-transition-selected-class="SiteNav__link--selected" href="https://www.armed-services.senate.gov/press-releases" tabindex="0">Press</a>
+
+                </li>
+  
+          </ul>
+        </div>
+      </nav>
+</div>
+
+<script>
+
+  var topLevelLinks = document.querySelectorAll('.SiteNav__link');
+
+  for (var i = 0; i < topLevelLinks.length; i++) {
+    topLevelLinks[i].addEventListener('mouseover', function () {
+      this
+        .parentElement
+        .classList
+        .add('focus');
+    });
+
+    topLevelLinks[i].addEventListener('mouseleave', function () {
+      this
+        .parentElement
+        .classList
+        .remove('focus');
+    });
+  }
+</script>        </div>
+      </div>
+
+      <div class="SiteHeader__nav SiteHeader__navSearch h-100">
+        
+        <div class="SiteHeader__search h-100">
+<div id="SiteSearch" class="SiteNavSearch">
+  <button class="SiteNavSearch__searchToggleButton" aria-label="Website search open" data-toggle-search="true" data-toggle-class="SiteHeader--searchMode" data-target="#js-site-header">
+    <span class="SiteNavSearch__searchIcon"></span>
+    <span class="sr-only">Website Search Open</span>
+  </button>
+
+  <div class="SiteNavSearch__searchOverlay">
+    <form class="SiteNavSearch__searchForm" aria-label="search" role="search" method="get" action="https://www.armed-services.senate.gov/search">
+      <div class="SiteNavSearch__searchFormContent">
+        <input name="q" id="js-site-nav-search-input" class="SiteNavSearch__searchInput" type="text" placeholder="Search" aria-label="Site Search">
+        <button class="SiteNavSearch__searchFormButton" type="submit">
+          <span class="sr-only">Submit Site Search Query</span>
+          <span class="SiteNavSearch__searchToggleIcon fa fa-search" aria-hidden="true"></span>
+        </button>
+      </div>
+    </form>
+
+    <button class="SiteNavSearch__searchToggleButton" aria-label="Website search" data-toggle-search="true" data-toggle-class="SiteHeader--searchMode" data-target="#js-site-header">
+      <span class="SiteNavSearch__searchIconClose" aria-hidden="true"></span>
+      <span class="sr-only">Website Search</span>
+    </button>
+  </div>
+</div>
+<script>
+
+  if (typeof window.setupSearchToggle !== 'function') {
+
+    window.setupSearchToggle = function () {
+      window.searchToggleSetup = true;
+      
+      if (typeof window.clearSearchToggle !== 'function') {
+        window.clearSearchToggle = function () {
+          $('#SiteSearch').removeClass('SiteNavSearch--searchMode');
+          $('#js-site-header').removeClass('SiteHeader--searchMode');
+          $('.js-siteLogo').removeClass('SiteHeader__logoContainer--searchMode');
+          $('.SiteNavSearch').removeClass('SiteNavSearch--searchMode');
+          $('.SiteNavSearch input').val('');
+        }
+      }
+
+      $('[data-toggle-class]').click(this, function () {
+
+        var className = $(this).data('toggle-class');
+        var target = $(this).data('target');
+        var searchTarget = $('.SiteNavSearch');
+        var logoTarget = $('.js-siteLogo');
+        var hasClass = $(target).hasClass(className);
+
+        $(target).toggleClass(className);
+
+        searchTarget.toggleClass('SiteNavSearch--searchMode');
+        $(logoTarget).toggleClass('SiteHeader__logoContainer--searchMode');
+
+        if (hasClass) {
+          $('#js-site-nav-search-input').val('');
+          return;
+        }
+
+        $('#js-site-nav-search-input').focus();
+      })
+    }
+  }
+
+  $(function () {
+    if (!window.searchToggleSetup) 
+      setupSearchToggle();
+    }
+  );
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                </div></div>
+
+                <div class="SiteLayout__mobileHeader">
+<div class="pin-spacer pin-spacer-MobileHeader" style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: auto; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1889px; height: 263px; padding: 0px;"><div class="MobileHeader" style="translate: none; rotate: none; scale: none; left: 8px; top: 0px; margin: 0px; max-width: 1889px; width: 1889px; max-height: 264px; height: 264px; padding: 0px; box-sizing: border-box; position: fixed; transform: translate(0px, 0px);">
+  <div class="MobileHeader__bgColor" style=""></div>
+  <div class="MobileHeader__container container h-100">
+    <div class="row no-gutters h-100 align-items-center justify-content-between ">
+
+      <div class="MobileHeader__logo d-flex justify-content-center justify-self-stretch">
+        <a class="MobileHeader__logoLink" href="https://www.armed-services.senate.gov/">
+          <span class="sr-only">Home Logo Link</span>
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140">
+	<path fill="#29313d" d="M234.82,38.7a7.24,7.24,0,0,1-.49,2.77,5.43,5.43,0,0,1-1.38,2,5.84,5.84,0,0,1-2.18,1.24,10.15,10.15,0,0,1-5.78,0,5.84,5.84,0,0,1-2.18-1.24,5.43,5.43,0,0,1-1.38-2,7.24,7.24,0,0,1-.49-2.77V26.47h2.41V38.29a5.17,5.17,0,0,0,1.07,3.59,5.7,5.7,0,0,0,6.92,0,5.22,5.22,0,0,0,1.07-3.59V26.47h2.41Z"></path>
+	<path fill="#29313d" d="M253.31,26.47h2.44l9.65,14.38h.05V26.47h2.26V44.69H265.3l-9.68-14.36h-.05V44.69h-2.26Z"></path>
+	<path fill="#29313d" d="M286.48,26.47h2.41V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M311.76,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M336.76,26.47h12.8v2.1h-10.4V34.2h9v2.1h-9v6.29h10.66v2.1H336.76Z"></path>
+	<path fill="#29313d" d="M367.26,26.47h6.89a9,9,0,0,1,3.6.66A6.71,6.71,0,0,1,380.27,29a7.81,7.81,0,0,1,1.47,2.92,13.84,13.84,0,0,1,.48,3.75,12.48,12.48,0,0,1-.5,3.6,7.93,7.93,0,0,1-1.5,2.85A6.75,6.75,0,0,1,377.71,44a8.5,8.5,0,0,1-3.56.68h-6.89Zm2.41,16.12h4.07a6.44,6.44,0,0,0,2.74-.52,4.7,4.7,0,0,0,1.82-1.46,6.1,6.1,0,0,0,1-2.25,13.12,13.12,0,0,0,.31-2.91,11.78,11.78,0,0,0-.32-2.83,6.15,6.15,0,0,0-1-2.16,4.56,4.56,0,0,0-1.76-1.39,6,6,0,0,0-2.58-.5h-4.28Z"></path>
+	<path fill="#29313d" d="M433.57,31.82a4.16,4.16,0,0,0-.43-1.73,3.43,3.43,0,0,0-1-1.2,4.41,4.41,0,0,0-1.46-.71,6.83,6.83,0,0,0-1.78-.23,8.2,8.2,0,0,0-1.35.13,4.66,4.66,0,0,0-1.32.44,2.68,2.68,0,0,0-1,.84,2.14,2.14,0,0,0-.4,1.33,2.09,2.09,0,0,0,.5,1.45,3.74,3.74,0,0,0,1.31.89,9.87,9.87,0,0,0,1.85.57c.7.14,1.41.3,2.13.46s1.42.36,2.12.59a6.5,6.5,0,0,1,1.86.94,4.56,4.56,0,0,1,1.31,1.54,5,5,0,0,1,.5,2.37,5,5,0,0,1-.62,2.52,5.37,5.37,0,0,1-1.6,1.75,7.2,7.2,0,0,1-2.24,1,9.63,9.63,0,0,1-2.56.34,12.87,12.87,0,0,1-3-.34,7.32,7.32,0,0,1-2.49-1.1,6,6,0,0,1-1.76-2,6.9,6.9,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.14,6.14,0,0,0,3.82,1.09,6.53,6.53,0,0,0,1.67-.21,4.28,4.28,0,0,0,1.44-.64,3.3,3.3,0,0,0,1-1.12,3.35,3.35,0,0,0,.39-1.67,2.24,2.24,0,0,0-.5-1.52A4,4,0,0,0,432,37.1a10.16,10.16,0,0,0-1.86-.6L428,36q-1.08-.23-2.13-.54a6.59,6.59,0,0,1-1.86-.84,4.33,4.33,0,0,1-1.3-1.36,4,4,0,0,1-.5-2.1,4.48,4.48,0,0,1,.57-2.3,5,5,0,0,1,1.52-1.61,6.71,6.71,0,0,1,2.1-1,8.47,8.47,0,0,1,2.34-.32,10.37,10.37,0,0,1,2.66.33,6.79,6.79,0,0,1,2.23,1,5.59,5.59,0,0,1,1.61,1.77,6.79,6.79,0,0,1,.85,2.56Z"></path>
+	<path fill="#29313d" d="M458.16,28.57h-5.48v-2.1h13.37v2.1h-5.49V44.69h-2.4Z"></path>
+	<path fill="#29313d" d="M486.64,26.47h2.56l6.61,18.22h-2.59l-2-5.58h-6.91l-2.1,5.58h-2.59Zm1.28,3h-.05L485.1,37h5.43Z"></path>
+	<path fill="#29313d" d="M514.91,28.57h-5.48v-2.1H522.8v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M539.91,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29H553v2.1H539.91Z"></path>
+	<path fill="#29313d" d="M581.86,31.82a4,4,0,0,0-.43-1.73,3.41,3.41,0,0,0-1-1.2,4.56,4.56,0,0,0-1.47-.71,6.7,6.7,0,0,0-1.77-.23,8.31,8.31,0,0,0-1.36.13,4.7,4.7,0,0,0-1.31.44,2.8,2.8,0,0,0-1,.84,2.2,2.2,0,0,0-.39,1.33,2.09,2.09,0,0,0,.49,1.45,3.84,3.84,0,0,0,1.31.89,10.22,10.22,0,0,0,1.86.57c.7.14,1.41.3,2.12.46s1.43.36,2.13.59a6.5,6.5,0,0,1,1.86.94,4.65,4.65,0,0,1,1.3,1.54,4.9,4.9,0,0,1,.5,2.37,5,5,0,0,1-.61,2.52,5.48,5.48,0,0,1-1.6,1.75,7.31,7.31,0,0,1-2.24,1,9.7,9.7,0,0,1-2.57.34,12.85,12.85,0,0,1-3-.34,7.38,7.38,0,0,1-2.5-1.1,6,6,0,0,1-1.75-2,6.63,6.63,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.09,6.09,0,0,0,3.81,1.09,6.67,6.67,0,0,0,1.68-.21,4.23,4.23,0,0,0,1.43-.64,3.33,3.33,0,0,0,1-1.12,3.46,3.46,0,0,0,.38-1.67,2.24,2.24,0,0,0-.5-1.52,3.86,3.86,0,0,0-1.31-.95,9.81,9.81,0,0,0-1.85-.6L576.28,36c-.72-.15-1.42-.33-2.12-.54a6.59,6.59,0,0,1-1.86-.84A4.36,4.36,0,0,1,571,33.3a4,4,0,0,1-.5-2.1,4.49,4.49,0,0,1,.58-2.3,5,5,0,0,1,1.51-1.61,6.71,6.71,0,0,1,2.1-1A8.57,8.57,0,0,1,577,26a10.5,10.5,0,0,1,2.67.33,6.89,6.89,0,0,1,2.23,1,5.84,5.84,0,0,1,1.61,1.77,6.61,6.61,0,0,1,.84,2.56Z"></path>
+	<path fill="#29313d" d="M635.78,31.82a4.16,4.16,0,0,0-.44-1.73,3.31,3.31,0,0,0-1-1.2,4.37,4.37,0,0,0-1.47-.71,6.7,6.7,0,0,0-1.77-.23,8.1,8.1,0,0,0-1.35.13,4.66,4.66,0,0,0-1.32.44,2.8,2.8,0,0,0-1,.84,2.2,2.2,0,0,0-.39,1.33,2.09,2.09,0,0,0,.5,1.45,3.79,3.79,0,0,0,1.3.89,10.22,10.22,0,0,0,1.86.57c.7.14,1.41.3,2.13.46s1.42.36,2.12.59a6.5,6.5,0,0,1,1.86.94,4.68,4.68,0,0,1,1.31,1.54,5,5,0,0,1,.5,2.37A5,5,0,0,1,638,42a5.37,5.37,0,0,1-1.6,1.75,7.2,7.2,0,0,1-2.24,1,9.63,9.63,0,0,1-2.56.34,12.87,12.87,0,0,1-3-.34,7.24,7.24,0,0,1-2.49-1.1,5.87,5.87,0,0,1-1.76-2,6.9,6.9,0,0,1-.78-3l2.61-.23a4.44,4.44,0,0,0,1.54,3.57,6.14,6.14,0,0,0,3.82,1.09,6.53,6.53,0,0,0,1.67-.21,4.28,4.28,0,0,0,1.44-.64,3.3,3.3,0,0,0,1-1.12,3.46,3.46,0,0,0,.38-1.67,2.2,2.2,0,0,0-.5-1.52,3.81,3.81,0,0,0-1.3-.95,10.16,10.16,0,0,0-1.86-.6L630.19,36c-.71-.15-1.42-.33-2.12-.54a6.59,6.59,0,0,1-1.86-.84,4.22,4.22,0,0,1-1.3-1.36,3.89,3.89,0,0,1-.5-2.1,4.48,4.48,0,0,1,.57-2.3,5.06,5.06,0,0,1,1.51-1.61,6.93,6.93,0,0,1,2.1-1,8.59,8.59,0,0,1,2.35-.32,10.42,10.42,0,0,1,2.66.33,6.79,6.79,0,0,1,2.23,1,5.59,5.59,0,0,1,1.61,1.77,6.79,6.79,0,0,1,.85,2.56Z"></path>
+	<path fill="#29313d" d="M656.27,26.47h12.8v2.1H658.68V34.2h9v2.1h-9v6.29h10.65v2.1H656.27Z"></path>
+	<path fill="#29313d" d="M686.77,26.47h2.44l9.65,14.38h0V26.47h2.26V44.69h-2.41l-9.68-14.36H689V44.69h-2.26Z"></path>
+	<path fill="#29313d" d="M725,26.47h2.56l6.61,18.22h-2.59l-2-5.58h-6.91l-2.1,5.58h-2.59Zm1.28,3h-.05L723.5,37h5.43Z"></path>
+	<path fill="#29313d" d="M753.31,28.57h-5.48v-2.1H761.2v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M778.31,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29h10.65v2.1H778.31Z"></path>
+	<path fill="#29313d" d="M845.16,32.1a5.11,5.11,0,0,0-.78-1.69,5.9,5.9,0,0,0-1.32-1.32,5.8,5.8,0,0,0-1.71-.84,6.33,6.33,0,0,0-2-.3,6.42,6.42,0,0,0-2.93.63,5.92,5.92,0,0,0-2.05,1.68,7.25,7.25,0,0,0-1.19,2.43,11.18,11.18,0,0,0,0,5.78,7.09,7.09,0,0,0,1.2,2.43,5.92,5.92,0,0,0,2.05,1.68,6.44,6.44,0,0,0,2.94.63,6.1,6.1,0,0,0,2.2-.39,5.3,5.3,0,0,0,1.81-1.1,5.83,5.83,0,0,0,1.3-1.71,6.64,6.64,0,0,0,.67-2.2l2.51.3A8.57,8.57,0,0,1,846.78,41a8.48,8.48,0,0,1-1.94,2.22,8.79,8.79,0,0,1-2.55,1.4,8.47,8.47,0,0,1-2.9.5,10.08,10.08,0,0,1-3.82-.69,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3,12.32,12.32,0,0,1,0-7.78,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,10.08,10.08,0,0,1,3.82-.69,10.69,10.69,0,0,1,2.8.36,8,8,0,0,1,2.4,1.06,7.4,7.4,0,0,1,1.87,1.75,7.64,7.64,0,0,1,1.21,2.46Z"></path>
+	<path fill="#29313d" d="M865,35.58a11.75,11.75,0,0,1,.62-3.89,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,11,11,0,0,1,7.66,0,8,8,0,0,1,2.89,2,8.55,8.55,0,0,1,1.82,3,12.32,12.32,0,0,1,0,7.78,8.55,8.55,0,0,1-1.82,3,8,8,0,0,1-2.89,2,11,11,0,0,1-7.66,0,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3A11.75,11.75,0,0,1,865,35.58Zm2.61,0a11,11,0,0,0,.38,2.89,7.25,7.25,0,0,0,1.19,2.43,6,6,0,0,0,2,1.68,6.44,6.44,0,0,0,2.94.63,6.35,6.35,0,0,0,2.92-.63,5.94,5.94,0,0,0,2-1.68,7.29,7.29,0,0,0,1.21-2.43,10.9,10.9,0,0,0,0-5.78,7.29,7.29,0,0,0-1.21-2.43,5.94,5.94,0,0,0-2-1.68,6.35,6.35,0,0,0-2.92-.63,6.44,6.44,0,0,0-2.94.63,6,6,0,0,0-2,1.68A7.25,7.25,0,0,0,868,32.69,11,11,0,0,0,867.62,35.58Z"></path>
+	<path fill="#29313d" d="M901.35,26.47h3.18l5.58,14.79,5.58-14.79h3.18V44.69h-2.41V30h-.05l-5.33,14.66h-1.94L903.81,30h0V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M937.51,26.47h3.18l5.58,14.79,5.59-14.79H955V44.69h-2.4V30h-.06l-5.32,14.66h-2L940,30h-.05V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M973.88,26.47h2.41V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M999.16,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M1028.26,28.57h-5.48v-2.1h13.37v2.1h-5.48V44.69h-2.41Z"></path>
+	<path fill="#29313d" d="M1053.26,26.47h12.8v2.1h-10.4V34.2h9v2.1h-9v6.29h10.66v2.1h-13.06Z"></path>
+	<path fill="#29313d" d="M1083.76,26.47h12.81v2.1h-10.4V34.2h9v2.1h-9v6.29h10.65v2.1h-13.06Z"></path>
+	<path fill="#29313d" d="M1135.67,35.58a11.5,11.5,0,0,1,.63-3.89,8.55,8.55,0,0,1,1.82-3,8,8,0,0,1,2.9-2,10.95,10.95,0,0,1,7.65,0,8,8,0,0,1,2.9,2,8.55,8.55,0,0,1,1.82,3,12.51,12.51,0,0,1,0,7.78,8.55,8.55,0,0,1-1.82,3,8,8,0,0,1-2.9,2,10.95,10.95,0,0,1-7.65,0,8,8,0,0,1-2.9-2,8.55,8.55,0,0,1-1.82-3A11.5,11.5,0,0,1,1135.67,35.58Zm2.62,0a11,11,0,0,0,.38,2.89,7.07,7.07,0,0,0,1.19,2.43,5.92,5.92,0,0,0,2.05,1.68,6.42,6.42,0,0,0,2.93.63,6.32,6.32,0,0,0,2.92-.63,6,6,0,0,0,2-1.68,7.09,7.09,0,0,0,1.2-2.43,10.64,10.64,0,0,0,0-5.78,7.09,7.09,0,0,0-1.2-2.43,6,6,0,0,0-2-1.68,6.32,6.32,0,0,0-2.92-.63,6.42,6.42,0,0,0-2.93.63,5.92,5.92,0,0,0-2.05,1.68,7.07,7.07,0,0,0-1.19,2.43A11,11,0,0,0,1138.29,35.58Z"></path>
+	<path fill="#29313d" d="M1171.94,26.47h2.43L1184,40.85h0V26.47h2.26V44.69h-2.41l-9.68-14.36h-.06V44.69h-2.25Z"></path>
+	<path fill="#374d6c" d="M250.71,111.33H218.28l-5.57,11.31H194.63l30.58-59.08H244l30.57,59.08H256.29Zm-6-12.24L234.5,78.16,224.19,99.09Z"></path>
+	<path fill="#374d6c" d="M333,122.64,317.35,104H300v18.65H282.8V63.56h41.47c15.12,0,26.86,6.67,26.86,20.17,0,9.88-6.25,16.12-15.54,18.82L353,122.64ZM323,91.5c6.16,0,10.64-1.69,10.64-7.43s-4.48-7.43-10.64-7.43H299.86V91.5Z"></path>
+	<path fill="#374d6c" d="M445.64,63.56v59.08H428.49V84.91l-23.56,28.87h-.85L380.52,84.91v37.73H363.88V63.56h18.84l22.21,28.36,22.38-28.36Z"></path>
+	<path fill="#374d6c" d="M524.27,109.48v13.16H461.18V63.56h62.16V76.73H478.15v9.7H515.4V99H478.15v10.47Z"></path>
+	<path fill="#374d6c" d="M606.53,93.1c0,18.57-14.45,29.54-37.16,29.54h-33V63.56h33C592.08,63.56,606.53,74.53,606.53,93.1ZM589,93.1c0-10.47-8.28-15.87-21-15.87H553.57V109H568C580.68,109,589,103.57,589,93.1Z"></path>
+	<path fill="#374d6c" d="M707.53,104.16c0,12.15-11.23,20.42-32.68,20.42-15.2,0-28-4.13-37.25-11.56l9-10.64c7,5.91,16.72,9.21,28.55,9.21,10.13,0,15.2-1.86,15.2-5.74s-4.73-5.07-16.89-6.08C655.93,98.25,640,94.37,640,81.2c0-12.66,13.68-19.58,32.43-19.58,12.67,0,24.32,3,32.43,8.77l-8.7,10.72c-6.58-4.64-14.52-6.5-23.73-6.58-6.93,0-15.29,1.1-15.29,5.32,0,4,6.84,4.47,17.4,5.32C693.85,86.77,707.53,90.57,707.53,104.16Z"></path>
+	<path fill="#374d6c" d="M782,109.48v13.16H718.93V63.56H781.1V76.73H735.91v9.7h37.25V99H735.91v10.47Z"></path>
+	<path fill="#374d6c" d="M844.27,122.64,828.64,104H811.25v18.65H794.1V63.56h41.47c15.12,0,26.86,6.67,26.86,20.17,0,9.88-6.25,16.12-15.54,18.82l17.4,20.09Zm-10-31.14c6.17,0,10.64-1.69,10.64-7.43s-4.47-7.43-10.64-7.43H811.16V91.5Z"></path>
+	<path fill="#374d6c" d="M883.79,63.56,903.3,106.1l19.43-42.54h18.41l-29,59.08H894.1L865.21,63.56Z"></path>
+	<path fill="#374d6c" d="M949.33,122.64V63.56h17.23v59.08Z"></path>
+	<path fill="#374d6c" d="M1034.72,101.54l14.78,7.6c-5.49,8.69-17.4,15.44-33.36,15.44-22.3,0-37.33-11.56-37.33-31.48s15-31.48,38-31.48c15.29,0,27.11,6.92,32.44,15.36l-14.87,7.6c-3.88-6.08-9.88-9-17.82-9-12.16,0-20.27,6.16-20.27,17.47s8.11,17.47,20.27,17.47C1024.5,110.57,1030.58,107.87,1034.72,101.54Z"></path>
+	<path fill="#374d6c" d="M1122.81,109.48v13.16h-63.09V63.56h62.16V76.73h-45.19v9.7h37.25V99h-37.25v10.47Z"></path>
+	<path fill="#374d6c" d="M1200,104.16c0,12.15-11.23,20.42-32.69,20.42-15.2,0-28-4.13-37.24-11.56l9-10.64c7,5.91,16.72,9.21,28.54,9.21,10.14,0,15.21-1.86,15.21-5.74s-4.73-5.07-16.9-6.08c-17.56-1.52-33.53-5.4-33.53-18.57,0-12.66,13.69-19.58,32.44-19.58,12.66,0,24.32,3,32.43,8.77l-8.7,10.72c-6.59-4.64-14.53-6.5-23.73-6.58-6.93,0-15.29,1.1-15.29,5.32,0,4,6.84,4.47,17.4,5.32C1186.32,86.77,1200,90.57,1200,104.16Z"></path>
+	<path fill="#374d6c" d="M111.91,82.24s8.85-3.37,3.9-12.6c-3.34-6.22-.9-9.93-.9-9.93L175.18,0s2.84,6.48-7.85,17.67l11.44-8.45a34.25,34.25,0,0,1-6.41,15c-5.13,3.06-10.31,6-15.68,8.74a61.77,61.77,0,0,0,18.15-8.63L180,21.39s-3.23,13.17-11.69,15.66l10.45-3a24.41,24.41,0,0,1-6,9.73c-5.72,2.3-11.46,4.52-17.36,6.42a56.55,56.55,0,0,0,14-3.49L178,44.26S174.79,53,166.34,55.44s10.44-2,10.44-2S172.11,60.53,166.52,64c-4.06.51-8.13.94-12.23,1.21a61,61,0,0,0,19.4-.77,28.51,28.51,0,0,1-9.84,9.35l8.35-.08s-4.23,5.26-8.45,8c-5.05.46-10.1.83-15.19,1a59.79,59.79,0,0,0,18.05.23l2.71-.15S160.62,93,154.65,93.46l7.5.23s-5,6-9.41,7.68L149.6,99.2c-5-3.26-10-6.58-14.77-10.21a61.73,61.73,0,0,0,15.76,12.47l4.9,3.36s-13.26,2.92-19.22-3.57l7.29,8a24.41,24.41,0,0,1-11.36-1c-4.6-4.11-9.13-8.29-13.43-12.75a56.48,56.48,0,0,0,9.31,11l6,6.59s-9.24.94-15.2-5.54,6.4,8.48,6.4,8.48l-13.37-4.35Z"></path>
+	<path fill="#374d6c" d="M68.1,82.24s-8.85-3.37-3.9-12.6c3.34-6.22.9-9.93.9-9.93L4.83,0S2,6.48,12.68,17.67L1.24,9.22a34.25,34.25,0,0,0,6.41,15c5.13,3.06,10.31,6,15.68,8.74A61.77,61.77,0,0,1,5.18,24.3L0,21.39S3.23,34.56,11.69,37.05l-10.45-3a24.41,24.41,0,0,0,6,9.73c5.72,2.3,11.47,4.52,17.37,6.42a56.63,56.63,0,0,1-14-3.49L2,44.26S5.22,53,13.68,55.44s-10.45-2-10.45-2S7.9,60.53,13.49,64c4.06.51,8.13.94,12.23,1.21a61,61,0,0,1-19.4-.77,28.51,28.51,0,0,0,9.84,9.35l-8.35-.08s4.23,5.26,8.46,8c5,.46,10.09.83,15.18,1a59.78,59.78,0,0,1-18,.23l-2.71-.15S19.4,93,25.36,93.46l-7.5.23s5,6,9.41,7.68l3.15-2.17c5-3.26,10-6.58,14.76-10.21a61.56,61.56,0,0,1-15.76,12.47l-4.89,3.36s13.25,2.92,19.21-3.57l-7.29,8a24.46,24.46,0,0,0,11.37-1c4.59-4.11,9.12-8.29,13.42-12.75a56.13,56.13,0,0,1-9.31,11l-6,6.59s9.24.94,15.2-5.54-6.39,8.48-6.39,8.48l13.36-4.35Z"></path>
+	<path fill="#374d6c" d="M100,79.53l-.24-1.26-3.1-12.21-3.8-4.86a2.49,2.49,0,0,0-1.92-1l-6.71-.1a2.5,2.5,0,0,0-1.92.86l-.7.8a2.19,2.19,0,0,1-.92.64L76.36,64a2.91,2.91,0,0,0-1.68,3.87l.78,1.85L76.65,68a1.26,1.26,0,0,1,1-.54l4.8-.5L84,73.26l-2.52,6.27Z"></path>
+	<path fill="#aa8e49" d="M71.08,82.44v9.68h37.86V82.44Zm6.54,7.16-1.51-1.06L74.54,89.6l.53-1.78-1.44-1.11h1.82L76.11,85l.6,1.74h1.81l-1.43,1.11Zm7,0-1.52-1.06L81.51,89.6,82,87.82,80.6,86.71h1.81L83.07,85l.61,1.74h1.81l-1.43,1.11Zm7,0L90,88.54,88.48,89.6,89,87.82l-1.45-1.11h1.82L90,85l.6,1.74h1.82L91,87.82Zm7,0L97,88.54,95.44,89.6,96,87.82l-1.45-1.11h1.82L97,85l.6,1.74h1.81L98,87.82Zm7,0L104,88.54l-1.56,1.06.53-1.78-1.44-1.11h1.82L104,85l.61,1.74h1.81L105,87.82Z"></path>
+	<path fill="#aa8e49" d="M77,118.22l-2.34-1.6a8.21,8.21,0,0,1-3.55-6.75V94H77Z"></path>
+	<polygon fill="#aa8e49" points="84.96 124.3 79.08 119.96 79.08 93.97 84.96 93.97 84.96 124.3"></polygon>
+	<polygon fill="#aa8e49" points="92.95 125.94 90.08 128.15 87.07 125.94 87.07 93.97 92.95 93.97 92.95 125.94"></polygon>
+	<polygon fill="#aa8e49" points="100.94 119.96 95.06 124.3 95.06 93.97 100.94 93.97 100.94 119.96"></polygon>
+	<path fill="#aa8e49" d="M105.39,116.62l-2.34,1.6V94h5.89v15.91A8.21,8.21,0,0,1,105.39,116.62Z"></path>
+	<path fill="#374d6c" d="M102.07,129.44c.26,1.8.35,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19h-1.63A.19.19,0,0,0,102.07,129.44Z"></path>
+	<path fill="#374d6c" d="M99.16,129.44c.26,1.8.35,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19H99.35A.19.19,0,0,0,99.16,129.44Z"></path>
+	<path fill="#374d6c" d="M96.25,129.44c.26,1.8.36,4.56.54,6.46a4.45,4.45,0,0,0,1.48-3.27c.06-.79,0-2.32,0-3.22a.18.18,0,0,0-.19-.19H96.44A.19.19,0,0,0,96.25,129.44Z"></path>
+	<path fill="#374d6c" d="M105.26,119.76a67.94,67.94,0,0,1-1.55,8.24h-7.8s-.17.09-.36-1.06Z"></path>
+	<path fill="#374d6c" d="M42.18,135.94l13.58-3.82-1.48,2.52,20-1.34a.66.66,0,0,1,.71.56h0a.67.67,0,0,1-.62.78l-19.72,1.17L57,139.74Z"></path>
+	<path fill="#374d6c" d="M77.89,129.44c-.26,1.8-.36,4.56-.54,6.46a4.41,4.41,0,0,1-1.48-3.27c-.06-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19h1.62A.2.2,0,0,1,77.89,129.44Z"></path>
+	<path fill="#374d6c" d="M80.8,129.44c-.26,1.8-.36,4.56-.54,6.46a4.46,4.46,0,0,1-1.49-3.27c0-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19H80.6A.2.2,0,0,1,80.8,129.44Z"></path>
+	<path fill="#374d6c" d="M83.7,129.44c-.25,1.8-.35,4.56-.53,6.46a4.46,4.46,0,0,1-1.49-3.27c-.05-.79,0-2.32,0-3.22a.19.19,0,0,1,.2-.19h1.62A.19.19,0,0,1,83.7,129.44Z"></path>
+	<path fill="#374d6c" d="M74.17,130.64l-18.11-2.45,4.56-3.65-13.24,2.14L58,132.05l-2.17-2.82,18.09,2.94a.77.77,0,1,0,.23-1.53Z"></path>
+	<rect fill="#374d6c" x="85.06" y="130.95" width="10.68" height="1.18"></rect>
+	<rect fill="#374d6c" x="85.06" y="133.3" width="10.68" height="1.18"></rect>
+	<path fill="#374d6c" d="M106.59,131.55l15-.85.33-1.09,18.49-2.05-3.86,3,3.61,2.73-18.45-.42-.12-.92-14.91.76a.56.56,0,0,1-.6-.56h0A.56.56,0,0,1,106.59,131.55Z"></path>
+	<path fill="#374d6c" d="M106.39,133.73l32.91,1-3.15,2.22,3.11,3.1-15.43-.38-2.26-3.89-15.23-.92a.53.53,0,0,1-.5-.55h0A.53.53,0,0,1,106.39,133.73Z"></path>
+	<path fill="#374d6c" d="M74.7,119.76A69.1,69.1,0,0,0,76.24,128h7.81s.17.09.35-1.06Z"></path>
+	<polygon fill="#aa8e49" points="92.05 7.21 89.96 1.22 87.69 7.21 81.44 7.21 86.41 11.05 84.58 17.15 89.96 13.53 95.19 17.15 93.36 11.05 98.29 7.21 92.05 7.21"></polygon>
+	<polygon fill="#aa8e49" points="73.64 19.57 71.56 13.58 69.29 19.57 63.03 19.57 68.01 23.41 66.18 29.51 71.56 25.89 76.79 29.51 74.96 23.41 79.89 19.57 73.64 19.57"></polygon>
+	<polygon fill="#aa8e49" points="80.83 40.83 78.75 34.84 76.48 40.83 70.22 40.83 75.2 44.67 73.37 50.77 78.75 47.15 83.98 50.77 82.15 44.67 87.07 40.83 80.83 40.83"></polygon>
+	<polygon fill="#aa8e49" points="103.55 40.83 101.47 34.84 99.2 40.83 92.94 40.83 97.91 44.67 96.08 50.77 101.47 47.15 106.69 50.77 104.87 44.67 109.79 40.83 103.55 40.83"></polygon>
+	<polygon fill="#aa8e49" points="110.73 19.57 108.65 13.58 106.39 19.57 100.13 19.57 105.1 23.41 103.27 29.51 108.65 25.89 113.88 29.51 112.06 23.41 116.98 19.57 110.73 19.57"></polygon>
+</svg>        </a>
+      </div>
+      
+
+      <button class="MobileHeader__icon MobileHeader__icon--search js-open-mobile-search h-100  col-auto" aria-label="open site search" data-toggle="modal" data-target="#website-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.64 55.98"><path d="M55.64 49.53L36.57 30.46A19.84 19.84 0 005.8 5.81a19.85 19.85 0 0024.26 31.05L49.18 56zM10.74 29a12.85 12.85 0 1118.14 0 12.92 12.92 0 01-18.14 0z"></path></svg>
+      </button>
+
+      <button class="js-open-mobile-nav MobileHeader__icon MobileHeader__icon--menu col-auto" aria-label="open mobile navigation">
+        <span class="MobileHeader__mobileNavIcon">
+          <span></span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</div></div>
+                </div>
+            </div>
+
+          <div id="aria-skip-nav" tabindex="-1"></div>
+          <div class="SiteLayout__transitionContainer d-flex flex-column flex-grow-1" data-transition="container" data-transition-namespace="internal" data-nav="site">
+            
+
+            
+<script>
+  if (!application) var application = {};
+  application = {
+    "config": {
+      "tinymce": {
+        "plugins": {
+          "selectvideo": {
+            "player": "jwplayer", // should be set to "legacy" or "jwplayer" currently
+            "youtube": true, // set to true to write the youtube tags for youtube videos
+            "width": "100%", // set width and height on the containing element
+            "height": "100%",
+            "tracking": true
+          }
+        }
+      }
+    },
+    "fn": { // deprecated mootools 1.2 stuff that we'll probably still use once we upgrade fully to 1.3
+      "defined": function (obj) {
+        return (obj != undefined);
+      },
+      "check": function (obj) {
+        return !!(obj || obj === 0);
+      }
+    },
+    "form": {
+      "processed": "null",
+    },
+    "friendly_urls": false,
+    "siteroot": "https://www.armed-services.senate.gov/",
+    "theme": "",
+    "webroot": "https://www.armed-services.senate.gov/",
+    "assetWebroot": "https://www.armed-services.senate.gov/",
+  };
+</script>
+
+              <div class="SiteLayout__main">
+
+
+
+
+
+
+                  <!--startindex-->
+
+
+
+
+
+<div class="Blocks">
+            
+
+
+
+  <div class="Block Block--static--banner Block--width--full Block--backgroundColor--default Block--textColor--default Block--textFamily--default mb-5">
+    <div class="Block__content">
+      
+<div class="Banner Banner--right" data-editor-modifier="left,right">
+  <div class="Banner__shadow"></div>
+  <div class="Banner__backgroundColor"></div>
+    <div class="Banner__backgroundSize"></div>
+    <div class="Banner__background" data-editor-background="background" style="background-image: url('https://www.armed-services.senate.gov/imo/media/image/ww2_memorial%20(1).jpeg')">
+      <div class="Banner__backgroundOverlay"></div>
+    </div>
+
+  <div class="Banner__content w-100">
+    <div class="Banner__contentBox">
+
+        <div class="Banner__headingOverline Heading Heading--overline">
+            <a class="Heading__title" href="https://www.armed-services.senate.gov/">
+              Home
+            </a>
+        </div>
+
+      <div class="Banner__heading Heading Heading--banner">
+        <h1 class="Heading__title" data-editor-text="title" data-placeholder="Banner Heading">
+          newsroom
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+            
+
+
+
+  <div class="Block Block--heading Block--width--wide Block--backgroundColor--default Block--textColor--default Block--textFamily--default mt-2 pb-4">
+    <div class="Block__content">
+      <div id="press-releases" class="Heading Heading--h2 Heading--underline"><h2 class="Heading__title">Press Releases</h2></div>
+
+    </div>
+  </div>
+
+</div>
+
+  <div class="container">
+    <div class="FilterBar mt-3">
+      <div class="row justify-content-between m-n2">
+        <div class="col-12 col-sm col-lg-6 p-2 d-flex align-items-center">
+              <div class="filter-buttons btn-group">
+    <div class="row mx-n1">
+      <div class="col col-sm-auto px-1">
+        <button class="Button Button--block Button--primary" data-toggle="modal" data-trigger-modal="#filtermodal" data-target="#filtermodal">
+          <span class="fa fa-filter"></span>&nbsp;Filter
+        </button>
+      </div>
+
+        <div class="col col-sm-auto px-1">
+          <a class="Button Button--block Button--primary" href="https://www.armed-services.senate.gov/press-releases?expanded=false">
+            <span class="fa fa-list"></span>&nbsp;Collapse
+          </a>
+        </div>
+    </div>
+  </div>
+  
+
+  <script>
+    $('[data-trigger-modal]').on('click', function (event) {
+      if ($('body').hasClass('wait')) {
+        event.preventDefault();
+        return;
+      }
+
+      var target = $(this).data('triggerModal');
+      $(target).modal();
+    })
+  </script>
+
+
+
+  <div class="BootstrapModal modal fade" id="filtermodal" tabindex="-1" role="dialog" aria-labelledby="filtermodal-title">
+    <div class="BootstrapModal__container modal-dialog" role="document">
+      <div class="BootstrapModal__content modal-content">
+        <div class="BootstrapModal__header align-items-center modal-header">
+          <h2 id="filtermodal-title" class="BootstrapModal__headerTitle modal-title">Filter Results</h2>
+
+            <button type="button" class="BootstrapModal__closeIcon" data-dismiss="modal" aria-label="filtermodal close button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768"><path d="M768 77.315L461.315 384 768 690.685 690.685 768 384 461.315 77.315 768 0 690.685 306.685 384 0 77.315 77.315 0 384 306.685 690.685 0z"></path></svg>
+            </button>
+        </div>
+
+        <div class="BootstrapModal__body modal-body">
+                <form id="search_sidebar_form" class="form-group filter-form">
+        <div class="mb-2">
+              <label class="sr-only" for="restrict_month">Month Field</label>
+    <select name="restrict_month" id="restrict_month" class="InputSelect InputSelect--md" title="All Months" autofocus="">
+        <option value="0" label="All Months">All Months</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+    </select>
+
+        </div>
+
+        <div class="mb-2">
+              <label class="sr-only" for="restrict_year">Year Field</label>
+    <select name="restrict_year" id="restrict_year" class="InputSelect InputSelect--md" title="All Years">
+        <option value="0" label="All Years">All Years</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+    </select>
+
+        </div>
+
+
+        <div class="mb-2">
+              <label class="sr-only" for="session_select">All Congressional Sessions</label>
+    <select name="session_select" id="session_select" class="InputSelect InputSelect--md" title="All Congressional Sessions">
+        <option value="0" label="All Congressional Sessions">All Congressional Sessions</option>
+          <option value="119">119th Congress (2025 - 2026)</option>
+          <option value="118">118th Congress (2023 - 2025)</option>
+          <option value="117">117th Congress (2021 - 2023)</option>
+          <option value="116">116th Congress (2019 - 2020)</option>
+          <option value="115">115th Congress (2017 - 2018)</option>
+          <option value="114">114th Congress (2015 - 2016)</option>
+          <option value="113">113th Congress (2013 - 2014)</option>
+          <option value="112">112th Congress (2011 - 2012)</option>
+          <option value="111">111th Congress (2009 - 2010)</option>
+          <option value="110">110th Congress (2007 - 2008)</option>
+          <option value="109">109th Congress (2005 - 2006)</option>
+          <option value="108">108th Congress (2003 - 2004)</option>
+          <option value="107">107th Congress (2001 - 2002)</option>
+          <option value="106">106th Congress (1999 - 2000)</option>
+    </select>
+
+        </div>
+
+        <div class="d-flex align-items-center justify-content-end">
+
+          <button id="side-update-by-date-btn" class="Button Button--secondaryLight" data-dismiss="modal" type="submit">
+            <span>Update</span>
+          </button>
+        </div>
+
+      </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#filtermodal').on('shown.bs.modal', function () {
+      $('[autofocus]').trigger('focus')
+    })
+  </script>
+
+        </div>
+        <div class="col-12 col-md-5 col-xl-4 p-2 PressSearch">
+<form class="press-search InlineSearch" role="search" method="get" action="https://www.armed-services.senate.gov/search">
+  
+  <div class="row no-gutters align-items-center">
+    <div class="InlineSearch__inputCol col">
+      <label for="search-field" class="sr-only">search</label>
+      <input class="js-inline-search-input InputText InputText--transparent" type="search" id="search-field" name="q" placeholder="Search">
+    </div>
+    <div class="InlineSearch__buttonCol col-auto">
+      <button class="Button Button--icon w-100" type="submit" aria-label="submit search">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</form>
+    <script>
+      $('.js-inline-search-input').on('focus', function() {
+        $(this).closest('.InlineSearch').addClass('InlineSearch--focused')
+      })
+      $('.js-inline-search-input').on('blur', function() {
+        $(this).closest('.InlineSearch').removeClass('InlineSearch--focused')
+      })
+    </script>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Block--width--wide OneColumnPage OneColumnPage--cream mt-5">
+    <div class="Block__content">
+      <!--stopindex-->
+
+
+        <a href="https://www.armed-services.senate.gov/press-releases#aria-skip-press" class="Button Button--secondary my-3 px-3 sr-only sr-only-focusable">Skip to page number selection</a>
+
+          <div class="data-browser">
+          <div class="OneColumnPage__content">
+              <ul class="PageList">
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-0 visible">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">June 16, 2026</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-roger-wicker-and-ranking-member-jack-reed-announce-fy27-ndaa-filing">
+        <h2 class=" ArticleTitle">SASC Chairman Roger Wicker and Ranking Member Jack Reed Announce FY27 NDAA Filing</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, today announced that S. 4784, the...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-1 visible">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">June 11, 2026</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-completes-markup-of-national-defense-authorization-act-for-fiscal-year-2027">
+        <h2 class=" ArticleTitle">SASC Completes Markup of National Defense Authorization Act for Fiscal Year 2027</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—Today, U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, announced that the Committee...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-2 visible">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">June 8, 2026</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-roger-wicker-and-ranking-member-jack-reed-announce-fy-2027-ndaa-markup-schedule">
+        <h2 class=" ArticleTitle">SASC Chairman Roger Wicker and Ranking Member Jack Reed Announce FY 2027 NDAA Markup Schedule</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, announced that the committee markup for...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-3">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">December 17, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-wicker-and-ranking-member-reed-commend-final-passage-of-the-fiscal-year-2026-national-defense-authorization-act">
+        <h2 class=" ArticleTitle">SASC Chairman Wicker and Ranking Member Reed Commend Final Passage of the Fiscal Year 2026 National Defense Authorization Act</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—Today, the United States Senate passed the National Defense Authorization Act for Fiscal Year 2026 by a vote of 77-20.
+An up-to-date Executive Summary of the FY26...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-4">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">November 20, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/11/20/2025/sasc-advances-dod-civilian-nominations-1">
+        <h2 class=" ArticleTitle">SASC Advances DOD Civilian Nominations</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        This week, the Senate Armed Services Committee voted to report out favorably the nominations of:
+&nbsp;
+Mr. Michael D. Payne to be Director of Cost Assessment and Program Evaluation,...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-5">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">October 10, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-wicker-and-ranking-member-reed-praise-senate-passage-of-the-fiscal-year-2026-national-defense-authorization-act">
+        <h2 class=" ArticleTitle">SASC Chairman Wicker and Ranking Member Reed Praise Senate Passage of the Fiscal Year 2026 National Defense Authorization Act</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—Today, the United States Senate passed the National Defense Authorization Act for Fiscal Year 2026 by a vote of 77-20. Senate Armed Services Committee Chairman Roger...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-6">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">July 16, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-roger-wicker-and-ranking-member-jack-reed-file-fy26-ndaa">
+        <h2 class=" ArticleTitle">SASC Chairman Roger Wicker and Ranking Member Jack Reed File FY26 NDAA</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, today announced that they have filed S....
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-7">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">July 11, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-completes-markup-of-national-defense-authorization-act-for-fiscal-year-2026">
+        <h2 class=" ArticleTitle">SASC Completes Markup of National Defense Authorization Act for Fiscal Year 2026</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—Today, U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, announced that the Committee...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-8">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">July 7, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-chairman-roger-wicker-and-ranking-member-jack-reed-announce-fy-2026-ndaa-markup-schedule">
+        <h2 class=" ArticleTitle">SASC Chairman Roger Wicker and Ranking Member Jack Reed Announce FY 2026 NDAA Markup Schedule</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        U.S. Senators Roger Wicker, R-Miss, and Jack Reed, D-RI, Chairman and Ranking Member of the Senate Armed Services Committee, announced that the full committee markup for the...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-9">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">May 14, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-dod-civilian-nominations">
+        <h2 class=" ArticleTitle">SASC Advances DOD Civilian Nominations</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        This week, the Senate Armed Services Committee voted by roll call to report out favorably the nominations of:
+
+Mr. Michael P. Cadenazzi, Jr. to be Assistant Secretary of Defense...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-10">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">April 9, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-nominations-of-meink-duffey-michael-bass-and-caine">
+        <h2 class=" ArticleTitle">SASC Advances Nominations of Meink, Duffey, Michael, Bass, and Caine</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        On Tuesday, April 8, 2025, the Senate Armed Services Committee voted by roll call to report out favorably the nominations of:-Dr. Troy E. Meink to be Secretary of the Air Force-Mr....
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-11">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">March 27, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/chairman-wicker-ranking-member-reed-request-inspector-general-probe-into-signal-incident">
+        <h2 class=" ArticleTitle">Chairman Wicker, Ranking Member Reed Request Inspector General Probe Into Signal Incident</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC— Today, Senate Armed Services Committee Chairman Roger Wicker (R-Miss.) and Ranking Member Jack Reed (D-R.I.) sent a letter to the Acting Inspector General of the...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-12">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">March 11, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-nominations-of-feinberg-for-deputy-secretary-of-defense-phelan-for-secretary-of-the-navy">
+        <h2 class=" ArticleTitle">SASC Advances Nominations of Feinberg for Deputy Secretary of Defense, Phelan for Secretary of the Navy</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        WASHINGTON, DC—Today, the Senate Armed Services Committee voted by roll call to favorably report out the nominations of Mr. Stephen Feinberg to be the next Deputy Secretary of...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-13">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">February 21, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-nomination-of-driscoll-for-secretary-of-the-army">
+        <h2 class=" ArticleTitle">SASC Advances Nomination of Driscoll for Secretary of the Army</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        Today, the Senate Armed Services Committee voted by roll call to report out favorably the nomination of Mr. Daniel P. Driscoll to be the next Secretary of the Army.&nbsp;The nomination...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-14">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">January 24, 2025</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/wicker-and-reed-announce-sasc-subcommittee-leadership-for-119th-congress">
+        <h2 class=" ArticleTitle">Wicker and Reed Announce SASC Subcommittee Leadership for 119th Congress</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        Today, Senate Armed Services Committee (SASC) Chairman Roger Wicker, R-Miss., and Ranking Member Jack Reed, D-R.I., announced the SASC subcommittee assignments for the 119th...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-15">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">December 18, 2024</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/reed-wicker-praise-senate-passage-of-the-fiscal-year-2025-national-defense-authorization-act">
+        <h2 class=" ArticleTitle">Reed, Wicker Praise Senate Passage of the Fiscal Year 2025 National Defense Authorization Act</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        The United States Senate today passed the National Defense Authorization Act for Fiscal Year 2025 by a vote of 85-14.Senate Armed Services Committee Chairman Jack Reed (D-RI)...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-16">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">December 7, 2024</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-and-hasc-release-text-of-fy25-ndaa-agreement">
+        <h2 class=" ArticleTitle">SASC and HASC Release Text of FY25 NDAA Agreement</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        U.S. Senators Jack Reed (D-RI) and Roger Wicker (R-MS), Chairman and Ranking Member of the Senate Armed Services Committee, and U.S. Representatives Mike Rogers (R-AL) and Adam...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-17">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">November 19, 2024</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-984-military-promotions">
+        <h2 class=" ArticleTitle">SASC Advances 984 Military Promotions</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        Today, the Senate Armed Services Committee voted by voice en bloc to report out favorably a list of 984 military nominations in the Army, Navy, Air Force, Marine Corps, and Space...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-18">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">September 24, 2024</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/sasc-advances-multiple-4-star-command-nominations-and-6024-additional-military-promotions">
+        <h2 class=" ArticleTitle">SASC Advances Multiple 4-Star Command Nominations and 6,024 Additional Military Promotions</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        Today, the Senate Armed Services Committee voted by voice en bloc to report out favorably a list of 6,028 military nominations in the Army, Navy, Air Force, Marine Corps, and Space...
+        
+      </div>
+  </div>
+
+                  </li>
+
+                  <li data-animate="partialFade" class="PageList__item mb-4 animate-partialFade js-trigger-19">
+                    
+
+
+
+  <div class="ArticleBlock">
+    <div class="ArticleBlock__titleContainer">
+        <div>
+          <p class="Heading Heading--time mb-2">September 19, 2024</p>
+        </div>
+
+      <a class="ArticleBlockLink" target="_self" href="https://www.armed-services.senate.gov/press-releases/reed-and-wicker-file-managers-package-to-fy-2025-national-defense-authorization-act">
+        <h2 class=" ArticleTitle">Reed and Wicker File Manager’s Package to FY 2025 National Defense Authorization Act</h2>
+      </a>
+    </div>
+
+
+      <div class="ArticleBlock__excerpt">
+        Today, Senate Armed Services Committee (SASC) Chairman Senator Jack Reed (D-RI) and Ranking Member Senator Roger Wicker (R-MS) filed a “manager’s package” of 93 amendments to S....
+        
+      </div>
+  </div>
+
+                  </li>
+              </ul>
+              </div>
+
+              <div id="aria-skip-press"></div>
+                <div class="Pagination">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto my-3">
+          <div class="row align-items-center justify-content-center justify-content-sm-start flex-nowrap">
+            <div class="col-auto">
+                Showing page
+            </div>
+
+            <div class="col-auto px-0">
+              <select class="InputSelect InputSelect--sm InputSelect--pagination" id="showing-page" title="Select Page" aria-label="Select results page number">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+              </select>
+            </div>
+
+            <div class="col-auto">of 15</div>
+          </div>
+      </div>
+
+      <div class="col-sm-auto my-3">
+        <div class="row justify-content-md-end justify-content-between mx-n2">
+            <div class="col col-sm-auto px-2 mt-2 mt-sm-0">
+              <a class="Button Button--paginationRight Button--block Button--md" href="https://www.armed-services.senate.gov/press-releases?pagenum_rs=2">Next</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function selectChanged(event) {
+      var theSelect;
+
+      if (event && event.target.value) {
+        theSelect = event;
+        theSelect.changed = true;
+      } else {
+        theSelect = this;
+      }
+      if (!theSelect.changed) {
+        return false;
+      }
+      /* this function is in scripts/pagination.js */
+      selectPage(theSelect)
+      return true;
+    }
+
+    function selectClicked() {
+      this.changed = true;
+    }
+
+    function selectFocused() {
+      this.initValue = this.value;
+      return true;
+    }
+
+    function selectKeyed(event) {
+      var theEvent;
+      var keyCodeTab = "9";
+      var keyCodeEnter = "13";
+      var keyCodeEsc = "27";
+
+      if ((event.keyCode == keyCodeEnter || event.keyCode == keyCodeTab) && this.value != this.initValue) {
+        this.changed = true;
+        selectChanged(this);
+      } else if (event.keyCode == keyCodeEsc) {
+        this.value = this.initValue;
+      } else {
+        this.changed = false;
+      }
+
+      return true;
+    }
+
+    (function initSelect() {
+      var theSelect = document.getElementById("showing-page");
+
+      if (theSelect) {
+        theSelect.changed = false;
+        theSelect.onfocus = selectFocused;
+        theSelect.onchange = selectChanged;
+        theSelect.onkeyup = selectKeyed;
+        theSelect.onclick = selectClicked;
+      }
+      return true;
+    })()
+  </script>
+
+          </div>
+
+
+    </div>
+  </div>
+  <!--startindex-->
+                  <!--stopindex-->
+
+              </div>
+
+            
+                <!-- Custom Footer Code: Google Analytics -->
+                <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M7TE9Q54Y4"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-M7TE9Q54Y4');
+</script>
+                <!-- Custom Footer Code: Adobe -->
+                <script src="https://assets.adobedtm.com/566dc2d26e4f/f8d2f26c1eac/launch-3a705652822d.min.js" async=""></script>
+
+
+<script>
+  if (typeof window.setupAnimations !== 'function') {
+    window.setupAnimations = function () {
+      window.animationsSet = true;
+      var animations = document.querySelectorAll('[data-animate]');
+      animations.forEach(function(animationEl, i) {
+        var animationClass = "";
+        var animationTriggerName = "";
+
+        if (animationEl.dataset.animate) {
+          animationClass = "animate-" + animationEl.dataset.animate;
+          animationTriggerName = "js-trigger-" + i;
+        } else if (animationEl.dataset.animatechild) {
+          animationClass = "animate-" + animationEl.dataset.animatechild;
+          animationTriggerName = "js-trigger-" + i;
+        } else {
+          return;
+        }
+
+        animationEl.classList.add(animationClass);
+        animationEl.classList.add(animationTriggerName);
+
+        // removed the toggleClass
+        ScrollTrigger.create({
+          id: animationTriggerName,
+          trigger: '.' + animationTriggerName,
+          start: 'top 90%',
+          onEnter: function(self) {
+            self.trigger.classList.add('visible');
+          },
+        });
+      })
+    }
+  }
+
+  $(function() {
+    if (!window.animationsSet) setupAnimations();
+  });
+</script>
+
+<script>
+  if (typeof window.internalLink !== 'function') {
+    window.isInternalLink = function (href) {
+      var isInternal =
+        Boolean(href.match(new RegExp('^' + window.location.origin))) // 1: If same site domain
+        || Boolean(href.match(/^\/[^\/]/)); // 2: If starts with a single / and not a double //
+
+      return isInternal;
+    }
+  }
+
+  if (typeof window.getParameterByName !== 'function') {
+    window.getParameterByName = function (name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+  }
+
+  if (typeof window.onLinkClick !== 'function') {
+    window.onLinkClick = function () {
+      $(function () {
+        $('a').each(function () {
+          var $this = $(this);
+
+          if ($this.hasLinkClickEvent) return;
+
+          var newWin = $this.hasClass('new-win');
+          var senExit = $this.hasClass('sen-exit');
+          var href = $this.attr('href');
+          var target = getParameterByName('target', href);
+
+          if (href && target == '_blank') {
+            $this.on('click', function(event) {
+              event.preventDefault();
+              window.open(href, target);
+            })
+          } else if (href && href.charAt(0) == '#') {
+            $this.click(function (e) {
+              e.preventDefault();
+              var targetName = this.getAttribute('href').replace('#', '');
+              var targetElement = document.getElementById(targetName) || document.querySelector('[name="' + targetName + '"]');
+
+              if (!targetElement) {
+                return;
+              }
+
+              var offsetHeight = window.getStuckHeaderHeight() || 0;
+              gsap.to(window, {duration: 1, scrollTo: {y: targetElement, offsetY: offsetHeight}, ease: 'power3'})
+              targetElement.focus();
+            });
+
+            $this.hasLinkClickEvent = true;
+          } else if (href) {
+            if (isInternalLink(href)) {
+              if (transitions) {
+                $this.on('click', function(event) {
+                  if (event.currentTarget.hasAttribute('data-modal-template')) return;
+                  if (event.currentTarget.hasAttribute('data-no-transition')) return;
+                  // If user help down modifier key during click they are opening in new tab/window
+                  if (2 === event.which || event.metaKey || event.ctrlKey) return;
+                  $('body').addClass('wait');
+                })
+              }
+            }
+          }
+        });
+      });
+    }
+  }
+
+  $(function(){
+    onLinkClick();
+  });
+
+</script>
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v10.0" nonce=""></script>
+
+                <script>
+                $('.RawHTML')
+                  .find('iframe#player, iframe[src*="youtu.be"], iframe[src*="youtube.com"]')
+                  .wrap('<div class="video-width"><div class="embedded-video"></div></div>');
+                $('.js-press-release')
+                  .find('table')
+                  .addClass('Table Table--striped')
+                  .wrap('<div class="ReadingWidthBreakout overflow-x-auto overflow-scroll-x-shadow"><div class="container"></div></div>');
+
+                // Clear focus state off of button 0.5s after clicking it
+                $('.Button').click(function () {
+                  var button = this;
+                  setTimeout(function () {
+                    button.blur();
+                  }, 500);
+                });
+              </script>
+
+  <script src="https://www.armed-services.senate.gov/scripts/pagination.js"></script>
+  <script src="https://www.armed-services.senate.gov/scripts/filter.js"></script>
+
+                <div class="js-footer SiteLayout__footer">
+<footer class="SiteFooter">
+  <div class="SiteFooter__layout">
+      
+      <div class="SiteFooter__nav">
+<nav class="FooterNav" aria-label="Footer Navigation">
+
+  <ul class="FooterNav__linkList FooterNav__linkList--desktop">
+
+
+
+
+
+
+
+
+        <li class="FooterNav__item  ">
+        
+          <a data-transition-selected-if="/about" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link " href="https://www.armed-services.senate.gov/about" title="About">
+            About
+          </a>
+        </li>
+
+
+
+
+
+
+
+        <li class="FooterNav__item  ">
+        
+          <a data-transition-selected-if="/subcommittees" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link " href="https://www.armed-services.senate.gov/subcommittees" title="Subcommittees">
+            Subcommittees
+          </a>
+        </li>
+
+
+
+
+
+
+
+        <li class="FooterNav__item  ">
+        
+          <a data-transition-selected-if="/hearings" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link " href="https://www.armed-services.senate.gov/hearings" title="Hearings">
+            Hearings
+          </a>
+        </li>
+
+
+
+
+
+
+
+        <li class="FooterNav__item  ">
+        
+          <a data-transition-selected-if="/committee-actions" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link " href="https://www.armed-services.senate.gov/committee-actions" title="Committee Actions">
+            Committee Actions
+          </a>
+        </li>
+
+
+
+
+
+
+
+        <li class="FooterNav__item  ">
+        
+          <a data-transition-selected-if="/press-releases" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link FooterNav__link--selected " href="https://www.armed-services.senate.gov/press-releases" title="Press">
+            Press
+          </a>
+        </li>
+
+
+
+
+
+
+
+        <li class="FooterNav__item  FooterNav__item--showMobile">
+        
+          <a data-transition-selected-if="/privacy-policy" data-transition-selected-class="FooterNav__link--selected" class="FooterNav__link " href="https://www.armed-services.senate.gov/privacy-policy" title="Privacy Policy">
+            Privacy Policy
+          </a>
+        </li>
+  </ul>
+
+
+</nav>      </div>
+
+    <div class="SiteFooter__content">
+      <p class="text-center">
+        Russell Senate Building, Room 228  Washington, D.C., 20510
+        <br>
+        <a class="Link" href="tel:2022243871">
+          (202) 224-3871</a>
+        <br>
+      </p>
+
+    </div>
+  </div>
+</footer>              </div>
+
+
+          </div>
+
+<div class="MobileNav">
+    <nav aria-label="Mobile Navigation" class="MobileNav__linksContainer container">
+          <div class="MobileNav__item" style="translate: none; rotate: none; scale: none; transform: translate(0px, 50px); opacity: 0;">
+<a class="MobileNav__link js-mobile-dropdown-parent" href="https://www.armed-services.senate.gov/about">
+                <span> About</span>
+            </a>
+
+              <div class="js-mobile-dropdown MobileNav__subLinks">
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/about/membership">
+                      <div class="MobileNav__subLink__label">
+                        <span>Members</span>
+                      </div>
+                    </a>
+
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/about/committee-staff">
+                      <div class="MobileNav__subLink__label">
+                        <span>Committee Staff</span>
+                      </div>
+                    </a>
+
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/about/history">
+                      <div class="MobileNav__subLink__label">
+                        <span>History/Jurisdiction</span>
+                      </div>
+                    </a>
+
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/about/committee-rules">
+                      <div class="MobileNav__subLink__label">
+                        <span>Rules</span>
+                      </div>
+                    </a>
+
+              </div>
+          </div>
+          <div class="MobileNav__item" style="translate: none; rotate: none; scale: none; transform: translate(0px, 50px); opacity: 0;">
+<a class="MobileNav__link" href="https://www.armed-services.senate.gov/subcommittees">
+                <span> Subcommittees</span>
+            </a>
+
+          </div>
+          <div class="MobileNav__item" style="translate: none; rotate: none; scale: none; transform: translate(0px, 50px); opacity: 0;">
+<a class="MobileNav__link js-mobile-dropdown-parent" href="https://www.armed-services.senate.gov/hearings">
+                <span> Hearings</span>
+            </a>
+
+              <div class="js-mobile-dropdown MobileNav__subLinks">
+              </div>
+          </div>
+          <div class="MobileNav__item" style="translate: none; rotate: none; scale: none; transform: translate(0px, 50px); opacity: 0;">
+<a class="MobileNav__link js-mobile-dropdown-parent" href="https://www.armed-services.senate.gov/committee-actions">
+                <span> Committee Actions</span>
+            </a>
+
+              <div class="js-mobile-dropdown MobileNav__subLinks">
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/committee-actions/legislation">
+                      <div class="MobileNav__subLink__label">
+                        <span>Legislation</span>
+                      </div>
+                    </a>
+
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/committee-actions/nominations">
+                      <div class="MobileNav__subLink__label">
+                        <span>Nominations</span>
+                      </div>
+                    </a>
+
+
+                    <a class="MobileNav__subLink" href="https://www.armed-services.senate.gov/committee-actions/library">
+                      <div class="MobileNav__subLink__label">
+                        <span>Library</span>
+                      </div>
+                    </a>
+
+              </div>
+          </div>
+          <div class="MobileNav__item" style="translate: none; rotate: none; scale: none; transform: translate(0px, 50px); opacity: 0;">
+<a class="MobileNav__link js-mobile-dropdown-parent" href="https://www.armed-services.senate.gov/press-releases">
+                <span> Press</span>
+            </a>
+
+              <div class="js-mobile-dropdown MobileNav__subLinks">
+              </div>
+          </div>
+    </nav>
+</div>
+
+<script>
+  window.animatedMobileNavIn = gsap
+    .timeline({paused: true})
+    .set('.MobileNav__linksContainer', {overflowY: 'hidden'})
+    .from('.MobileNav__item', {
+      duration: 0.5,
+      opacity: 0,
+      translateY: 50,
+      stagger: 0.1,
+      ease: 'power3',
+      clearProps: true
+    }, '+=0.25')
+    .set('.MobileNav__linksContainer', {overflowY: ''});
+
+
+  window.animatedMobileNavOut = gsap
+    .timeline({paused: true})
+    .to('.MobileNav__item', {
+      duration: 0.5,
+      opacity: 0,
+      translateY: -50,
+      stagger: 0.05,
+      ease: 'power3'
+    });
+
+  $(function () {
+    // Control logic/animations of opening and closing of mobile nav
+    var toggleMobileNav = function (state) {
+      var navOverflowElement = document.querySelector('.MobileNav__linksContainer');
+
+      if (state === 'open') {
+        window.disableBodyScroll(navOverflowElement)
+
+        var padding = function () {
+          var newsAlert = $('.SiteLayout__alert').outerHeight();
+          var mobileHeader = $('.pin-spacer-MobileHeader').outerHeight();
+          var paddingVal = paddingVal = (newsAlert || 0) + (mobileHeader || 0);
+
+          return paddingVal < 90
+            ? 90
+            : paddingVal;
+        }
+
+        $('.MobileNav').css('paddingTop', function () {
+          var paddingToAdd = padding();
+          var topOfViewport = $(window).scrollTop();
+          var newsAlert = $('.SiteLayout__alert').outerHeight();
+
+          if (topOfViewport < newsAlert) {
+            return paddingToAdd
+          } else {
+            return paddingToAdd > 150
+              ? 150
+              : paddingToAdd;
+          }
+
+        });
+        window.disableBodyScroll(navOverflowElement)
+        window
+          .animatedMobileNavIn
+          .play(0);
+        document
+          .body
+          .classList
+          .add('mobile-nav-open');
+        gsap.to(window, {
+          duration: 0.5,
+          scrollTo: '.SiteHeader',
+          ease: 'power3'
+        });
+      } else if (state === 'close') {
+        window.enableBodyScroll(navOverflowElement);
+        window
+          .animatedMobileNavOut
+          .play(0);
+        document
+          .body
+          .classList
+          .remove('mobile-nav-open');
+      }
+    };
+
+    // Click handling for open/close of mobile nav
+    $('.js-open-mobile-nav').click(function () {
+      if (document.body.classList.contains('mobile-nav-open')) {
+        toggleMobileNav('close')
+      } else {
+        toggleMobileNav('open')
+      }
+    });
+
+    $('.js-open-mobile-search').click(function () {
+      if (document.body.classList.contains('mobile-nav-open')) {
+        toggleMobileNav('close')
+      }
+    });
+
+    // Expand/Collapse Dropdowns and Handle repeat clicks on parents
+    var clickAndClose = function () {
+      $('.js-mobile-dropdown-parent').removeClass('active');
+      toggleMobileNav('close');
+      gsap.to('.js-mobile-dropdown', 0.2, {height: 0});
+    };
+
+    var onClickParent = function (event) {
+
+      var parentLink = $(event.target).closest('.MobileNav__link');
+      var dropdown = $(parentLink).next('.js-mobile-dropdown')[0];
+
+      if (dropdown) {
+        if ($(parentLink).hasClass('active')) {
+          clickAndClose();
+        } else {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          $('.js-mobile-dropdown-parent').removeClass('active');
+          $('.js-mobile-dropdown').each(function (index, element) {
+            if (element === dropdown) 
+              return;
+            gsap.to(element, 0.6, {height: 0});
+          })
+          parentLink.addClass('active');
+          gsap.set(dropdown, {height: "auto"});
+          gsap.from(dropdown, 0.6, {height: 0});
+          gsap.from(dropdown.querySelectorAll('.MobileNav__subLink'), {
+            duration: 0.8,
+            opacity: 0,
+            scale: 0.5,
+            stagger: 0.1,
+            ease: 'power3'
+          })
+        }
+      } else {
+        clickAndClose()
+      };
+    };
+
+    $('.MobileNav__link').click(onClickParent);
+    $('.MobileNav__subLink').click(clickAndClose);
+  });
+</script>
+          <div class="SiteLayout__loading">
+            <div class="Loading">
+              <div class="Loading__spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+
+
+
+  <div class="BootstrapModal BootstrapModal--search modal fade" id="website-search" tabindex="-1" role="dialog" aria-labelledby="website-search-title">
+    <div class="BootstrapModal__container modal-dialog" role="document">
+      <div class="BootstrapModal__content modal-content">
+        <div class="BootstrapModal__header align-items-center modal-header">
+          <h2 id="website-search-title" class="BootstrapModal__headerTitle modal-title sr-only">website-search</h2>
+
+        </div>
+
+        <div class="BootstrapModal__body modal-body">
+            <form aria-label="search" id="sitesearch" role="search" method="get" action="https://www.armed-services.senate.gov/search">
+    <div class="MobileSearch">
+      <div class="MobileSearch__layout">
+        <label class="sr-only" for="q">Site Search</label>
+        <input class="MobileSearch__input" type="search" name="q" id="q" placeholder="Search" autofocus="">
+        <button class="MobileSearch__button" aria-label="submit search query" type="submit">
+          <span class="fa fa-search" aria-hidden="true"></span>
+        </button>
+      </div>
+      <button type="button" class="BootstrapModal__closeIcon" data-dismiss="modal" aria-label="Close search">
+        <span class="CustomIcon__before--close" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#website-search').on('shown.bs.modal', function () {
+      $('[autofocus]').trigger('focus')
+    })
+  </script>
+
+<script type="text/javascript">
+  if (typeof window.makeStickyHeader !== 'function') {
+    window.getStuckHeaderHeight = function () {
+      var siteHeader = document.querySelector('.SiteHeader');
+      var siteHeaderHeight = (siteHeader)
+        ? siteHeader.offsetHeight
+        : 0;
+      var mobileHeader = document.querySelector('.MobileHeader');
+      var mobileHeaderHeight = (mobileHeader)
+        ? mobileHeader.offsetHeight
+        : 0;
+
+      // Get height of either desktop or mobile header, the not shown header will return 0
+      return siteHeaderHeight + mobileHeaderHeight;
+    }
+
+    window.makeStickyHeader = function (containerProp) {
+      window.madeStickyHeader = true;
+      var container = containerProp || document;
+      var siteHeader = document.querySelector('.SiteHeader');
+      var mobileHeader = document.querySelector('.MobileHeader');
+
+      ScrollTrigger.defaults({
+        // uncomment to see debug markers
+        //markers: true
+      });
+
+      // Pin SiteHeader when it hits the top of the viewport
+      if (siteHeader) {
+        ScrollTrigger.create({
+          id: 'SiteHeader', // creates .pin-spacer-SiteHeader which we target in _SiteHeader.scss
+          trigger: '.SiteLayout__siteHeader',
+          endTrigger: ".SiteLayout__footer",
+          start: "top top",
+          end: "bottom top",
+          pin: true,
+          pinSpacing: false
+        })
+      }
+
+      var siteHeaderInternal = document.querySelector('.body--internal .SiteHeader');
+      var siteHeaderHome = document.querySelector('.body--home .SiteHeader');
+      var banner = document.querySelector('.Block--static--bannerBackgroundImage:first-child, .Block--static--banner:first-child, .HomeHero');
+
+      siteHeader.classList.remove('stuck');
+      mobileHeader.classList.remove('stuck');
+      if (banner) {
+        ScrollTrigger.create({
+          trigger: banner,
+          endTrigger: '.SiteLayout__container',
+          start: '50% top',
+          end: 'bottom top',
+          onEnter: function() {
+            $('.SiteHeader, .MobileHeader').addClass('stuck')
+          }
+        })
+      } else {
+        siteHeader.classList.add('stuck');
+        mobileHeader.classList.add('stuck');
+      }
+
+      // Pin MobileHeader when it hits the top of the viewport
+      if (mobileHeader) {
+        ScrollTrigger.create({
+          id: 'MobileHeader', // creates .pin-spacer-MobileHeader which we target in _MobileHeader.scss
+          trigger: mobileHeader,
+          endTrigger: ".SiteLayout__footer",
+          start: "top top",
+          pin: true,
+          pinSpacing: false
+        })
+      }
+
+      var mobileHeaderBgColor = document.querySelector('.MobileHeader__bgColor')
+      if (mobileHeaderBgColor) {
+        gsap.from(mobileHeaderBgColor, {
+          clearProps: true,
+          scrollTrigger: {
+            id: 'MobileHeaderBackground',
+            trigger: '.SiteLayout__navigation',
+            start: "+=10px",
+            end: "+=1px",
+            scrub: 1
+          }
+        });
+      }
+    }
+  }
+
+  var prevBodyHeight = 0;
+  if (window.polyfills) var resizeObserver = new window
+    .polyfills
+    .ResizeObserver(function (entries) {
+      var newHeight = (entries[0].contentRect)
+        ? entries[0].contentRect.height
+        : 0;
+
+      if (newHeight === prevBodyHeight)
+        return;
+
+      // If the height changed save it
+      prevBodyHeight = newHeight;
+
+      // If we have any scrollTriggers on window loop through and refresh them
+      window.refreshScrollTriggers();
+    })
+
+  // start observing a DOM node
+  $(function () {
+    if (!window.madeStickyHeader)
+      window.makeStickyHeader();
+    resizeObserver.observe(document.body);
+  });
+</script>
+
+        <script type="text/javascript">
+          $(function () {
+            $("script.deferred-script").each(function () {
+              var text = $(this).text();
+              eval(
+                text == ''
+                ? this.innerHTML
+                : text);
+            });
+          });
+          sen = true;
+        </script>
+
+
+  <script>
+    
+    var arrayify = function(list) {
+      return Array.prototype.slice.call(list)
+    };
+
+    
+    var runScript = function(originalElement) {
+      var element = document.createElement('script');
+
+      if (originalElement.attributes.length) {
+        var attributes = arrayify(originalElement.attributes);
+
+        attributes.forEach(function(attr) {
+          element.setAttribute(attr.name, attr.value);
+        });
+      }
+      element.textContent = originalElement.textContent;
+      element.setAttribute('async', 'false');
+
+      originalElement.replaceWith(element);
+      return element;
+    };
+
+    var shouldPrevent = function(data) {
+      if (data.el.hasAttribute('data-no-transition') || data.el.hasAttribute('data-modal-template')) return true;
+      var targetUrl = data.href.replace(window.location.origin, '');
+      var regex = new RegExp(/^(?:\/?assets)|(?:\/?imo)|(?:\/?download=1)/);
+      if (targetUrl && regex.test(targetUrl)) return true;
+
+      return false;
+    }
+
+    
+    
+    var transitionFormHandler = function(container) {
+      var forms = container.querySelectorAll('form[method="get"]');
+      if (forms.length) forms.forEach(function(form) {
+        if ($(form).attr('data-no-transition') !== undefined) return;
+        $(form).on('submit', function(event) {
+          event.preventDefault();
+          $('body').addClass('wait');
+          var targetUrl = event.target.action;
+          var targetQuery = $(this).serialize();
+          $('.BootstrapModal').modal('hide');
+          transitions.go(targetUrl + '?' + targetQuery);
+        })
+      })
+    }
+
+    var isIE = document.body.style.msTouchAction !== undefined;
+    if (!isIE && transitions) {
+      // Grab the prefers reduced media query.
+      var mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      // Check if the media query matches or is not available.
+      if (!mediaQuery || mediaQuery.matches) {
+        transitionsReducedMotion();
+      } else {
+        transitionsFullMotion();
+      }
+
+      // Adds an event listener to check for changes in the media query's value.
+      mediaQuery.addEventListener("change", function() {
+        if (mediaQuery.matches) {
+          transitions.destroy();
+          transitionsReducedMotion();
+        } else {
+          transitions.destroy();
+          transitionsFullMotion();
+        }
+      });
+
+      // When user has 'prefers-reduced-motion' turned on in their OS
+      function transitionsReducedMotion() {
+        transitions.init({
+          preventRunning: true,
+          timeout: 20000,
+          schema: {
+            prefix: 'data-transition'
+          },
+          prevent: shouldPrevent,
+          transitions: [{
+            name: 'default-transition',
+            leave: function(data) {
+              return gsap.timeline()
+                .to(data.current.container, {
+                  opacity: 0,
+                  duration: 0.2,
+                }, '<')
+                .set('.SiteFooter', { opacity: 0 })
+            },
+            beforeLeave: function(data) {
+              gsap.to(window, { duration: 1, scrollTo: {y: 0}, ease: 'power3'});
+              return;
+            },
+            enter: function(data) {
+              return gsap.timeline()
+                .set(data.current.container, {position: 'absolute', opacity: 0})
+                .from(data.next.container, {
+                  opacity: 0,
+                  duration: 0.2,
+                }, '<')
+                .to('.SiteFooter', {
+                  opacity: 1,
+                  duration: 0.1,
+                }, '<')
+                .set('.SiteFooter', { opacity: '' })
+            },
+          }],
+        });
+
+        transitionsGlobalHooks();
+      };
+      // For regular motion users
+      function transitionsFullMotion() {
+        // Remove below line and write custom transitions here
+        transitionsReducedMotion();
+      };
+
+      function transitionsGlobalHooks() {
+        transitions.hooks.before(function(data) {
+          $('body').addClass('wait');
+          $('.fc-tbx').remove(); // Clear Forms Builder validation errors
+
+          // Allow Google Recaptcha script include to reinitialize
+          if (typeof grecaptcha !== 'undefined') delete grecaptcha;
+          if (typeof ___grecaptcha_cfg !== 'undefined') delete ___grecaptcha_cfg;
+
+          window.clearSearchToggle()
+
+        });
+
+        transitions.hooks.afterLeave(function(data) {
+          var currentNav = data.current.container.dataset.nav
+          var nextNav = data.next.container.dataset.nav
+          var nextUrl = data.next.url.href;
+          if (currentNav !== nextNav && nextUrl) window.location = nextUrl;
+
+          var nextPage = new DOMParser().parseFromString(data.next.html, "text/html");
+
+          // Sync body tags
+          var newBodyClasses = nextPage.querySelector('body').classList;
+          if (newBodyClasses) document.body.className = newBodyClasses;
+
+          $('[data-transition-selected-if]').each(function (link) {
+            var linkCondition = $(this).attr('data-transition-selected-if');
+            var selectedClass = $(this).attr('data-transition-selected-class') || 'selected';
+
+            $(this).removeClass(selectedClass);
+            if (new RegExp('^' + linkCondition).test(window.location.pathname)) {
+              var secondaryCondition = $(this).attr('data-transition-selected-nestedIf'),
+                pathArr = window.location.pathname.split('/'),
+                linkPathArr = secondaryCondition ? secondaryCondition.split('/') : " ";
+
+              $(this).addClass(selectedClass);
+
+              if (secondaryCondition && pathArr.length < 4 && window.location.pathname !== secondaryCondition) {
+                $(this).removeClass(selectedClass);
+              } else if (secondaryCondition && pathArr.length >= 4 && linkPathArr.length < 3) {
+                $(this).removeClass(selectedClass);
+              }
+            }
+          });
+
+          // Sync NewsAlert content
+          var newDocument = document.createRange().createContextualFragment(data.next.html);
+          var newsAlert = newDocument.querySelector('.NewsAlert');
+          var currentNewsAlert = document.querySelector('.NewsAlert');
+
+
+          // Clean up any existing newsAlert Splide instance
+          if (typeof window.destroyNewsAlertSplide === 'function') window.destroyNewsAlertSplide();
+
+          if (newsAlert) {
+            if (!currentNewsAlert.classList.contains('NewsAlert--hasContent') && newsAlert.classList.contains('NewsAlert--hasContent')) {
+              currentNewsAlert.className = newsAlert.className || currentNewsAlert.className;
+              currentNewsAlert.innerHTML = newsAlert.innerHTML || '';
+
+              var newHeight = $(newsAlert).height();
+              gsap.timeline()
+                .from('.NewsAlert', {
+                  height: 0,
+                  duration: 0.5
+                })
+                .set('.NewsAlert', { height: '' })
+            } else if (currentNewsAlert.classList.contains('NewsAlert--hasContent') && !newsAlert.classList.contains('NewsAlert--hasContent')) {
+              var currentHeight = $(currentNewsAlert).height();
+              gsap.timeline()
+                .to('.NewsAlert', {
+                  height: 0,
+                  duration: 0.5
+                })
+                .call(function() {
+                  currentNewsAlert.className = newsAlert.className || currentNewsAlert.className;
+                  currentNewsAlert.innerHTML = newsAlert.innerHTML || '';
+                })
+                .set('.NewsAlert', { height: '' })
+
+            } else {
+              currentNewsAlert.className = newsAlert.className || currentNewsAlert.className;
+              currentNewsAlert.innerHTML = newsAlert.innerHTML || '';
+            }
+
+            var scripts = currentNewsAlert.querySelectorAll('script');
+            if (scripts && scripts.length) scripts.forEach(function(script) {runScript(script)});
+          }
+        });
+
+        transitions.hooks.after(function(data) {
+          $('body').removeClass('wait');
+
+          // Recalculate ScrollTrigger values
+          window.killScrollTriggers();
+          window.madeStickyHeader = false;
+          window.makeStickyHeader(data.next.container);
+          window.animationsSet = false;
+          window.setupAnimations(data.next.container);
+
+          // Force load any scripts after page transition
+          // Borrowed idea from swup.js:
+          // https://github.com/swup/scripts-plugin/blob/master/src/index.js
+          var scripts = data.next.container.querySelectorAll('script');
+          if (scripts && scripts.length) scripts.forEach(function(script) {runScript(script)});
+
+          transitionFormHandler(data.next.container);
+
+          if (typeof ga !== 'undefined') {
+            ga('set', 'page', window.location.pathname);
+            ga('send', 'pageview');
+          }
+          if (typeof FB !== 'undefined') FB.XFBML.parse();
+        });
+
+        // Prefetching the top level pages after a couple seconds for faster response time on click
+setTimeout(function() {
+                  transitions.prefetch('https://www.armed-services.senate.gov/about');
+                }, 2000);setTimeout(function() {
+                  transitions.prefetch('https://www.armed-services.senate.gov/subcommittees');
+                }, 3000);setTimeout(function() {
+                  transitions.prefetch('https://www.armed-services.senate.gov/hearings');
+                }, 4000);setTimeout(function() {
+                  transitions.prefetch('https://www.armed-services.senate.gov/committee-actions');
+                }, 5000);setTimeout(function() {
+                  transitions.prefetch('https://www.armed-services.senate.gov/press-releases');
+                }, 6000);
+        transitionFormHandler(document);
+      }
+    }
+  </script>
+  <script type="text/javascript" src="https://www.armed-services.senate.gov/3NqBKH9SX/X6IfWME/K-YDrLc/3iYs/mLifLNYSDaYf/F2YmSikD/PUw/bUHA6KhUa?v=44bd1db5-2958-7be7-054e-09c612fd1734" defer=""></script>
+
+
+</body></html><!-- Build #1793753904 -->

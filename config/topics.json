@@ -18,33 +18,69 @@
       "structure": "Four defense priorities (Sec. III): defend the homeland; deter strategic attacks; deter aggression (PRC pacing challenge, Russia acute threat); build a resilient Joint Force and defense ecosystem. Ways: integrated deterrence (Sec. IV), campaigning (Sec. V), building enduring advantages (Sec. VIII). Persistent threats: North Korea, Iran, VEOs."
     }
   ],
-
   "department_name_aliases": [
-    "Department of War", "Department of Defense", "DoW", "DoD", "Pentagon",
-    "Secretary of War", "Secretary of Defense", "War Department", "war.gov", "defense.gov"
+    "Department of War",
+    "Department of Defense",
+    "DoW",
+    "DoD",
+    "Pentagon",
+    "Secretary of War",
+    "Secretary of Defense",
+    "War Department",
+    "war.gov",
+    "defense.gov"
   ],
-
   "prefilter": {
     "_comment": "Stage 1 (cheap). An item passes the prefilter if it matches at least one 'context' term AND scores >= min_keyword_hits against any priority's keywords, OR its embedding cosine similarity to any priority description is >= embedding_threshold.",
     "context_terms": [
-      "Pentagon", "Department of War", "Department of Defense", "DoW", "DoD",
-      "Secretary of War", "Secretary of Defense", "Hegseth", "Joint Chiefs", "Joint Force",
-      "military", "armed forces", "Army", "Navy", "Air Force", "Marine Corps", "Space Force",
-      "Coast Guard", "National Guard", "combatant command", "INDOPACOM", "NORTHCOM", "SOUTHCOM",
-      "EUCOM", "CENTCOM", "AFRICOM", "SPACECOM", "STRATCOM", "CYBERCOM",
-      "defense", "national security", "NDAA", "Armed Services Committee", "warfighter", "troops",
-      "servicemember", "nuclear", "missile", "NATO"
+      "Pentagon",
+      "Department of War",
+      "Department of Defense",
+      "DoW",
+      "DoD",
+      "Secretary of War",
+      "Secretary of Defense",
+      "Hegseth",
+      "Joint Chiefs",
+      "Joint Force",
+      "military",
+      "armed forces",
+      "Army",
+      "Navy",
+      "Air Force",
+      "Marine Corps",
+      "Space Force",
+      "Coast Guard",
+      "National Guard",
+      "combatant command",
+      "INDOPACOM",
+      "NORTHCOM",
+      "SOUTHCOM",
+      "EUCOM",
+      "CENTCOM",
+      "AFRICOM",
+      "SPACECOM",
+      "STRATCOM",
+      "CYBERCOM",
+      "defense",
+      "national security",
+      "NDAA",
+      "Armed Services Committee",
+      "warfighter",
+      "troops",
+      "servicemember",
+      "nuclear",
+      "missile",
+      "NATO"
     ],
     "min_keyword_hits": 1,
     "embedding_model": "nomic-embed-text",
     "embedding_threshold": 0.55
   },
-
   "classifier": {
     "relevance_threshold": 0.6,
     "_comment": "Stage 2: Ollama returns {relevant, score, nds2026_tags, nds2022_tags, rationale}. Tags must be priority ids from this file. Items with score < relevance_threshold are dropped."
   },
-
   "priorities": [
     {
       "id": "nds26_homeland",
@@ -56,11 +92,33 @@
       "source_quote": "We will secure America's borders and maritime approaches, and we will defend our nation's skies through Golden Dome for America and a renewed focus on countering unmanned aerial threats.",
       "source_ref": "2026 NDS, Introduction p.2; LOE 1 pp.16-17",
       "keywords": [
-        "homeland defense", "homeland security", "border security", "southern border", "border mission",
-        "military at the border", "national defense area", "deport", "illegal aliens", "DHS",
-        "Golden Dome", "missile defense of the homeland", "homeland missile defense", "NORAD", "NORTHCOM",
-        "counter-drone", "counter-UAS", "C-UAS", "unmanned aerial", "drone incursion", "electromagnetic spectrum",
-        "cyber defense", "critical infrastructure", "Islamic terrorist", "ISIS", "al Qaeda", "counterterrorism"
+        "homeland defense",
+        "homeland security",
+        "border security",
+        "southern border",
+        "border mission",
+        "military at the border",
+        "national defense area",
+        "deport",
+        "illegal aliens",
+        "DHS",
+        "Golden Dome",
+        "missile defense of the homeland",
+        "homeland missile defense",
+        "NORAD",
+        "NORTHCOM",
+        "counter-drone",
+        "counter-UAS",
+        "C-UAS",
+        "unmanned aerial",
+        "drone incursion",
+        "electromagnetic spectrum",
+        "cyber defense",
+        "critical infrastructure",
+        "Islamic terrorist",
+        "ISIS",
+        "al Qaeda",
+        "counterterrorism"
       ],
       "weight": 1.0
     },
@@ -74,11 +132,31 @@
       "source_quote": "DoW will therefore provide the President with credible options to guarantee U.S. military and commercial access to key terrain from the Arctic to South America, especially Greenland, the Gulf of America, and the Panama Canal.",
       "source_ref": "2026 NDS, LOE 1 p.16; LOE 3 'Western Hemisphere' p.19",
       "keywords": [
-        "Western Hemisphere", "Monroe Doctrine", "Trump Corollary", "narco-terrorist", "narcoterrorist",
-        "cartel", "foreign terrorist organization", "Operation Southern Spear", "Southern Spear",
-        "Absolute Resolve", "Venezuela", "Maduro", "Greenland", "Panama Canal", "Gulf of America",
-        "Caribbean", "Latin America", "Central America", "South America", "Mexico", "Canada", "SOUTHCOM",
-        "Arctic", "drug boat", "maritime interdiction"
+        "Western Hemisphere",
+        "Monroe Doctrine",
+        "Trump Corollary",
+        "narco-terrorist",
+        "narcoterrorist",
+        "cartel",
+        "foreign terrorist organization",
+        "Operation Southern Spear",
+        "Southern Spear",
+        "Absolute Resolve",
+        "Venezuela",
+        "Maduro",
+        "Greenland",
+        "Panama Canal",
+        "Gulf of America",
+        "Caribbean",
+        "Latin America",
+        "Central America",
+        "South America",
+        "Mexico",
+        "Canada",
+        "SOUTHCOM",
+        "Arctic",
+        "drug boat",
+        "maritime interdiction"
       ],
       "weight": 1.0
     },
@@ -92,10 +170,30 @@
       "source_quote": "To that end, as the NSS directs, we will build, posture, and sustain a strong denial defense along the FIC.",
       "source_ref": "2026 NDS, LOE 2 p.18",
       "keywords": [
-        "China", "PRC", "Chinese military", "People's Liberation Army", "PLA", "Beijing", "Xi Jinping",
-        "Indo-Pacific", "INDOPACOM", "First Island Chain", "denial defense", "deterrence by denial",
-        "Taiwan", "Taiwan Strait", "South China Sea", "East China Sea", "Philippines", "Japan", "Guam",
-        "military-to-military", "mil-to-mil", "deconfliction", "strategic stability", "Pacific"
+        "China",
+        "PRC",
+        "Chinese military",
+        "People's Liberation Army",
+        "PLA",
+        "Beijing",
+        "Xi Jinping",
+        "Indo-Pacific",
+        "INDOPACOM",
+        "First Island Chain",
+        "denial defense",
+        "deterrence by denial",
+        "Taiwan",
+        "Taiwan Strait",
+        "South China Sea",
+        "East China Sea",
+        "Philippines",
+        "Japan",
+        "Guam",
+        "military-to-military",
+        "mil-to-mil",
+        "deconfliction",
+        "strategic stability",
+        "Pacific"
       ],
       "weight": 1.0
     },
@@ -109,10 +207,34 @@
       "source_quote": "President Trump has set a new global standard for defense spending at NATO's Hague Summit—3.5% of gross domestic product (GDP) on core military spending and an additional 1.5% on security-related spending, for a total of 5% of GDP.",
       "source_ref": "2026 NDS, Introduction p.3; LOE 3 pp.18-21",
       "keywords": [
-        "burden-sharing", "burden sharing", "NATO", "defense spending pledge", "5% of GDP", "3.5%",
-        "Hague Summit", "allies", "partners", "model ally", "arms sales", "foreign military sales", "FMS",
-        "South Korea", "Republic of Korea", "Korean Peninsula", "USFK", "Japan", "Australia", "AUKUS",
-        "Israel", "Gulf partners", "Saudi Arabia", "Abraham Accords", "Europe", "Ukraine", "Africa", "AFRICOM"
+        "burden-sharing",
+        "burden sharing",
+        "NATO",
+        "defense spending pledge",
+        "5% of GDP",
+        "3.5%",
+        "Hague Summit",
+        "allies",
+        "partners",
+        "model ally",
+        "arms sales",
+        "foreign military sales",
+        "FMS",
+        "South Korea",
+        "Republic of Korea",
+        "Korean Peninsula",
+        "USFK",
+        "Japan",
+        "Australia",
+        "AUKUS",
+        "Israel",
+        "Gulf partners",
+        "Saudi Arabia",
+        "Abraham Accords",
+        "Europe",
+        "Ukraine",
+        "Africa",
+        "AFRICOM"
       ],
       "weight": 1.0
     },
@@ -126,15 +248,36 @@
       "source_quote": "We will therefore bolster our organic sustainment capabilities, grow nontraditional vendors, and partner with traditional DIB vendors, Congress, our allies and partners, and other federal departments and agencies to reinvigorate and mobilize our great nation's unrivaled creativity and ingenuity, re-spark our innovative spirit, and restore our industrial capacity.",
       "source_ref": "2026 NDS, Introduction p.4; LOE 4 pp.21-22",
       "keywords": [
-        "defense industrial base", "industrial base", "DIB", "defense production", "munitions production",
-        "production capacity", "supply chain", "critical minerals", "rare earth", "shipbuilding", "shipyard",
-        "submarine industrial base", "Office of Strategic Capital", "Defense Production Act", "multiyear procurement",
-        "nontraditional vendors", "defense contractor", "Lockheed", "RTX", "Raytheon", "Northrop", "General Dynamics",
-        "Boeing Defense", "Anduril", "Palantir", "co-production", "reshoring"
+        "defense industrial base",
+        "industrial base",
+        "DIB",
+        "defense production",
+        "munitions production",
+        "production capacity",
+        "supply chain",
+        "critical minerals",
+        "rare earth",
+        "shipbuilding",
+        "shipyard",
+        "submarine industrial base",
+        "Office of Strategic Capital",
+        "Defense Production Act",
+        "multiyear procurement",
+        "nontraditional vendors",
+        "defense contractor",
+        "Lockheed",
+        "RTX",
+        "Raytheon",
+        "Northrop",
+        "General Dynamics",
+        "Boeing Defense",
+        "Anduril",
+        "Palantir",
+        "co-production",
+        "reshoring"
       ],
       "weight": 1.0
     },
-
     {
       "id": "nds22_homeland",
       "strategy": "nds2022",
@@ -145,8 +288,16 @@
       "source_quote": "The scope and scale of threats to the homeland have fundamentally changed. The PRC and Russia now pose more dangerous challenges to safety and security at home, even as terrorist threats persist.",
       "source_ref": "2022 NDS, Sec. II 'Threats to the U.S. Homeland'; Sec. III; MDR 'Guam'",
       "keywords": [
-        "homeland defense", "NORTHCOM", "NORAD", "critical infrastructure", "resilience", "Guam defense",
-        "homeland missile defense", "counterspace", "GPS", "terrorist threat"
+        "homeland defense",
+        "NORTHCOM",
+        "NORAD",
+        "critical infrastructure",
+        "resilience",
+        "Guam defense",
+        "homeland missile defense",
+        "counterspace",
+        "GPS",
+        "terrorist threat"
       ],
       "weight": 1.0
     },
@@ -160,9 +311,25 @@
       "source_quote": "Second, we will deter strategic attacks against the United States, our Allies, and our partners.",
       "source_ref": "2022 NDS, Introduction p.1; Sec. IV",
       "keywords": [
-        "strategic attack", "strategic deterrence", "nuclear deterrence", "space", "Space Force", "satellite",
-        "counterspace", "anti-satellite", "ASAT", "cyber attack", "cyberattack", "CYBERCOM", "Cyber Command",
-        "zero trust", "STRATCOM", "SPACECOM", "chemical weapons", "biological weapons", "hypersonic"
+        "strategic attack",
+        "strategic deterrence",
+        "nuclear deterrence",
+        "space",
+        "Space Force",
+        "satellite",
+        "counterspace",
+        "anti-satellite",
+        "ASAT",
+        "cyber attack",
+        "cyberattack",
+        "CYBERCOM",
+        "Cyber Command",
+        "zero trust",
+        "STRATCOM",
+        "SPACECOM",
+        "chemical weapons",
+        "biological weapons",
+        "hypersonic"
       ],
       "weight": 1.0
     },
@@ -176,8 +343,20 @@
       "source_quote": "The PRC is therefore the pacing challenge for the Department.",
       "source_ref": "2022 NDS, Sec. II; Sec. IV 'Deterring PRC Attacks'",
       "keywords": [
-        "China", "PRC", "PLA", "pacing challenge", "pacing threat", "Taiwan", "Taiwan Strait",
-        "South China Sea", "East China Sea", "Indo-Pacific", "INDOPACOM", "gray zone", "coercion", "Beijing"
+        "China",
+        "PRC",
+        "PLA",
+        "pacing challenge",
+        "pacing threat",
+        "Taiwan",
+        "Taiwan Strait",
+        "South China Sea",
+        "East China Sea",
+        "Indo-Pacific",
+        "INDOPACOM",
+        "gray zone",
+        "coercion",
+        "Beijing"
       ],
       "weight": 1.0
     },
@@ -191,8 +370,20 @@
       "source_quote": "Even as the PRC poses the Department's pacing challenge, recent events underscore the acute threat posed by Russia.",
       "source_ref": "2022 NDS, Sec. II 'Russia as an Acute Threat'; Sec. IV 'Deterring Russian Attacks'",
       "keywords": [
-        "Russia", "Russian military", "Moscow", "Kremlin", "Putin", "Ukraine", "NATO", "EUCOM",
-        "eastern flank", "Baltic", "Poland", "Article 5", "extended deterrence", "Black Sea"
+        "Russia",
+        "Russian military",
+        "Moscow",
+        "Kremlin",
+        "Putin",
+        "Ukraine",
+        "NATO",
+        "EUCOM",
+        "eastern flank",
+        "Baltic",
+        "Poland",
+        "Article 5",
+        "extended deterrence",
+        "Black Sea"
       ],
       "weight": 1.0
     },
@@ -206,9 +397,22 @@
       "source_quote": "Fourth, to ensure our future military advantage, we will build a resilient Joint Force and defense ecosystem.",
       "source_ref": "2022 NDS, Introduction p.1; Sec. VIII",
       "keywords": [
-        "acquisition reform", "rapid fielding", "experimentation", "readiness", "recruiting", "retention",
-        "workforce", "defense ecosystem", "industrial base", "advanced manufacturing", "innovation",
-        "Defense Innovation Unit", "DIU", "installation resilience", "energy resilience", "modernization"
+        "acquisition reform",
+        "rapid fielding",
+        "experimentation",
+        "readiness",
+        "recruiting",
+        "retention",
+        "workforce",
+        "defense ecosystem",
+        "industrial base",
+        "advanced manufacturing",
+        "innovation",
+        "Defense Innovation Unit",
+        "DIU",
+        "installation resilience",
+        "energy resilience",
+        "modernization"
       ],
       "weight": 1.0
     },
@@ -222,9 +426,20 @@
       "source_quote": "Integrated deterrence entails working seamlessly across warfighting domains, theaters, the spectrum of conflict, all instruments of U.S. national power, and our network of Alliances and partnerships.",
       "source_ref": "2022 NDS, Introduction p.1; Sec. IV; Sec. V",
       "keywords": [
-        "integrated deterrence", "campaigning", "joint exercise", "multinational exercise", "exercise",
-        "interoperability", "freedom of navigation", "FONOP", "force posture", "rotational deployment",
-        "gray zone", "information operations", "combined planning", "intelligence sharing"
+        "integrated deterrence",
+        "campaigning",
+        "joint exercise",
+        "multinational exercise",
+        "exercise",
+        "interoperability",
+        "freedom of navigation",
+        "FONOP",
+        "force posture",
+        "rotational deployment",
+        "gray zone",
+        "information operations",
+        "combined planning",
+        "intelligence sharing"
       ],
       "weight": 0.9
     },
@@ -238,9 +453,30 @@
       "source_quote": "In service of our strategic priorities, we will accept measured risk but remain vigilant in the face of other persistent threats, including those posed by North Korea, Iran, and violent extremist organizations (VEOs).",
       "source_ref": "2022 NDS, Introduction p.2; Sec. II 'Other Persistent Threats'",
       "keywords": [
-        "North Korea", "DPRK", "Pyongyang", "Kim Jong Un", "ICBM test", "Iran", "Iranian", "Tehran", "IRGC",
-        "Houthi", "Hezbollah", "Hamas", "proxy", "militia", "violent extremist", "VEO", "ISIS", "al-Qaida",
-        "al Qaeda", "al-Shabaab", "CENTCOM", "Red Sea", "Strait of Hormuz", "Iran nuclear"
+        "North Korea",
+        "DPRK",
+        "Pyongyang",
+        "Kim Jong Un",
+        "ICBM test",
+        "Iran",
+        "Iranian",
+        "Tehran",
+        "IRGC",
+        "Houthi",
+        "Hezbollah",
+        "Hamas",
+        "proxy",
+        "militia",
+        "violent extremist",
+        "VEO",
+        "ISIS",
+        "al-Qaida",
+        "al Qaeda",
+        "al-Shabaab",
+        "CENTCOM",
+        "Red Sea",
+        "Strait of Hormuz",
+        "Iran nuclear"
       ],
       "weight": 1.0
     },
@@ -254,14 +490,35 @@
       "source_quote": "The PRC likely intends to possess at least 1,000 deliverable warheads by the end of the decade.",
       "source_ref": "2022 NPR, Security Environment; NPR force modernization; 2022 MDR",
       "keywords": [
-        "nuclear posture", "nuclear triad", "nuclear modernization", "Sentinel", "ICBM", "Minuteman",
-        "Columbia-class", "SSBN", "B-21", "W93", "SLCM-N", "sea-launched cruise missile", "warhead",
-        "NNSA", "nuclear test", "missile defense", "Missile Defense Agency", "MDA", "Next Generation Interceptor",
-        "Glide Phase Interceptor", "hypersonic defense", "THAAD", "Aegis", "Patriot", "IAMD", "Guam defense system"
+        "nuclear posture",
+        "nuclear triad",
+        "nuclear modernization",
+        "Sentinel",
+        "ICBM",
+        "Minuteman",
+        "Columbia-class",
+        "SSBN",
+        "B-21",
+        "W93",
+        "SLCM-N",
+        "sea-launched cruise missile",
+        "warhead",
+        "NNSA",
+        "nuclear test",
+        "missile defense",
+        "Missile Defense Agency",
+        "MDA",
+        "Next Generation Interceptor",
+        "Glide Phase Interceptor",
+        "hypersonic defense",
+        "THAAD",
+        "Aegis",
+        "Patriot",
+        "IAMD",
+        "Guam defense system"
       ],
       "weight": 1.0
     },
-
     {
       "id": "x_budget",
       "strategy": "cross",
@@ -272,9 +529,24 @@
       "source_quote": "This is why burden-sharing is such an essential ingredient of this Strategy, even as DoW prioritizes growing the Joint Force and advocating defense spending toplines to support such growth.",
       "source_ref": "2026 NDS, 'The Simultaneity Problem' p.13",
       "keywords": [
-        "defense budget", "budget request", "topline", "NDAA", "National Defense Authorization Act",
-        "appropriations", "defense appropriations", "continuing resolution", "reconciliation", "supplemental",
-        "Armed Services Committee", "HASC", "SASC", "Appropriations Committee", "markup", "fiscal year 2027", "FY27", "FY2027"
+        "defense budget",
+        "budget request",
+        "topline",
+        "NDAA",
+        "National Defense Authorization Act",
+        "appropriations",
+        "defense appropriations",
+        "continuing resolution",
+        "reconciliation",
+        "supplemental",
+        "Armed Services Committee",
+        "HASC",
+        "SASC",
+        "Appropriations Committee",
+        "markup",
+        "fiscal year 2027",
+        "FY27",
+        "FY2027"
       ],
       "weight": 1.0
     },
@@ -288,9 +560,21 @@
       "source_quote": "The Department will also continue to play a vital role in NATO itself, even as we calibrate U.S. force posture and activities in the European theater to better account for the Russian threat to American interests as well as our allies' own capabilities.",
       "source_ref": "2026 NDS, 'Russia' p.10; 2022 NDS Sec. V 'Campaigning and Our Global Posture'",
       "keywords": [
-        "force posture", "posture review", "troop withdrawal", "troop reduction", "drawdown", "deployment",
-        "deploy", "redeploy", "basing", "base closure", "rotational force", "carrier strike group",
-        "bomber task force", "troop levels", "forward presence"
+        "force posture",
+        "posture review",
+        "troop withdrawal",
+        "troop reduction",
+        "drawdown",
+        "deployment",
+        "deploy",
+        "redeploy",
+        "basing",
+        "base closure",
+        "rotational force",
+        "carrier strike group",
+        "bomber task force",
+        "troop levels",
+        "forward presence"
       ],
       "weight": 0.9
     },
@@ -304,10 +588,30 @@
       "source_quote": "The Department will instead reward rapid experimentation, acquisition, and fielding.",
       "source_ref": "2022 NDS, Sec. VIII 'Transform the Foundation of the Future Force'",
       "keywords": [
-        "acquisition", "major defense acquisition program", "MDAP", "contract award", "awarded a contract",
-        "F-47", "F-35", "NGAD", "B-21", "Sentinel", "Columbia", "Virginia-class", "frigate", "Constellation",
-        "CCA", "Collaborative Combat Aircraft", "program cancellation", "cost overrun", "Nunn-McCurdy",
-        "GAO report", "milestone", "low-rate initial production", "other transaction authority", "OTA"
+        "acquisition",
+        "major defense acquisition program",
+        "MDAP",
+        "contract award",
+        "awarded a contract",
+        "F-47",
+        "F-35",
+        "NGAD",
+        "B-21",
+        "Sentinel",
+        "Columbia",
+        "Virginia-class",
+        "frigate",
+        "Constellation",
+        "CCA",
+        "Collaborative Combat Aircraft",
+        "program cancellation",
+        "cost overrun",
+        "Nunn-McCurdy",
+        "GAO report",
+        "milestone",
+        "low-rate initial production",
+        "other transaction authority",
+        "OTA"
       ],
       "weight": 0.9
     },
@@ -321,10 +625,27 @@
       "source_quote": "We will fuel research and development for advanced capabilities, including in directed energy, hypersonics, integrated sensing, and cyber.",
       "source_ref": "2022 NDS, Sec. VIII; 2026 NDS LOE 4 ('adopting new advances in technology, like artificial intelligence (AI)')",
       "keywords": [
-        "artificial intelligence", "AI", "autonomy", "autonomous", "drone", "unmanned", "uncrewed",
-        "hypersonic", "directed energy", "laser weapon", "high-power microwave", "quantum", "space-based",
-        "satellite constellation", "Proliferated Warfighter Space Architecture", "SDA", "Space Development Agency",
-        "CDAO", "Replicator", "DIU", "electronic warfare"
+        "artificial intelligence",
+        "AI",
+        "autonomy",
+        "autonomous",
+        "drone",
+        "unmanned",
+        "uncrewed",
+        "hypersonic",
+        "directed energy",
+        "laser weapon",
+        "high-power microwave",
+        "quantum",
+        "space-based",
+        "satellite constellation",
+        "Proliferated Warfighter Space Architecture",
+        "SDA",
+        "Space Development Agency",
+        "CDAO",
+        "Replicator",
+        "DIU",
+        "electronic warfare"
       ],
       "weight": 0.9
     },
@@ -338,9 +659,20 @@
       "source_quote": "Mutual, verifiable nuclear arms control offers the most effective, durable and responsible path to achieving a key goal: reducing the role of nuclear weapons in U.S. strategy.",
       "source_ref": "2022 NPR, Sec. VI 'Arms Control, Nuclear Non-Proliferation'",
       "keywords": [
-        "arms control", "New START", "nuclear treaty", "non-proliferation", "nonproliferation", "NPT",
-        "nuclear testing", "test ban", "CTBT", "strategic stability talks", "risk reduction", "verification",
-        "INF Treaty", "Open Skies"
+        "arms control",
+        "New START",
+        "nuclear treaty",
+        "non-proliferation",
+        "nonproliferation",
+        "NPT",
+        "nuclear testing",
+        "test ban",
+        "CTBT",
+        "strategic stability talks",
+        "risk reduction",
+        "verification",
+        "INF Treaty",
+        "Open Skies"
       ],
       "weight": 0.9
     },
@@ -354,74 +686,178 @@
       "source_quote": "We will restore the warrior ethos and rebuild the Joint Force so that America's enemies never doubt our resolve or ability to respond decisively to those threats.",
       "source_ref": "2026 NDS, Secretary's memorandum",
       "keywords": [
-        "Secretary of War", "Secretary of Defense", "Hegseth", "Deputy Secretary", "Joint Chiefs", "Caine",
-        "Chief of Naval Operations", "Army Chief of Staff", "Air Force Chief of Staff", "Commandant",
-        "nominee", "nomination", "confirmation hearing", "confirmed", "fired", "relieved of command",
-        "resigned", "reorganization", "memo", "directive", "Department of War rename", "policy change"
+        "Secretary of War",
+        "Secretary of Defense",
+        "Hegseth",
+        "Deputy Secretary",
+        "Joint Chiefs",
+        "Caine",
+        "Chief of Naval Operations",
+        "Army Chief of Staff",
+        "Air Force Chief of Staff",
+        "Commandant",
+        "nominee",
+        "nomination",
+        "confirmation hearing",
+        "confirmed",
+        "fired",
+        "relieved of command",
+        "resigned",
+        "reorganization",
+        "memo",
+        "directive",
+        "Department of War rename",
+        "policy change"
       ],
       "weight": 0.9
     }
   ],
-
   "divergences": [
     {
       "id": "div_russia_europe",
       "topic": "Russia and European defense",
       "nds2026": "Describes Russia as 'a persistent but manageable threat to NATO's eastern members' and calls for NATO allies to 'take primary responsibility for Europe's conventional defense, with critical but more limited U.S. support.'",
       "nds2022": "Describes Russia as an 'acute threat' and commits the Department to 'work closely with the North Atlantic Treaty Organization (NATO) and our partners to provide U.S. leadership, develop key enabling capabilities, and deepen interoperability.'",
-      "trigger_priorities": ["nds22_russia_acute", "nds26_burden"],
-      "trigger_keywords": ["Russia", "NATO", "Ukraine", "Europe", "EUCOM", "Baltic", "Poland"]
+      "trigger_priorities": [
+        "nds22_russia_acute",
+        "nds26_burden"
+      ],
+      "trigger_keywords": [
+        "Russia",
+        "NATO",
+        "Ukraine",
+        "Europe",
+        "EUCOM",
+        "Baltic",
+        "Poland"
+      ],
+      "short_2026": "calls Russia \"a persistent but manageable threat to NATO's eastern members\" and asks NATO allies to take \"primary responsibility for Europe's conventional defense.\"",
+      "short_2022": "calls Russia an \"acute threat\" and commits to \"provide U.S. leadership\" alongside NATO."
     },
     {
       "id": "div_climate",
       "topic": "Climate change",
       "nds2026": "Does not mention climate change.",
       "nds2022": "Lists climate change among 'transboundary challenges' and directs the Department to 'integrate climate change into threat assessments' and increase installation resilience.",
-      "trigger_priorities": ["nds22_joint_force"],
-      "trigger_keywords": ["climate", "extreme weather", "sea-level", "installation resilience", "clean energy", "energy resilience"]
+      "trigger_priorities": [
+        "nds22_joint_force"
+      ],
+      "trigger_keywords": [
+        "climate",
+        "extreme weather",
+        "sea-level",
+        "installation resilience",
+        "clean energy",
+        "energy resilience"
+      ],
+      "short_2026": "does not mention climate change.",
+      "short_2022": "directs the Department to \"integrate climate change into threat assessments.\""
     },
     {
       "id": "div_arms_control",
       "topic": "Arms control",
       "nds2026": "Does not mention arms control; it describes expanded military-to-military communications with the PLA 'with a focus on supporting strategic stability.'",
       "nds2022": "The NPR places 'renewed emphasis on arms control, non-proliferation, and risk reduction' and cancels the SLCM-N program.",
-      "trigger_priorities": ["x_arms_control", "nds22_nuclear_missile_defense"],
-      "trigger_keywords": ["arms control", "New START", "SLCM-N", "nuclear test", "non-proliferation", "strategic stability"]
+      "trigger_priorities": [
+        "x_arms_control",
+        "nds22_nuclear_missile_defense"
+      ],
+      "trigger_keywords": [
+        "arms control",
+        "New START",
+        "SLCM-N",
+        "nuclear test",
+        "non-proliferation",
+        "strategic stability"
+      ],
+      "short_2026": "does not mention arms control.",
+      "short_2022": "(NPR) places \"renewed emphasis on arms control, non-proliferation, and risk reduction.\""
     },
     {
       "id": "div_hemisphere",
       "topic": "Western Hemisphere and border emphasis",
       "nds2026": "Makes the Western Hemisphere part of the top line of effort: border security, narco-terrorists, and access to 'Greenland, the Gulf of America, and the Panama Canal.'",
       "nds2022": "Treats the Western Hemisphere as a regional goal ('a stable, peaceful, and democratic Western Hemisphere'), not a top-level priority, and does not mention border security as a Department mission.",
-      "trigger_priorities": ["nds26_hemisphere", "nds26_homeland"],
-      "trigger_keywords": ["border", "cartel", "narco", "Venezuela", "Greenland", "Panama", "Caribbean", "SOUTHCOM"]
+      "trigger_priorities": [
+        "nds26_hemisphere",
+        "nds26_homeland"
+      ],
+      "trigger_keywords": [
+        "border",
+        "cartel",
+        "narco",
+        "Venezuela",
+        "Greenland",
+        "Panama",
+        "Caribbean",
+        "SOUTHCOM"
+      ],
+      "short_2026": "makes border security and the Western Hemisphere part of its first line of effort.",
+      "short_2022": "treats the Western Hemisphere as a regional goal rather than a top-level priority."
     },
     {
       "id": "div_korea_mideast",
       "topic": "Korean Peninsula and Middle East responsibility",
       "nds2026": "States South Korea 'is capable of taking primary responsibility for deterring North Korea with critical but more limited U.S. support' and that regional partners should take 'primary responsibility for deterring and defending against Iran and its proxies.'",
       "nds2022": "Deters North Korea 'through forward posture; integrated air and missile defense; close coordination and interoperability with our ROK Ally' and works to 'increase partner capability and resilience' against Iran.",
-      "trigger_priorities": ["nds22_persistent_threats", "nds26_burden"],
-      "trigger_keywords": ["South Korea", "USFK", "Korean Peninsula", "North Korea", "Iran", "Israel", "Gulf"]
+      "trigger_priorities": [
+        "nds22_persistent_threats",
+        "nds26_burden"
+      ],
+      "trigger_keywords": [
+        "South Korea",
+        "USFK",
+        "Korean Peninsula",
+        "North Korea",
+        "Iran",
+        "Israel",
+        "Gulf"
+      ],
+      "short_2026": "says regional allies should take \"primary responsibility\" for deterring North Korea and Iran, \"with critical but more limited U.S. support.\"",
+      "short_2022": "deters North Korea \"through forward posture\" and works to \"increase partner capability and resilience\" against Iran."
     },
     {
       "id": "div_force_culture",
       "topic": "Force culture and workforce",
       "nds2026": "Emphasizes restoring 'the warrior ethos.'",
       "nds2022": "Emphasizes recruiting and training 'a workforce with the skills, abilities, and diversity we need.'",
-      "trigger_priorities": ["x_leadership", "nds22_joint_force"],
-      "trigger_keywords": ["warrior ethos", "diversity", "DEI", "recruiting", "standards", "personnel policy"]
+      "trigger_priorities": [
+        "x_leadership",
+        "nds22_joint_force"
+      ],
+      "trigger_keywords": [
+        "warrior ethos",
+        "diversity",
+        "DEI",
+        "equity",
+        "inclusion",
+        "personnel policy",
+        "grooming standards",
+        "fitness standards",
+        "transgender"
+      ],
+      "short_2026": "emphasizes restoring \"the warrior ethos.\"",
+      "short_2022": "emphasizes a workforce with \"the skills, abilities, and diversity we need.\""
     },
     {
       "id": "div_china_framing",
-      "topic": "China framing (convergence with differing language)",
+      "topic": "China framing",
       "nds2026": "Seeks to 'Deter China in the Indo-Pacific Through Strength, Not Confrontation' with a 'denial defense along the First Island Chain'; states the goal 'is not to dominate China.'",
       "nds2022": "Names the PRC 'the pacing challenge' and states 'Conflict with the PRC is neither inevitable nor desirable.'",
-      "trigger_priorities": ["nds26_china", "nds22_pacing_challenge"],
-      "trigger_keywords": ["China", "PRC", "PLA", "Taiwan"]
+      "trigger_priorities": [
+        "nds26_china",
+        "nds22_pacing_challenge"
+      ],
+      "trigger_keywords": [
+        "China",
+        "PRC",
+        "PLA",
+        "Taiwan"
+      ],
+      "short_2026": "frames the goal as deterring China \"Through Strength, Not Confrontation.\"",
+      "short_2022": "names the PRC \"the pacing challenge.\""
     }
   ],
-
   "email_groups_order": [
     "Homeland & Western Hemisphere",
     "China & the Indo-Pacific",
@@ -430,5 +866,19 @@
     "Nuclear, Missile Defense & Strategic Deterrence",
     "Industrial Base, Acquisition & Technology",
     "Budget, Congress & Leadership"
-  ]
+  ],
+  "clustering": {
+    "embedding_similarity_threshold": 0.82,
+    "title_jaccard_threshold": 0.5
+  },
+  "digest": {
+    "window_hours": 24,
+    "max_classify": 90,
+    "max_main_stories": 10,
+    "max_primary_updates": 3,
+    "max_single_source": 3,
+    "max_members_per_story": 4,
+    "max_fulltext_fetches": 40,
+    "min_fulltext_chars": 800
+  }
 }

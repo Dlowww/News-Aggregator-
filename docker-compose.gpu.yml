@@ -1,0 +1,11 @@
+# NVIDIA GPU passthrough for Ollama. Requires the NVIDIA Container Toolkit on the host.
+# Enabled by setup.sh through COMPOSE_FILE=docker-compose.yml:docker-compose.gpu.yml in .env.
+services:
+  ollama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

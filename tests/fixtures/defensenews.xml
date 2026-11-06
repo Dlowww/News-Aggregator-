@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet media="screen" type="text/xsl" href="/wp-content/themes/smg/assets/xslt/rss-xslt.xml"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:media="http://search.yahoo.com/mrss/"
+xmlns:news="http://www.pugpig.com/news"
+>
+
+<channel>
+	<title>Defense News</title>
+	<atom:link href="https://www.defensenews.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.defensenews.com/</link>
+	<description>Covering the politics, business and technology of defense &#124; Defense News</description>
+	<lastBuildDate>Thu, 05 Nov 2026 22:55:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.1.4</generator>
+
+<image>
+	<url>https://one.sightlinemg.com/wp-content/uploads/2026/06/favicon-def.png?w=32</url>
+	<title>Defense News</title>
+	<link>https://www.defensenews.com/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">255331545</site><atom:link rel="next" type="application/rss+xml" href="https://www.defensenews.com/feed/?paged=2" />
+	<item>
+		<title>Shield AI to acquire radar maker Echodyne to bust drones</title>
+		<link>https://www.defensenews.com/industry/techwatch/2026/11/05/shield-ai-to-acquire-radar-maker-echodyne-to-bust-drones/</link>
+		
+		<dc:creator><![CDATA[Zita Fletcher]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 22:55:48 +0000</pubDate>
+				<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Industry]]></category>
+		<category><![CDATA[MilTech]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[ausa 2026]]></category>
+		<category><![CDATA[counter-drone technology]]></category>
+		<category><![CDATA[Defense Department]]></category>
+		<category><![CDATA[dn dnr]]></category>
+		<category><![CDATA[drones]]></category>
+		<category><![CDATA[Eben Frankenberg]]></category>
+		<category><![CDATA[Echodyne]]></category>
+		<category><![CDATA[Gary Steele]]></category>
+		<category><![CDATA[JIATF-401]]></category>
+		<category><![CDATA[lasers]]></category>
+		<category><![CDATA[Matamaterials Electronically Scanned Array]]></category>
+		<category><![CDATA[Pentagon]]></category>
+		<category><![CDATA[radar systems]]></category>
+		<category><![CDATA[Shield AI]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/news/2026/11/05/shield-ai-to-acquire-radar-maker-echodyne-to-bust-drones/</guid>
+
+					<description><![CDATA[Shield AI's CEO said the purchase of Echodyne supports the company’s aim to branch into different areas of unmanned systems.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87612</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/08/Shield-AI-X-BAT.jpg.jpg" width="1024" height="683" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/08/Shield-AI-X-BAT.jpg.jpg" width="1024" height="683" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph"><a href="https://www.defensenews.com/industry/techwatch/2026/10/19/shield-ai-software-cuts-autonomous-flight-development-to-six-weeks/">Shield AI</a> agreed to acquire <a href="https://www.defensenews.com/global/europe/2026/09/10/us-radar-maker-echodyne-mulls-european-production-as-drone-warfare-fuels-demand/">Echodyne</a> in a $5.3 billion transaction <a href="https://www.echodyne.com/newsroom/shield-to-acquire-echodyne">announced</a> Thursday — a major financial transaction that expands the prime defense contractors&#8217; drone-warfare capabilities.</p>
+
+
+
+<p class="wp-block-paragraph">Echodyne produces next-generation, solid-state radar systems patented as Metamaterials Electronically Scanned Array (MESA) technology. Its highly advanced systems are flexible and can be easily incorporated into a wide variety of weapons and monitoring systems to detect drones, including high-energy lasers and microwave weapons.</p>
+
+
+
+<p class="wp-block-paragraph">In September, Echodyne was awarded a $250 million contract by the Defense Department’s premier national counter-drone task force, JIATF-401, to provide counter-drone technology to military forces over 36 months.</p>
+
+
+
+<p class="wp-block-paragraph">Speaking to Defense News in July, Echodyne CEO Eben Frankenberg said demand for counter-drone detecting radar is “red hot” and could grow tenfold by 2030. The company produces technology that can track small quadcopter drones and even over 1,000 objects at a time.</p>
+
+
+
+<p class="wp-block-paragraph">“There is a rush of interest globally for counter-drone,” Frankenberg<a href="https://www.defensenews.com/industry/2026/07/02/in-red-hot-counter-drone-market-echodyne-ceo-sees-radar-demand-boom/"> told </a>Defense News. “The Ukraine war made it obvious to everyone that drones had changed the face of warfare, but the Iran war made it obvious that everything’s at risk.”</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://one.sightlinemg.com/wp-content/uploads/2026/08/DSCF3915.jpg.jpg?w=1024" alt="" class="wp-image-120774" /><figcaption class="wp-element-caption">Echodyne CEO Eben Frankenberg at the Eurosatory defense show near Paris on June 16, 2026.&nbsp;(Rudy Ruitenberg/staff)</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">The acquisition is a bold new move for Shield AI, which is already well-known as the maker of the X-Bat and V-Bat vertical takeoff and landing systems, or VTOL drones. The V-Bat became famous for assisting the U.S. Coast Guard in conducting reconnaissance on illicit drug trafficking at sea and enabling law enforcement to make large maritime drug busts.</p>
+
+
+
+<p class="wp-block-paragraph">The company also builds Hivemind autonomy software, which delivers AI pilots to perform multi-agent teaming and swarming across a wide range of unmanned systems, including unmanned aircraft systems, drone boats and spacecraft.</p>
+
+
+
+<p class="wp-block-paragraph">Shield AI CEO Gary Steele said the purchase of Echodyne supports the company’s aim to branch into three different areas of unmanned systems.</p>
+
+
+
+<p class="wp-block-paragraph">“We are building a new-generation defense technology company consisting of three fast-growing, high-margin, mutually supporting business units: autonomy software, autonomous systems and mission systems,” Steele said in a statement.</p>
+
+
+
+<p class="wp-block-paragraph">Frankenberg said in a statement that Shield AI’s mission complements that of Echodyne and that he expects unity of effort to multiply what both companies can deliver. &nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">“Hundreds of customers rely on our radars to detect and track drones, protect people and infrastructure, secure borders, and ensure safe airspace operations,” Frankenberg said.</p>
+
+
+
+<p class="wp-block-paragraph">“Shield shares our view that autonomous systems can only act on what they can sense, and superior sensors lead to superior systems and outcomes,&#8221; he continued. &#8220;By joining Shield, we’re creating a company with the size and breadth to deliver even more value to our broad range of defense, government, and commercial customers around the globe.”</p>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Popular military air show permanently pulled from RAF Fairford after suspected terror threat</title>
+		<link>https://www.defensenews.com/global/europe/2026/11/05/popular-military-air-show-permanently-pulled-from-raf-fairford-after-suspected-terror-threat/</link>
+		
+		<dc:creator><![CDATA[Cristina Stassis]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 20:55:19 +0000</pubDate>
+				<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Europe]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[air show]]></category>
+		<category><![CDATA[Britian]]></category>
+		<category><![CDATA[europe]]></category>
+		<category><![CDATA[iran]]></category>
+		<category><![CDATA[Middle East]]></category>
+		<category><![CDATA[MOD Boscombe Down]]></category>
+		<category><![CDATA[RAF Fairford]]></category>
+		<category><![CDATA[RIAT]]></category>
+		<category><![CDATA[Royal International Air Tattoo]]></category>
+		<category><![CDATA[UK]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/news/2026/11/05/popular-military-air-show-permanently-pulled-from-raf-fairford-after-suspected-terror-threat/</guid>
+
+					<description><![CDATA[Over a month after a suspected Iranian plot on RAF Fairford, organizers of the world's largest military air show announced its permanent departure to MOD Boscombe Down.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87610</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/08/2026-03-20T184518Z_1_LYNXMPEM2J12I_RTROPTP_4_IRAN-CRISIS-BRITAIN.JPG.jpg" width="3000" height="2004" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/08/2026-03-20T184518Z_1_LYNXMPEM2J12I_RTROPTP_4_IRAN-CRISIS-BRITAIN.JPG.jpg" width="3000" height="2004" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Over a month after a <a href="https://www.militarytimes.com/news/your-military/2026/09/27/terror-suspects-wanted-to-do-big-damage-to-air-base-used-by-us-trump-says/" target="_blank" rel="noreferrer noopener">suspected Iranian threat</a> at <a href="https://www.militarytimes.com/news/your-military/2026/03/20/uk-approves-us-use-of-british-bases-to-strike-iran-missile-sites-targeting-ships/" target="_blank" rel="noreferrer noopener">RAF Fairford</a> rattled officials, one of the world’s biggest annual air shows hosted at the United Kingdom base is permanently relocating to a different installation in the country.</p>
+
+
+
+<p class="wp-block-paragraph">The Royal International Air Tattoo will move from RAF Fairford in Gloucestershire, England, to MOD Boscombe Down in Wiltshire after four decades at its longtime home, organizers <a href="https://www.airtattoo.com/news/riat-to-relocate-to-mod-boscombe-down-for-riat27-and-beyond/#riat-to-relocate-to-mod-boscombe-down-for-riat27-and-beyond/" target="_blank" rel="noreferrer noopener">announced</a> Wednesday.</p>
+
+
+
+<p class="wp-block-paragraph">Following discussions with the Royal Air Force and the U.S. Air Force, organizers <a href="https://www.rafct.com/news/website-and-press-statement-riat26/" target="_blank" rel="noreferrer noopener">canceled</a> the 2026 air show in late May, calling it a difficult decision that was prompted by “uncertainty” over access to RAF Fairford given the base’s involvement with the war in Iran. </p>
+
+
+
+<p class="wp-block-paragraph">The U.S. Air Force housed a dozen B-1B Lancers at RAF Fairford during Operation Epic Fury to use in strikes against Iranian missile sites that were attacking ships in the Strait of Hormuz. </p>
+
+
+
+<p class="wp-block-paragraph">But following the suspected terrorist plot targeting the base, the U.S. promptly <a href="https://www.militarytimes.com/news/pentagon-congress/2026/10/05/us-removes-b-1-bombers-from-uk-base-amid-security-concerns/" target="_blank" rel="noreferrer noopener">removed</a> all bombers from the installation and returned them back to their home stations.</p>
+
+
+
+<p class="wp-block-paragraph">British officials said there are “strong indications” that Iran was involved in the late September suspected plot targeting the base, but Iran’s Foreign Minister Abbas Araghchi <a href="https://x.com/araghchi/status/2105397896929476928" target="_blank" rel="noreferrer noopener">denied the accusation</a> on social media. Five men were initially arrested and released on bail. Two men were rearrested and charged under the U.K. National Security Act.</p>
+
+
+
+<p class="wp-block-paragraph">Although the organizers did not cite the plot at RAF Fairford as the reason for the move, they described the relocation essential for the air show’s long-term future.</p>
+
+
+
+<p class="wp-block-paragraph">“The decision to move RIAT to Boscombe Down is about much more than a new location,&#8221; RAF Charitable Trust Chief Executive Gavin Gager said in the announcement. &#8220;It is about securing the future of the world&#8217;s greatest military airshow and the charitable impact it generates for future generations.”</p>
+
+
+
+<p class="wp-block-paragraph">The air show usually attracts more than 150,000 spectators. Its first show at MOD Boscombe Down is scheduled for July 16 to 18.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.raf.mod.uk/our-organisation/stations/mod-boscombe-down/">MOD Boscombe Down</a> is a British military airfield used for aircraft testing and evaluation. It hosts two air squadrons and six units.</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Vector introduces ready-to-go one-way attack drone</title>
+		<link>https://www.defensenews.com/industry/techwatch/2026/11/05/vector-introduces-ready-to-go-one-way-attack-drone/</link>
+		
+		<dc:creator><![CDATA[Daniel Terrill]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 20:28:53 +0000</pubDate>
+				<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Digital Show Dailies]]></category>
+		<category><![CDATA[Industry]]></category>
+		<category><![CDATA[MilTech]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[Unmanned]]></category>
+		<category><![CDATA[ausa 2026]]></category>
+		<category><![CDATA[dn dnr]]></category>
+		<category><![CDATA[drone dominance]]></category>
+		<category><![CDATA[drones]]></category>
+		<category><![CDATA[vector]]></category>
+		<guid isPermaLink="false">https://www.defensenews.com/news/2026/11/05/vector-introduces-ready-to-go-one-way-attack-drone/</guid>
+
+					<description><![CDATA[The company said the Warfighter’s Stack consists of the drone, an HV-ESAD to hold an explosive payload, and a remote control.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87608</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/11/Vector-Warfighters-Stack-cover.png" width="1080" height="812" type="image/png" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/11/Vector-Warfighters-Stack-cover.png" width="1080" height="812" type="image/png" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Utah-based defense company Vector has unveiled the Warfighter&#8217;s Stack, an integrated one-way attack drone system that combines its Mace quadcopter, electronic arming device and a controller.</p>
+
+
+
+<p class="wp-block-paragraph">In a Nov. 2 <a href="https://www.tfvector.com/news/vector-introduces-the-warfighters-stack-mace-hv-esad-and-hilt">announcement</a>, Andy Yakulis, Vector’s co-founder and chief executive officer, said the stack was designed for intuitive operation and scaled production.</p>
+
+
+
+<p class="wp-block-paragraph">“Modern warfare requires more than individual platforms. It requires systems that work together, operators who can employ them effectively, and the industrial capacity to produce them at the scale the mission demands,” Yakulis said.</p>
+
+
+
+<p class="wp-block-paragraph">The Warfighter’s Stack builds on Vector’s experience participating in the Defense Department’s <a href="https://www.militarytimes.com/news/your-military/2026/02/03/pentagon-taps-25-firms-for-small-cheap-attack-drone-competition/">Drone Dominance Program</a>, an effort to rapidly expand and improve the domestic commercial drone industry through competition.</p>
+
+
+
+<p class="wp-block-paragraph">The Pentagon also uses the program to identify top-performing drone manufacturers and place orders with them. <a href="https://www.militarytimes.com/industry/techwatch/2026/10/12/vector-nammo-expand-push-to-mass-produce-armed-drones/">Vector</a> ranked fourth in the close-quarters battle category during the <a href="https://www.militarytimes.com/industry/techwatch/2026/10/01/neros-perennial-autonomy-lead-in-pentagons-drone-competition/">latest round of competition,</a> resulting in a government order for 5,000 of its drones.</p>
+
+
+
+<p class="wp-block-paragraph">According to the company, the Warfighter’s Stack consists of the Mace drone, a High-Voltage Electronic Safe and Arm Device, or HV-ESAD, and the Hilt hand controller. “Together, the systems connect the aircraft, energetic integration, and controller into a single operational architecture,” the company said.</p>
+
+
+
+<p class="wp-block-paragraph">Vector described the Mace as a compact, attritable drone — meaning inexpensive and relatively easy to replace — designed to maneuver through “confined and complex environments.”&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">According to Vector, the drone features low-light and thermal cameras, electronic warfare-resistant capabilities and support for fiber-optic control. It also includes an altitude-hold feature intended to reduce operator workload. </p>
+
+
+
+<p class="wp-block-paragraph">Additionally, the Mace can integrate with the Android Team Awareness Kit, or ATAK, and supports both ArduPilot and Betaflight piloting firmware.</p>
+
+
+
+<p class="wp-block-paragraph">The company&#8217;s HV-ESAD is a universal system designed to integrate with a range of drone platforms and munitions. Vector said the modular device was selected to support the Drone Dominance Program.</p>
+
+
+
+<p class="wp-block-paragraph">The company said the Hilt controller was built “around the requirements of the modern warfighter,” with a design intended for use with gloved hands and alongside other military equipment.</p>
+
+
+
+<p class="wp-block-paragraph">Yakulis described the controller as “a purpose-built interface that is rugged, adaptable, and designed to work with the systems they are actually operating.”</p>
+
+
+
+<p class="wp-block-paragraph">According to the announcement, Vector designed the Warfighter’s Stack with production scale in mind and says it can “fulfill orders in the thousands.” However, the company declined to provide details on contracts or timelines. </p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>How General Dynamics Is Modernizing Military Communications Security</title>
+		<link>https://www.defensenews.com/video/2026/11/05/how-general-dynamics-is-modernizing-military-communications-security/</link>
+		
+		<dc:creator><![CDATA[Staff]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 20:16:29 +0000</pubDate>
+				<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[Digital Show Dailies]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Military Featured]]></category>
+		<category><![CDATA[military-featured]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/uncategorized/2026/10/20/how-general-dynamics-is-modernizing-military-communications-security/</guid>
+
+					<description><![CDATA[General Dynamics Mission Systems discusses high-speed encryption and adaptable security technology designed to protect military networks as cyber threats evolve]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">86934</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/10/video-poster-dacc92c9-621d-47ec-87a9-f1e5afbb0e34.jpg" width="1920" height="1080" type="image/jpeg" />
+<enclosure url="https://cdn.jwplayer.com/videos/kWS6tcRM-5ZsksG4j.mp4" length="0" type="video/mp4" />
+<media:content url="https://cdn.jwplayer.com/videos/kWS6tcRM-5ZsksG4j.mp4" type="video/mp4" medium="video" width="1920" height="1080" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[<figure class="wp-block-smg-jwplayer-video"><video poster="/wp-content/uploads/2026/10/video-poster-dacc92c9-621d-47ec-87a9-f1e5afbb0e34.jpg" controls preload="none"><source src="https://cdn.jwplayer.com/manifests/kWS6tcRM.m3u8" type="application/vnd.apple.mpegurl"/><source src="https://cdn.jwplayer.com/videos/kWS6tcRM-5ZsksG4j.mp4" type="video/mp4"/><source src="https://cdn.jwplayer.com/videos/kWS6tcRM-Y2ywrFC2.mp4" type="video/mp4"/><source src="https://cdn.jwplayer.com/videos/kWS6tcRM-SsomXLLO.mp4" type="video/mp4"/></video><figcaption class="wp-element-caption" style="display:none">General Dynamics Mission Systems discusses high-speed encryption and adaptable security technology designed to protect military networks as cyber threats evolve</figcaption></figure>]]></content:encoded>
+	</item>
+		<item>
+		<title>Germany names Army Chief Freuding as next chief of defense</title>
+		<link>https://www.defensenews.com/global/europe/2026/11/05/germany-names-army-chief-freuding-as-next-chief-of-defense/</link>
+		
+		<dc:creator><![CDATA[Sabine Siebold, Reuters]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 18:30:53 +0000</pubDate>
+				<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Digital Show Dailies]]></category>
+		<category><![CDATA[Europe]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[ausa 2026]]></category>
+		<category><![CDATA[Carsten Breuer]]></category>
+		<category><![CDATA[chief of defense]]></category>
+		<category><![CDATA[Christian Freuding]]></category>
+		<category><![CDATA[europe]]></category>
+		<category><![CDATA[germany]]></category>
+		<category><![CDATA[NATO]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/?p=87601</guid>
+
+					<description><![CDATA[German Army Chief Christian Freuding will succeed Carsten Breuer to become the country's next chief of defense in February 2027.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87601</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/11/2026-11-05T150847Z_1_LYNXNPEMA41MO_RTROPTP_4_GERMANY-AIRSHOW-MERZ.jpg" width="4000" height="2668" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/11/2026-11-05T150847Z_1_LYNXNPEMA41MO_RTROPTP_4_GERMANY-AIRSHOW-MERZ.jpg" width="4000" height="2668" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">German Army Chief Christian Freuding will become the country&#8217;s chief of defense, assuming the job of Germany&#8217;s highest-ranking soldier in February 2027, the defense ministry said in a statement on Thursday.</p>
+
+
+
+<p class="wp-block-paragraph">He will succeed Carsten Breuer, who was chosen as the next head of NATO&#8217;s military committee, the alliance&#8217;s top military authority and a key advisory body for its political leaders.</p>
+
+
+
+<p class="wp-block-paragraph">Freuding became army chief in October 2025 after years of overseeing Berlin&#8217;s arms supplies to Kyiv, pushing for the implementation of new technology tested in Ukraine and initiating a drone regiment in the German army.</p>
+
+
+
+<p class="wp-block-paragraph">&#8220;Lieutenant General Freuding embodies camaraderie and the values of our Bundeswehr,&#8221; Defense Minister Boris Pistorius said in the statement.</p>
+
+
+
+<p class="wp-block-paragraph">&#8220;He is guided by a clear moral compass,&#8221; the minister added. &#8220;He has impressively demonstrated that, even in times of major changes and challenges, he keeps a cool head, makes the right decisions quickly, and puts them into action.&#8221;</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Israeli defense company says this trigger is programmed to shoot drones</title>
+		<link>https://www.defensenews.com/news/2026/11/05/israeli-defense-company-says-this-trigger-is-programmed-to-shoot-drones/</link>
+		
+		<dc:creator><![CDATA[Daniel Terrill]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 14:00:00 +0000</pubDate>
+				<category><![CDATA[Asia Pacific]]></category>
+		<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Digital Show Dailies]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[Industry]]></category>
+		<category><![CDATA[Mideast Africa]]></category>
+		<category><![CDATA[MilTech]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[anti-drone]]></category>
+		<category><![CDATA[Arbel]]></category>
+		<category><![CDATA[ausa 2026]]></category>
+		<category><![CDATA[dn dnr]]></category>
+		<category><![CDATA[Israel Weapon Industries]]></category>
+		<category><![CDATA[IWI]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/?p=87566</guid>
+
+					<description><![CDATA[The company says the Arbel electromechanical device will release a cadence of fire optimized for shooting down drones. ]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87566</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/11/IWI-Arbel-cover.jpg" width="1080" height="720" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/11/IWI-Arbel-cover.jpg" width="1080" height="720" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Thailand&#8217;s Ministry of Defence began fielding a new computerized rifle trigger designed to help soldiers shoot down small drones, according to last month&#8217;s announcement by the device&#8217;s manufacturer, <a href="https://www.militarytimes.com/off-duty/gearscout/2015/01/29/iwi-reintroduces-the-galil-ace-to-the-us-market/">Israel Weapon Industries</a>, or IWI. Company officials consider the deployment a real-world endorsement of the <a href="https://iwi.net/anti-drone/">Arbel Anti-Drone System</a> as a potential solution for countering drones on the battlefield.</p>
+
+
+
+<p class="wp-block-paragraph">In an interview with Defense News, Semion Dukhan, IWI&#8217;s marketing director, described common counter-drone options such as <a href="https://www.militarytimes.com/industry/techwatch/2026/07/01/the-us-military-wants-a-fleet-of-laser-trucks-heres-what-they-might-look-like/">lasers</a>, <a href="https://www.militarytimes.com/news/your-military/2025/06/11/georgia-guard-activates-its-first-electromagnetic-warfare-unit/">high-powered electronics</a>, <a href="https://www.militarytimes.com/industry/techwatch/2026/08/04/us-army-wants-a-surface-to-air-missile-that-can-destroy-small-drones/">interceptors</a> and <a href="https://www.militarytimes.com/news/your-military/2026/08/03/meet-drone-round-the-company-supplying-marines-with-anti-drone-ammo/">specialized ammunition</a> as “not viable in the long run.” He argued that while these technologies can be effective, they often have limitations involving cost, mobility or ease of use. Arbel&#8217;s advantage, he said, is its practicality.</p>
+
+
+
+<p class="wp-block-paragraph">“The Arbel is putting a computer to the trigger mechanism of the weapon, so in the context of an anti-drone rifle, what we do is we put the computer in the lower receiver of a standard AR-15 rifle … and with this computer, we control the trigger mechanism of the weapon,” Dukhan said.</p>
+
+
+
+<p class="wp-block-paragraph">He explained that Arbel functions somewhat like a fully automatic weapon in that depressing and holding the trigger engages the system. “So you as an operator, the first bullet that you will shoot, will be purely mechanical … and from the second bullet onward, the system controls the rate of fire to a specific rate of fire that we analyzed as optimal,” he said.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="https://one.sightlinemg.com/wp-content/uploads/2026/11/IWI-Arbel.png" alt="IWI Arbel" class="wp-image-122409" /><figcaption class="wp-element-caption">An IWI spokesman says the Arbel trigger device will fit with any standard AR-15 lower receiver. (IWI)</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">Dukhan said IWI determined the “optimal” rate by analyzing thousands of test shots. “We came down to the specific figure … to get the most chances to hit this kind of target,” he said, describing a target measuring 10 to 15 inches in diameter and flying at roughly 60 kilometers per hour at ranges of 150 to 200 meters.</p>
+
+
+
+<p class="wp-block-paragraph">When IWI unveiled Arbel in 2024, the company said it was intended to improve marksmanship under stressful conditions. Early <a href="https://www.youtube.com/watch?v=_WB36CpfoI0">promotional videos</a> show an operator depressing and holding the trigger before Arbel releases rounds once the system determines the conditions are right.</p>
+
+
+
+<p class="wp-block-paragraph">Dukhan explained that the original version calculates stability and range before discharging a round, whereas the anti-drone version uses an algorithmically calculated rate of fire. “For the anti-drone, it&#8217;s only timing. When you, as a user, use the anti-drone algorithm and put it on the Arbel anti-drone safety position, then it only works on timing,” he said.</p>
+
+
+
+<p class="wp-block-paragraph">He added that the option is more “predictable” than the stability-based version, leaving the operator to focus on aiming and following the target. He argued that Arbel can turn anyone with a rifle into a counter-drone operator.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Before Thailand, approximately 25 other countries had already adopted the Arbel system for improving marksmanship or countering drones, according to IWI.</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>MBDA plans to fly ‘fat’ hypersonic interceptor demonstrator before end-2029</title>
+		<link>https://www.defensenews.com/global/europe/2026/11/05/mbda-plans-to-fly-fat-hypersonic-interceptor-demonstrator-before-end-2029/</link>
+		
+		<dc:creator><![CDATA[Rudy Ruitenberg]]></dc:creator>
+		<pubDate>Thu, 05 Nov 2026 08:26:11 +0000</pubDate>
+				<category><![CDATA[Euronaval Coverage]]></category>
+		<category><![CDATA[Europe]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[Industry]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Special Multimedia Reports]]></category>
+		<category><![CDATA[china]]></category>
+		<category><![CDATA[dn dnr]]></category>
+		<category><![CDATA[Euronaval]]></category>
+		<category><![CDATA[europe]]></category>
+		<category><![CDATA[European Union]]></category>
+		<category><![CDATA[france]]></category>
+		<category><![CDATA[Hydef]]></category>
+		<category><![CDATA[Hydis]]></category>
+		<category><![CDATA[hypersonic interceptor]]></category>
+		<category><![CDATA[hypersonic missile]]></category>
+		<category><![CDATA[MBDA]]></category>
+		<category><![CDATA[russia]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/?p=87589</guid>
+
+					<description><![CDATA[“So it’s a bit fat, but it’s a Formula 1. It’s hypersonic, truly hypersonic, not just Mach 5," MBDA executive Lionel Mazenq said of the envisioned Hydis interceptor missile for Europe.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87589</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/11/GettyImages-2302931081.jpg" width="7954" height="5305" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/11/GettyImages-2302931081.jpg" width="7954" height="5305" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">PARIS — An industry consortium developing a European hypersonic interceptor plans to fly a full-systems demonstrator by the end of 2029, project leader MBDA said in a briefing at the Euronaval maritime-defense exhibition.</p>
+
+
+
+<p class="wp-block-paragraph">The program, named <a href="https://occar.int/our-work/programmes/hydis-programme">Hydis</a>, is competing with the <a href="https://occar.int/our-work/programmes/hydef">Hydef program</a> coordinated by Spain’s Sistemas de Misiles to secure €100 million (US$112 million) in European funding for the second development phase of the interceptor. A decision about who will get the financing is due at the end of the month, Lionel Mazenq, MBDA’s vice president for program incubators, said Nov. 4.</p>
+
+
+
+<p class="wp-block-paragraph">While China and Russia have been developing hypersonic glide vehicles for attack, Europe lacks capabilities to intercept them, something Hydis and Hydef seek to address. Both projects received European funding for their initial development, but the <a href="https://defence-industry-space.ec.europa.eu/eu-defence-industry/european-defence-fund-edf-official-webpage-european-commission_en">European Defence Funds</a> plans to fund only one of the two proposals as part of its 2026 work program.</p>
+
+
+
+<p class="wp-block-paragraph">The Hydis interceptor is designed to address a large number of threats that are “very diverse in terms of behavior,” Mazenq said. “Today nothing is able to intercept this portfolio of threats, absolutely nothing.”</p>
+
+
+
+<p class="wp-block-paragraph">With the <a href="https://www.defensenews.com/global/europe/2026/07/13/europes-hydis-project-settles-on-concept-for-hypersonic-interceptor/">final concept selected</a>, the consortium is now undertaking a number of on-the-ground demonstrations to bring technology readiness to level 3 or 4 as part of the first phase of the project, the executive said. The commonly used technology readiness scale spans nine tiers, with the highest level representing a system completely developed and proven to work.</p>
+
+
+
+<p class="wp-block-paragraph">For the second phase, Hydis will expand to 36 industrial and research partners as well as 14 subcontractors, from the current 19 companies involved in the project, according to Mazenq. Companies joining the consortium include Safran, which will provide terminal-guidance sensors, as well as Thales, Saab and Leonardo for capabilities such as communication and data links.</p>
+
+
+
+<p class="wp-block-paragraph">The current three-year phase of Hydis, which runs until May 2027, has received €80 million in European funding, with additional funding of €57 million from the four supporting countries France, Italy, Germany and the Netherlands.</p>
+
+
+
+<p class="wp-block-paragraph">The project will expand to 17 countries for the second phase, with 11 member states contributing a combined €133 million of funding in addition to the European money, MBDA said. Germany is dropping out as a partner country for the second phase of the project, according to the briefing documents.</p>
+
+
+
+<p class="wp-block-paragraph">The companies involved in the project will also provide more than €10 million in combined funding, Mazenq said. The consortium is “working on fallback options” should the European Commission choose Hydef instead, though Mazenq said “we are thinking that we will win.”</p>
+
+
+
+<p class="wp-block-paragraph">The second phase is set to run from mid-2027 to mid-2029, and will include full-scale flight trials, according to Mazenq. At the end of the second phase, Hydis aims for a level of technology readiness between 3 and 6 for all functions, with a full-systems demonstrator “by the end of the decade, so very soon after.”</p>
+
+
+
+<p class="wp-block-paragraph">Production of the interceptor is scheduled to start in the first half of the 2030s, the executive said.</p>
+
+
+
+<p class="wp-block-paragraph">France, Italy, Belgium, the Netherlands, Sweden and Poland will provide “massive contributions” to the project, with smaller contributions from other countries, he said.</p>
+
+
+
+<p class="wp-block-paragraph">The MBDA executive presented a design for a four-stage missile, a “multi-stage stratospheric hypersonic interceptor” capable of dealing both with hypersonic threats arriving horizontally at medium altitudes, as well as ballistic missiles that approach with a relatively steep dive, and which must be intercepted “relatively early” in the upper layers of the atmosphere.</p>
+
+
+
+<p class="wp-block-paragraph">The Hydis partner countries as well as the European Commission requested an interceptor that covers both ballistic and hypersonic defense, “which requires, effectively, an additional effort in terms of design,” but brings advantages in terms of being able to stockpile a single missile against multiple threats, Mazenq said.</p>
+
+
+
+<p class="wp-block-paragraph">China is probably the country that is ahead in developing hypersonic weapons, more than Russia, with its DF-17 hypersonic glide vehicle the most advanced in service today, according to Mazenq.</p>
+
+
+
+<p class="wp-block-paragraph">“So being obsessed just by Russia is not the solution to prepare a robust system for defending Europe, not only the European continent, but also our forces deployed around the world,” the executive said.</p>
+
+
+
+<p class="wp-block-paragraph">The big challenge of intercepting hypersonic glide vehicles is their maneuverability at altitudes between 30 and 45 kilometers, which means that a slight turn can change the projected interception point by tens or hundreds of kilometers, according to the MBDA executive.</p>
+
+
+
+<p class="wp-block-paragraph">Predicting the trajectory of hypersonic threats will be key to intercepting them, with artificial intelligence running real-time models as soon as a target is detected to identify the right time and place to intercept, updated throughout the flight of the interceptor as it climbs towards its target, Mazenq said.</p>
+
+
+
+<p class="wp-block-paragraph">“This capability is absolutely essential because if you don&#8217;t have it, the pressure on the design of the interceptor is such that it&#8217;s impossible to do.”</p>
+
+
+
+<p class="wp-block-paragraph">Target and interceptor encounter velocity can reach 5 kilometers per second, according to Mazenq.</p>
+
+
+
+<p class="wp-block-paragraph">The only equivalent to the European program is the U.S. Glide Phase Interceptor project, which was awarded to Northrop Grumman, Mazenq said. The difference with the European project is that GPI only addresses the hypersonic glider threat, with intermediate-range ballistic missiles handled by exoatmospheric interceptors such as SM-3, according to the MBDA executive.</p>
+
+
+
+<p class="wp-block-paragraph">Hydis is aiming for a “robust design” that can be effective with a limited number of sensors. While the system is designed to be integrated with European space-based missile early-warning capabilities JEWEL and Odin’s Eye, it must also be capable of delivering “a good performance” with only a long-range radar, Mazenq said.</p>
+
+
+
+<p class="wp-block-paragraph">“That&#8217;s an additional challenge, but this is absolutely necessary to strengthen the future capability and to make it robust to all the conditions that can be encountered during a conflict.”</p>
+
+
+
+<p class="wp-block-paragraph">Hydis aims for its interceptor to cost less than a third of the unit price of an SM-3 missile, according to Mazenq, who didn’t clarify which version of the U.S. missile when asked. The SM-3 Block 1B missile <a href="https://www.missiledefenseadvocacy.org/missile-defense-systems/missile-interceptors-by-cost/">costs</a> $9.7 million to $12.5 million per intercept, while the price tag for the Block IIA missile is $27.9 million, according to the non-profit Missile Defense Advocacy Alliance.</p>
+
+
+
+<p class="wp-block-paragraph">The Hydis concept is hit-to-kill, and the interceptor builds on technology from existing programs, particularly MBDA’s Aster air-defense missile for flight control, while Italy’s Avio provides high-performance solid rocket motors. The system is designed to defeat a hypersonic threat with a maximum of two interceptors fired, according to Mazenq.</p>
+
+
+
+<p class="wp-block-paragraph">A visual comparison with the Aster B1 NT air-defense missile in the presentation indicated an interceptor that stands around 30% taller, with a length of about 7 meters (23 ft). Mazenq said the missile will be compatible with vertical-launch systems onboard ships, including the Mark 41 vertical-launch cell as well as a future version of Naval Group’s Sylver VLS.</p>
+
+
+
+<p class="wp-block-paragraph">“It&#8217;s effectively four-stage with a very high capability of acceleration, because we want to fire it as late as possible, due to the indetermination of the hypersonic threat trajectory,” Mazenq said. “So it’s a bit fat, but it’s a Formula 1. It’s hypersonic, truly hypersonic, not just Mach 5.”</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Amid Iran conflict, ‘non-hostile’ deaths of 2 US airmen raise overseas toll</title>
+		<link>https://www.defensenews.com/news/pentagon-congress/2026/11/04/amid-iran-conflict-non-hostile-deaths-of-2-us-airmen-raise-overseas-toll-to-23/</link>
+		
+		<dc:creator><![CDATA[Cristina Stassis]]></dc:creator>
+		<pubDate>Wed, 04 Nov 2026 23:08:17 +0000</pubDate>
+				<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[Mideast Africa]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[Pentagon & Congress]]></category>
+		<category><![CDATA[airmen deaths]]></category>
+		<category><![CDATA[American fatalities]]></category>
+		<category><![CDATA[CENTCOM]]></category>
+		<category><![CDATA[DCAS]]></category>
+		<category><![CDATA[Hegseth]]></category>
+		<category><![CDATA[Iran war]]></category>
+		<category><![CDATA[Operation Epic Fury]]></category>
+		<category><![CDATA[Overseas Operations]]></category>
+		<category><![CDATA[Pentagon]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/news/2026/11/04/amid-iran-conflict-non-hostile-deaths-of-2-us-airmen-raise-overseas-toll-to-23/</guid>
+
+					<description><![CDATA[Two U.S. airmen supporting operations against Iran died last week in "non-hostile" incidents, raising the death toll to 23 since the war began.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87586</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/11/1000w_q95-77.jpg" width="1000" height="662" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/11/1000w_q95-77.jpg" width="1000" height="662" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Two unidentified U.S. airmen died last week in “non-hostile” incidents amid the war in Iran, raising the number of <a href="https://www.militarytimes.com/news/your-military/2026/07/22/4-us-soldiers-killed-in-iran-war-return-to-american-soil/" target="_blank" rel="noopener">American fatalities</a> since the war began to 23. </p>
+
+
+
+<p class="wp-block-paragraph">The two airmen are listed under the &#8220;non-hostile” category in the Pentagon’s recently updated <a href="https://dcas.dmdc.osd.mil/dcas/conflictCasualties/oo/byCategory" target="_blank" rel="noreferrer noopener">Defense Casualty Analysis System</a>, or DCAS, meaning their deaths are not related to direct combat operations. One of the deaths was illness- or injury-related, and the other is listed as “pending,” according to the DCAS.</p>
+
+
+
+<p class="wp-block-paragraph">One airman was an active-duty service member, an Air Force spokesperson told Military Times, while the other was in the Air National Guard.</p>
+
+
+
+<p class="wp-block-paragraph">Although typical Department of Defense policy dictates that the names of deceased service members be released to the public 24 hours after next of kin notifications, the Air Force has yet to announce their identities. The spokesperson declined to comment on why their names have been withheld thus far and if the service has been in contact with their families.</p>
+
+
+
+<p class="wp-block-paragraph">Both airmen were white men and mid- to senior-enlisted personnel in E5 to E9 grades, according to DCAS. One was between 31 and 35, while the other was over 35.</p>
+
+
+
+<p class="wp-block-paragraph">One of the airmen passed away in the U.S. Central Command’s area of responsibility, which spans from Northeast Africa across the Middle East to Central and South Asia, the spokesperson said. </p>
+
+
+
+<p class="wp-block-paragraph">The other airman died in the United States; however, the spokesperson declined to comment on where the second airman was operating out of and how they were transported to the U.S.</p>
+
+
+
+<p class="wp-block-paragraph">CENTCOM referred Military Times to the Air Force when asked for comment.</p>
+
+
+
+<p class="wp-block-paragraph">The airman whose death is listed as “pending” is under investigation currently, the spokesperson said, but did not specify by which department.</p>
+
+
+
+<p class="wp-block-paragraph">Another service member whose death was listed as “pending” in DCAS was an Army captain who suffered a <a href="https://www.militarytimes.com/news/your-military/2026/09/23/army-identifies-19th-us-service-member-to-die-amid-iran-war/" target="_blank" rel="noreferrer noopener">medical incident</a> while aboard a military flight on the way to Saudi Arabia in late September.</p>
+
+
+
+<p class="wp-block-paragraph">DCAS lists both of the airmen&#8217;s deaths under the Overseas Operations category, instead of Operation Epic Fury, with a Pentagon official telling Military Times it is because the U.S. deems Epic Fury as concluded. The Overseas Operations lists the start date as July 7, aligned with the continued U.S. pressure campaign against Iran.</p>
+
+
+
+<p class="wp-block-paragraph">Officials have been tight-lipped on the exact date Epic Fury was considered terminated, but a defense official previously specified May 5 to Military Times.</p>
+
+
+
+<p class="wp-block-paragraph">The Pentagon’s classification of the operation as an Overseas Operation category faced criticism from Democratic members of Congress, who accused Secretary of Defense Pete Hegseth of trying to hide the casualties.</p>
+
+
+
+<p class="wp-block-paragraph">The Overseas Operation category now includes eight service members: four listed as hostile and four as non-hostile. Combining the two categories together makes for a total of 23 service members who have lost their lives since the war in Iran began on Feb. 28, with the Epic Fury category listing 15. </p>
+
+
+
+<p class="wp-block-paragraph">In total, 866 service members have been wounded in action since the war’s beginning across both categories. That includes 417 under Operation Epic Fury and 449 in Overseas Operations, according to DCAS.</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Under threat of air strikes, US looks to bolster base infrastructure with 3D printing</title>
+		<link>https://www.defensenews.com/global/mideast-africa/2026/11/04/under-threat-of-air-strikes-us-looks-to-bolster-base-infrastructure-with-3d-printing/</link>
+		
+		<dc:creator><![CDATA[Michael Peck]]></dc:creator>
+		<pubDate>Wed, 04 Nov 2026 20:16:46 +0000</pubDate>
+				<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[Daily News Roundup]]></category>
+		<category><![CDATA[Digital Show Dailies]]></category>
+		<category><![CDATA[Global]]></category>
+		<category><![CDATA[Mideast Africa]]></category>
+		<category><![CDATA[Newsletters]]></category>
+		<category><![CDATA[3D printer]]></category>
+		<category><![CDATA[Air Force]]></category>
+		<category><![CDATA[air strikes]]></category>
+		<category><![CDATA[ausa 2026]]></category>
+		<category><![CDATA[base construction]]></category>
+		<category><![CDATA[concrete]]></category>
+		<category><![CDATA[dn dnr]]></category>
+		<category><![CDATA[Iran war]]></category>
+		<category><![CDATA[Middle East]]></category>
+		<category><![CDATA[Mideast]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/news/2026/11/04/under-threat-of-air-strikes-us-looks-to-bolster-base-infrastructure-with-3d-printing/</guid>
+
+					<description><![CDATA[U.S. Air Force officials conceded that troop housing at Middle East bases was "never designed for the threat environment now arriving overhead."]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87583</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/08/3D-barracks.jpg.jpg" width="803" height="565" type="image/jpeg" />
+<media:content medium="image" url="https://one.sightlinemg.com/wp-content/uploads/2026/08/3D-barracks.jpg.jpg" width="803" height="565" type="image/jpeg" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[
+<p class="wp-block-paragraph">With many U.S. bases in the Middle East <a href="https://www.militarytimes.com/news/pentagon-congress/2026/09/15/iranian-strikes-damaged-hundreds-of-us-military-buildings-dozens-of-aircraft/">damaged by Iranian bombardment</a>, the U.S. Air Force wants to develop mobile 3D concrete printers to erect buildings quickly.</p>
+
+
+
+<p class="wp-block-paragraph">“Put bluntly, the Air Force has spent decades building exquisite kill chains while too often housing the airmen who sustain them in tents, trailers, and flat-walled structures that were never designed for the threat environment now arriving overhead,” admitted the Air Force’s Small Business Innovation Research solicitation, which will close in January 2027.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.crainsdetroit.com/crains-content-studio/publishing-partner/cdb-ai-robotic-3d-concrete-printing/">Concrete printing</a>, in which printers deposit layers of material to form structures, is gaining traction in commercial construction. The Air Force already used 3D printing to <a href="https://www.afcec.af.mil/News/Article-Display/Article/3276570/3d-printed-concrete-building-technology-used-for-tyndall-rebuild/">rebuild</a> hurricane-damaged Tyndall Air Force Base, Florida, in 2023, while a Maryland Air National Guard civil engineer <a href="https://www.175wg.ang.af.mil/News/Article-Display/Article/4163552/3d-printing-the-resilient-infrastructure-of-tomorrow/">squadron</a> is developing its own mobile concrete printer.</p>
+
+
+
+<p class="wp-block-paragraph">But the new SBIR, which is a direct-to-Phase II project, suggests the Air Force wants 3D construction capability imminently. The goal is to enable “military engineers to rapidly print protective structures using automated or semi-automated construction workflows, reduced skilled labor, and locally available cementitious materials where feasible,” the Air Force said.</p>
+
+
+
+<p class="wp-block-paragraph">While 3D concrete printers exist, the Air Force is concerned that the technology is not yet ready to build structures that can survive bombardment by missiles and drones. Hundreds of U.S. military buildings across eight Middle Eastern countries were damaged by Iranian attacks, according to a September 2026 <a href="https://www.dodig.mil/reports.html/Article/4600623/operation-epic-fury-oef/" target="_blank" rel="noopener">report</a> by the Department of Defense Office of the Inspector General.</p>
+
+
+
+<p class="wp-block-paragraph">The problem is that “the existing state of the art has not yet fully addressed the combined problem that matters most for combat survivability: printable expeditionary materials, field-executable operator workflows, and structure geometry deliberately optimized to mitigate blast-wave behavior and fragmentation effects,” said the SBIR.</p>
+
+
+
+<p class="wp-block-paragraph">The project will evaluate cement-like materials for qualities such as strength, adhesion and the availability of local components. It will develop new construction geometries “that improve survivability beyond conventional flat-wall construction, including shapes intended to reduce blast reflection, limit pressure amplification, interrupt fragmentation paths, and improve internal occupant protection.”</p>
+
+
+
+<p class="wp-block-paragraph">Ultimately, the Air Force wants a mobile concrete printer that can quickly and consistently erect structures while being operated “in austere conditions by lightly trained military personnel.”</p>
+
+
+
+<p class="wp-block-paragraph">The Air Force foresees “substantial” dual-use applications for the mobile concrete printers, such as critical infrastructure and humanitarian relief. However, the SBIR also notes that commercialization will likely require numerous approvals in areas such as building codes.</p>
+
+
+
+<p class="wp-block-paragraph">The aim is to “transition the capability from ‘we can print something interesting’ to ‘a civil engineer unit can deploy, set up, print, inspect, and use protective infrastructure fast enough to matter,'&#8221; the service said.</p>
+]]></content:encoded>
+	</item>
+		<item>
+		<title>Rise of the defense industry innovators &#124; Defense News Weekly Full Episode 11.3.26</title>
+		<link>https://www.defensenews.com/video/2026/11/04/rise-of-the-defense-industry-innovators-defense-news-weekly-full-episode-11-3-26/</link>
+		
+		<dc:creator><![CDATA[Angela Caguimbal]]></dc:creator>
+		<pubDate>Wed, 04 Nov 2026 18:27:06 +0000</pubDate>
+				<category><![CDATA[Defense News Weekly]]></category>
+		<category><![CDATA[Defense News Weekly Episodes]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[AUSA]]></category>
+		<category><![CDATA[defense dollars]]></category>
+		<category><![CDATA[defense news weekly]]></category>
+		<category><![CDATA[drones]]></category>
+		<category><![CDATA[kbr]]></category>
+		<category><![CDATA[lockcheed martin]]></category>
+		<category><![CDATA[long form]]></category>
+		<category><![CDATA[material]]></category>
+		<category><![CDATA[Military Featured]]></category>
+		<category><![CDATA[rev-en]]></category>
+		<guid isPermaLink="false">https://one.sightlinemg.com/defensenews/?p=87337</guid>
+
+					<description><![CDATA[As the American military seeks new capabilities and advanced systems amid rapid change, defense companies of all sizes showcased their solutions at a major defense conference.]]></description>
+		
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87337</post-id><media:thumbnail url="https://one.sightlinemg.com/wp-content/uploads/2026/10/DNW-844-THUMB.png" width="1920" height="1080" type="image/png" />
+<enclosure url="https://cdn.jwplayer.com/videos/ZrPLhMuX-5ZsksG4j.mp4" length="0" type="video/mp4" />
+<media:content url="https://cdn.jwplayer.com/videos/ZrPLhMuX-5ZsksG4j.mp4" type="video/mp4" medium="video" width="1920" height="1080" />
+<news:push>0</news:push>
+<content:encoded><![CDATA[<figure class="wp-block-smg-jwplayer-video"><video controls preload="none"><source src="https://cdn.jwplayer.com/manifests/ZrPLhMuX.m3u8" type="application/vnd.apple.mpegurl"/><source src="https://cdn.jwplayer.com/videos/ZrPLhMuX-5ZsksG4j.mp4" type="video/mp4"/><source src="https://cdn.jwplayer.com/videos/ZrPLhMuX-Y2ywrFC2.mp4" type="video/mp4"/><source src="https://cdn.jwplayer.com/videos/ZrPLhMuX-SsomXLLO.mp4" type="video/mp4"/></video><figcaption class="wp-element-caption">As the American military seeks new capabilities and advanced systems amid rapid change, defense companies of all sizes showcased their solutions at a major defense conference.</figcaption></figure>]]></content:encoded>
+	</item>
+	</channel>
+</rss>

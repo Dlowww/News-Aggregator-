@@ -1,0 +1,96 @@
+# Defense Strategy Brief: self-hosted n8n + Ollama (+ Postgres for n8n data and the sent-URL store).
+# GPU: setup.sh adds docker-compose.gpu.yml via COMPOSE_FILE in .env when an NVIDIA GPU is usable.
+name: defense-brief
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-dsb}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dsb} -d dsb"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [brief]
+
+  ollama:
+    image: ollama/ollama:${OLLAMA_IMAGE_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      OLLAMA_KEEP_ALIVE: 30m
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_CONTEXT_LENGTH: "8192"
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+    networks: [brief]
+
+  n8n:
+    image: n8nio/n8n:${N8N_IMAGE_TAG:-2.46.6}
+    restart: unless-stopped
+    depends_on:
+      postgres: { condition: service_healthy }
+      ollama: { condition: service_started }
+    ports:
+      - "127.0.0.1:${N8N_PORT:-5678}:5678"   # localhost only; put a TLS reverse proxy in front for remote access
+    environment:
+      # --- n8n core ---
+      GENERIC_TIMEZONE: America/Los_Angeles
+      TZ: America/Los_Angeles
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?set N8N_ENCRYPTION_KEY in .env}
+      N8N_HOST: ${N8N_HOST:-localhost}
+      N8N_PORT: "5678"
+      N8N_PROTOCOL: ${N8N_PROTOCOL:-http}
+      WEBHOOK_URL: ${N8N_PUBLIC_URL:-http://localhost:5678/}
+      N8N_EDITOR_BASE_URL: ${N8N_PUBLIC_URL:-http://localhost:5678/}
+      N8N_SECURE_COOKIE: ${N8N_SECURE_COOKIE:-false}
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_DATABASE: n8n
+      DB_POSTGRESDB_USER: ${POSTGRES_USER:-dsb}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD}
+      N8N_RUNNERS_ENABLED: "true"
+      NODE_FUNCTION_ALLOW_BUILTIN: fs,url         # Code nodes read config/*.json and write dry-run previews
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: "false"       # workflows read the settings below via $env
+      EXECUTIONS_DATA_PRUNE: "true"
+      EXECUTIONS_DATA_MAX_AGE: "720"              # keep 30 days of execution history
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_VERSION_NOTIFICATIONS_ENABLED: "false"
+      # --- Defense Strategy Brief settings (read by the workflows) ---
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:?run ./setup.sh to choose a model}
+      OLLAMA_EMBED_MODEL: ${OLLAMA_EMBED_MODEL:-nomic-embed-text}
+      DIGEST_RECIPIENT: ${DIGEST_RECIPIENT:?set DIGEST_RECIPIENT in .env}
+      ALERT_RECIPIENT: ${ALERT_RECIPIENT:-}
+      CONGRESS_API_KEY: ${CONGRESS_API_KEY:-}
+      SCRAPER_USER_AGENT: ${SCRAPER_USER_AGENT:-DefenseStrategyBrief/1.0 (personal news digest; self-hosted n8n)}
+      FEED_FAILURE_ALERT_RATIO: ${FEED_FAILURE_ALERT_RATIO:-0.3}
+      DSB_DRY_RUN: ${DSB_DRY_RUN:-false}
+      DSB_CONFIG_DIR: /data/config
+      DSB_PREVIEW_DIR: /data/previews
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./config:/data/config:ro
+      - ./workflows:/data/workflows:ro
+      - ./previews:/data/previews
+    networks: [brief]
+
+volumes:
+  postgres_data:
+  ollama_models:
+  n8n_data:
+
+networks:
+  brief:
+    name: defense-brief-net

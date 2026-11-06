@@ -1,7 +1,8 @@
 .env
+.setup/
+previews/*
+!previews/.gitkeep
 *.sqlite
 *.sqlite-journal
-data/
-n8n_data/
-ollama_data/
+node_modules/
 .DS_Store
