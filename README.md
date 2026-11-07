@@ -7,7 +7,7 @@ A self-hosted, fully automated daily email digest of U.S. national defense news.
 3. removes items it has already sent and clusters coverage of the same event across outlets;
 4. applies **corroboration rules** (two independent outlets, or a primary source);
 5. summarizes each story neutrally with a **local LLM via Ollama**, tagging which NDS priorities it relates to;
-6. emails one HTML digest (with a plain-text part) through **Gmail OAuth**, where every summary links its sources.
+6. emails one HTML digest (with a plain-text part) from your Gmail account via **Gmail SMTP with an app password**, where every summary links its sources.
 
 Failures, empty days and widespread feed outages trigger an **alert email**. A **monthly reminder** asks you to re-verify source bias ratings.
 
@@ -16,7 +16,7 @@ Schedule 5:00 AM PT ─► Load config ─► Fetch ~30 feeds (parallel, retries
   ─► Drop already-sent URLs (Postgres) ─► Embeddings (nomic-embed-text) ─► Keyword + embedding prefilter
   ─► LLM classification {relevant, score, nds2026_tags, nds2022_tags, rationale} (validated, 1 retry) ─► score ≥ 0.6
   ─► Cluster by embedding ─► Corroboration ─► Rank & cap ─► Article text (robots.txt-aware) ─► LLM summaries (validated, 1 retry)
-  ─► Compose email + balance check ─► Gmail ─► Record sent URLs + run stats ─► Alert if >30% feeds failed
+  ─► Compose email + balance check ─► Gmail SMTP ─► Record sent URLs + run stats ─► Alert if >30% feeds failed
 Any error ─► Alerts workflow ─► email · No stories ─► alert email · 1st of each month ─► ratings re-verification reminder
 ```
 
@@ -26,7 +26,7 @@ Any error ─► Alerts workflow ─► email · No stories ─► alert email �
 - [What's in the repo](#whats-in-the-repo)
 - [Model choice and the tradeoff](#model-choice-and-the-tradeoff)
 - [Setup](#setup)
-- [Gmail OAuth setup (manual, one time)](#gmail-oauth-setup-manual-one-time)
+- [Gmail app password (manual, one time)](#gmail-app-password-manual-one-time)
 - [Test run and spot checks](#test-run-and-spot-checks)
 - [Sourcing policy: bias and corroboration rules](#sourcing-policy-bias-and-corroboration-rules)
 - [Editing sources, topics and prompts](#editing-sources-topics-and-prompts)
@@ -85,31 +85,22 @@ git clone <this repo> && cd News-Aggregator-
 ./setup.sh
 ```
 
-The script asks for your recipient address, an n8n owner email and password, and (optionally, now or later) your Google OAuth client ID and secret. It then does everything else. It's safe to re-run: existing credentials are kept unless you pass `--reimport-credentials`.
+The script asks for your recipient address, an n8n owner email and password, and the sending Gmail address and app password. It then does everything else. It's safe to re-run.
 
-Then complete [Gmail OAuth](#gmail-oauth-setup-manual-one-time), the only manual step, and do a [test run](#test-run-and-spot-checks).
+Before running it, create a [Gmail app password](#gmail-app-password-manual-one-time) (the only manual step). Afterwards, do a [test run](#test-run-and-spot-checks).
 
 Optional: get a free Congress.gov API key at <https://api.congress.gov/sign-up/>, put it in `.env` as `CONGRESS_API_KEY`, and run `docker compose up -d n8n`. This enables Congressional Research Service reports. Without the key, the CRS feed is skipped and the digest notes it.
 
-## Gmail OAuth setup (manual, one time)
+## Gmail app password (manual, one time)
 
-The digest is sent from your Gmail account through Google's API. Google requires you to create your own OAuth client.
+The digest is sent from your Gmail account over Gmail's SMTP server (`smtp.gmail.com:465`, SSL) using an **app password**: a 16-character password Google generates for one app. It does not expire, needs no Google Cloud project, and can be revoked at any time without changing your real password.
 
-1. **Create a Google Cloud project.** Go to <https://console.cloud.google.com/>, open the project picker at the top, choose **New Project**, name it (e.g. `defense-brief`), and click **Create**. Make sure it's selected.
-2. **Enable the Gmail API.** Go to **APIs & Services → Library**, search for **Gmail API**, and click **Enable**.
-3. **Configure the OAuth consent screen** (labeled **Google Auth Platform** in newer consoles):
-   - **Branding / App information:** app name `Defense Strategy Brief`; use your email for support and developer contact.
-   - **Audience:** User type **External**, unless you have a Google Workspace org and want **Internal**. Leave publishing status as **Testing**, and under **Test users** add the Gmail address that will send the digest.
-   - **Data access / Scopes:** add `https://www.googleapis.com/auth/gmail.send`. n8n's Gmail credential also requests its standard Gmail scopes. Approve those in the next step.
-   - *Note:* in **Testing** status, Google expires refresh tokens after **7 days**. For unattended operation, click **Publish app** (status **In production**). For a personal app you don't need verification; Google shows an "unverified app" warning when you connect, which you can click through ("Advanced → Go to …"). Alternatively, use an Internal app in a Workspace org.
-4. **Create OAuth credentials.** Go to **APIs & Services → Credentials → Create credentials → OAuth client ID**. Choose application type **Web application**. Under **Authorized redirect URIs** add exactly:
-   ```
-   http://localhost:5678/rest/oauth2-credential/callback
-   ```
-   If you changed `N8N_PUBLIC_URL`, use `<N8N_PUBLIC_URL>rest/oauth2-credential/callback` instead. n8n shows the exact value in the credential dialog as "OAuth Redirect URL". Click **Create** and copy the **Client ID** and **Client secret**.
-5. **Connect the credential in n8n.** Open <http://localhost:5678>, log in, and go to **Credentials → "DSB Gmail OAuth2"**. If you gave the client ID and secret to `setup.sh` they're already filled in; otherwise paste them. Click **Sign in with Google**, pick the sending account, allow access, and save. Both workflows already reference this credential.
+1. **Turn on 2-Step Verification** for the sending account at <https://myaccount.google.com/security> → *How you sign in to Google* → **2-Step Verification**. App passwords require it.
+2. **Create the app password:** open <https://myaccount.google.com/apppasswords>, type a name such as `Defense Brief`, and click **Create**. Copy the 16 characters it shows; spaces don't matter. Google shows it only once.
+   - If the page says app passwords aren't available: check that 2-Step Verification is on. Work or school (Workspace) accounts may have them disabled by an administrator, and accounts with Advanced Protection can't use them.
+3. **Give it to setup:** `setup.sh` asks for `GMAIL_ADDRESS` (the sending account) and `GMAIL_APP_PASSWORD`. You can also put both in `.env` and re-run `./setup.sh`, which re-imports the SMTP credential on every run.
 
-To send alerts to a different address, set `ALERT_RECIPIENT` in `.env`.
+To change the password later, update `GMAIL_APP_PASSWORD` in `.env` and run `./setup.sh` again. The recipient can be any address (`DIGEST_RECIPIENT`). Alerts go to `ALERT_RECIPIENT`, or to `DIGEST_RECIPIENT` if that's unset.
 
 ## Test run and spot checks
 
@@ -212,7 +203,7 @@ The workflows read `config/*.json` on every run, so **edits take effect on the n
 | Spec | What was built | Why |
 |---|---|---|
 | Two compose services (n8n, Ollama) | **Three:** n8n, Ollama, **Postgres** | You asked me to choose SQLite or Postgres. n8n has no native SQLite node, so SQLite would need a custom image or shell workarounds. Postgres has a first-class n8n node with parameterized queries, handles concurrent writes safely, also serves as n8n's own database (recommended over SQLite for production), and is easy to back up (`pg_dump`). |
-| Gmail node | The **Gmail OAuth2 credential** used through an HTTP Request node to the Gmail API (the Gmail node is still used for alerts) | The n8n Gmail node sends either HTML or plain text, not both. Sending a raw MIME message gives a true `multipart/alternative` email with a plain-text fallback, using the same OAuth credential. |
+| Gmail node with OAuth2 | **Gmail SMTP with an app password**, through n8n's Send Email node (digest and alerts) | Changed at your request. Publishing a Google OAuth app to production required a homepage and privacy policy, and in Testing mode Google expires the sign-in every 7 days, which breaks unattended runs. An app password doesn't expire, and the Send Email node sends a true `multipart/alternative` email (HTML plus plain text). |
 | "Retries with backoff" on HTTP/Ollama nodes | n8n built-in retries (fixed 5 s interval); exponential backoff in code for article fetches | n8n's node retry has no exponential option. |
 | CRS via RSS | Congress.gov API (`CONGRESS_API_KEY`) | CRS publishes no official RSS feed. |
 | AP feed | AP's verified Flipboard feeds | apnews.com RSS ended in 2024. These feeds are AP-curated but hosted by Flipboard. |
@@ -224,7 +215,8 @@ The workflows read `config/*.json` on every run, so **edits take effect on the n
 | Symptom | Fix |
 |---|---|
 | Alert: "Ollama: embeddings … refused the connection" | Check `docker compose ps` and `docker compose logs ollama`. Make sure the models are pulled: `docker compose exec ollama ollama list`. |
-| Alert: Gmail 401 / `invalid_grant` | The OAuth token expired. If the consent screen is in **Testing**, tokens last 7 days; publish the app. Reconnect in **Credentials → DSB Gmail OAuth2**. |
+| Run error: `Invalid login` / `535 Username and Password not accepted` | The app password is wrong or was revoked, or 2-Step Verification was turned off. Create a new app password, put it in `GMAIL_APP_PASSWORD` in `.env`, and run `./setup.sh`. Use the app password, not your normal password. |
+| Email not arriving, no error | Check the recipient's spam folder and mark the first digest "Not spam". Sending from and to the same Gmail account is fine. |
 | Runs take hours | The model is too large for CPU. Set `OLLAMA_MODEL=llama3.1:8b` (or `qwen2.5:7b`), or lower `digest.max_classify` in `topics.json`. |
 | Feed alert keeps listing the same source | Run `./scripts/test-feeds.sh`. The publisher may have moved the feed, or it blocks your IP. Update or exclude it in `sources.json`. |
 | "no items parsed from list page" for HASC, SASC or CSIS | The site layout changed. Update `parseHtmlList` in `workflows/src/lib.js`, rebuild and re-import (see below). |
@@ -232,7 +224,7 @@ The workflows read `config/*.json` on every run, so **edits take effect on the n
 | Off-topic stories | Raise `relevance_threshold` or `prefilter.embedding_threshold`; tighten `keywords`. |
 | Code node error "Cannot find module 'fs'/'url'" | Make sure `NODE_FUNCTION_ALLOW_BUILTIN=fs,url` is set (it is in `docker-compose.yml`), then run `docker compose up -d n8n`. |
 | Changed config but nothing changed | Config is read at runtime; check JSON validity. For Code-node logic changes, rebuild and re-import. |
-| Lost `N8N_ENCRYPTION_KEY` | Stored credentials can't be decrypted. Re-run `./setup.sh --reimport-credentials` and reconnect Gmail. |
+| Lost `N8N_ENCRYPTION_KEY` | n8n can't decrypt its stored credentials. Restore the old `.env` if you can. Otherwise reset n8n's data (`docker compose down -v` also deletes history and models) and run `./setup.sh`, which re-creates the credentials from `.env`. |
 | Start over completely | Destructive: `docker compose down -v` deletes n8n data, history and models. Then run `./setup.sh`. |
 
 ## Development and tests
@@ -269,4 +261,5 @@ docker compose restart n8n
 - corroboration, including the same-owner rule;
 - de-duplication;
 - the no-stories alert;
-- a scheduled production run that fails and triggers the error-workflow alert.
+- a scheduled production run that fails and triggers the error-workflow alert;
+- a real send of the digest and of an alert through the Send Email node to a test SMTP server (`tests/e2e/smtp-sink.py`, needs `aiosmtpd`; point `SMTP_PYTHON` at a Python that has it).

@@ -12,9 +12,15 @@ const LIB = fs.readFileSync(path.join(SRC, 'lib.js'), 'utf8').replace(/^'use str
 const code = (f) => `// ---- generated from workflows/src/nodes/${f} + lib.js by scripts/build-workflows.js; edit those files, not this node ----\n`
   + LIB + '\n// ===================== node logic =====================\n' + fs.readFileSync(path.join(SRC, 'nodes', f), 'utf8');
 
-const IDS = { main: 'DSBriefMain00001', alerts: 'DSBriefAlerts001', pg: 'dsbPostgres00001', gmail: 'dsbGmailOAuth001' };
+const IDS = { main: 'DSBriefMain00001', alerts: 'DSBriefAlerts001', pg: 'dsbPostgres00001', smtp: 'dsbSmtpGmail0001' };
 const PG = { postgres: { id: IDS.pg, name: 'DSB Postgres' } };
-const GMAIL = { gmailOAuth2: { id: IDS.gmail, name: 'DSB Gmail OAuth2' } };
+const SMTP = { smtp: { id: IDS.smtp, name: 'DSB Gmail SMTP' } };
+// Gmail SMTP with an app password (smtp.gmail.com:465). Sends multipart/alternative (HTML + plain text).
+const emailNode = (name, pos, notes) => node(name, 'n8n-nodes-base.emailSend', 2.1, pos, {
+  fromEmail: "={{ 'Defense Strategy Brief <' + $env.GMAIL_ADDRESS + '>' }}",
+  toEmail: '={{ $json.to }}', subject: '={{ $json.subject }}', emailFormat: 'both',
+  text: '={{ $json.text }}', html: '={{ $json.html }}', options: { appendAttribution: false } },
+{ credentials: SMTP, retryOnFail: true, maxTries: 3, waitBetweenTries: 5000, notes });
 let nid = 0;
 const uuid = () => { nid++; return `00000000-0000-4000-8000-${String(nid).padStart(12, '0')}`; };
 
@@ -97,12 +103,7 @@ function buildMain() {
     ifNode('Anything to send?', [24 * X, -100], '={{ $json.no_stories }}', { type: 'boolean', operation: 'false', singleValue: true }),
     ifNode('Dry run?', [25 * X, -100], '={{ $json.dry_run }}', isTrue),
     codeNode('Save preview to disk', 'save-preview.js', [26 * X, -250]),
-    node('Send digest via Gmail', 'n8n-nodes-base.httpRequest', 4.2, [26 * X, -50], {
-      method: 'POST', url: 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send',
-      authentication: 'predefinedCredentialType', nodeCredentialType: 'gmailOAuth2',
-      sendBody: true, specifyBody: 'json', jsonBody: '={{ JSON.stringify({ raw: $json.raw }) }}', options: { timeout: 60000 },
-    }, { credentials: GMAIL, retryOnFail: true, maxTries: 3, waitBetweenTries: 5000,
-      notes: 'Uses the n8n Gmail OAuth2 credential. Sent through the Gmail API directly (not the Gmail node) so the message is multipart/alternative with a plain-text part.' }),
+    emailNode('Send digest (Gmail SMTP)', [26 * X, -50], 'Gmail SMTP with an app password; sends HTML with a plain-text alternative. 3 tries, 5 s apart.'),
     pgLog('Record sent URLs & run log', [27 * X, -100], "$('Compose email & run stats').first().json"),
     codeNode('Feed health check', 'health-check.js', [28 * X, -100]),
     execAlerts('Alert: too many feed failures', [29 * X, -100]),
@@ -138,9 +139,9 @@ function buildMain() {
   connect(c, 'Anything to send?', 'Dry run?', 0);
   connect(c, 'Anything to send?', 'No qualifying stories', 1);
   connect(c, 'Dry run?', 'Save preview to disk', 0);
-  connect(c, 'Dry run?', 'Send digest via Gmail', 1);
+  connect(c, 'Dry run?', 'Send digest (Gmail SMTP)', 1);
   connect(c, 'Save preview to disk', 'Record sent URLs & run log');
-  connect(c, 'Send digest via Gmail', 'Record sent URLs & run log');
+  connect(c, 'Send digest (Gmail SMTP)', 'Record sent URLs & run log');
   connect(c, 'Record sent URLs & run log', 'Feed health check');
   connect(c, 'Feed health check', 'Alert: too many feed failures');
   // The alert runs before logging so the alerts workflow receives the alert payload itself.
@@ -164,9 +165,7 @@ function buildAlerts() {
     codeNode('Ratings re-verification reminder', 'alert-monthly.js', [X, 400]),
     ifNode('Dry run?', [2 * X, 200], "={{ String($env.DSB_DRY_RUN || '').toLowerCase() === 'true' }}", isTrue),
     codeNode('Save alert preview', 'save-preview.js', [3 * X, 100]),
-    node('Send alert email', 'n8n-nodes-base.gmail', 2.1, [3 * X, 300], {
-      sendTo: '={{ $env.ALERT_RECIPIENT || $env.DIGEST_RECIPIENT }}', subject: '={{ $json.subject }}', emailType: 'html', message: '={{ $json.html }}', options: { appendAttribution: false } },
-    { credentials: GMAIL, retryOnFail: true, maxTries: 3, waitBetweenTries: 5000 }),
+    emailNode('Send alert email', [3 * X, 300], 'Alerts go to ALERT_RECIPIENT, or DIGEST_RECIPIENT if unset.'),
   ];
   // The alert preview writer stores alerts as alert-latest.* (the html field is present, so tag it).
   n.find((x) => x.name === 'Save alert preview').parameters.jsCode = n.find((x) => x.name === 'Save alert preview').parameters.jsCode.replace("const name = j.html ? 'digest' : 'alert';", "const name = 'alert';");

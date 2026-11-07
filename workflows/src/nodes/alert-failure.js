@@ -10,6 +10,6 @@ const lines = [
   ex.url ? 'Execution: ' + ex.url : (ex.id ? 'Execution ID: ' + ex.id : null),
   'Mode: ' + (ex.mode || 'unknown') + ' · Time: ' + fmtDateLA(new Date(), { dateStyle: 'medium', timeStyle: 'short' }),
   '',
-  'Common causes: Ollama container down or model not pulled; Gmail credential expired (reconnect it in n8n > Credentials); Postgres unavailable; a config JSON file with a syntax error. See README > Troubleshooting.',
+  'Common causes: Ollama container down or model not pulled; Gmail app password revoked or changed (update GMAIL_APP_PASSWORD in .env and re-run setup.sh); Postgres unavailable; a config JSON file with a syntax error. See README > Troubleshooting.',
 ].filter((l) => l !== null);
-return [{ json: { subject: '[ALERT] Defense Strategy Brief run failed', text: lines.join('\n'), html: '<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#1a1f2b">' + lines.map((l) => l ? escapeHtml(l).replace(/(https?:\/\/\S+)/g, '<a href="$1">$1</a>') : '<br>').join('<br>') + '</div>' } }];
+return [{ json: { to: $env.ALERT_RECIPIENT || $env.DIGEST_RECIPIENT, subject: '[ALERT] Defense Strategy Brief run failed', text: lines.join('\n'), html: '<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#1a1f2b">' + lines.map((l) => l ? escapeHtml(l).replace(/(https?:\/\/\S+)/g, '<a href="$1">$1</a>') : '<br>').join('<br>') + '</div>' } }];

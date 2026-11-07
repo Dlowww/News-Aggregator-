@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 # Defense Strategy Brief: one-time setup (safe to re-run).
 #   1. creates .env and generates secrets       5. creates the n8n owner account
-#   2. detects RAM/GPU and picks an Ollama model 6. imports credentials (Postgres; Gmail shell)
+#   2. detects RAM/GPU and picks an Ollama model 6. imports credentials (Postgres; Gmail SMTP)
 #   3. starts Postgres, Ollama, n8n             7. imports + publishes both workflows
-#   4. pulls the models                          8. prints the remaining manual steps (Gmail OAuth)
-# Options: --reimport-credentials (overwrites the Gmail credential: you must reconnect it)
-#          --no-pull (skip model downloads)
+#   4. pulls the models                          8. prints how to test
+# Options: --no-pull (skip model downloads)
 set -euo pipefail
 cd "$(dirname "$0")"
-REIMPORT_CREDS=0; PULL=1
-for a in "$@"; do case "$a" in --reimport-credentials) REIMPORT_CREDS=1;; --no-pull) PULL=0;; *) echo "unknown option $a"; exit 2;; esac; done
+PULL=1
+for a in "$@"; do case "$a" in --reimport-credentials) ;; --no-pull) PULL=0;; *) echo "unknown option $a"; exit 2;; esac; done
 
 say()  { printf '\n\033[1m== %s\033[0m\n' "$*"; }
 warn() { printf '\033[33mWARNING: %s\033[0m\n' "$*"; }
@@ -57,8 +56,11 @@ ask() { # ask KEY "prompt" [secret]
 ask DIGEST_RECIPIENT "Email address to receive the daily brief"
 ask N8N_OWNER_EMAIL "n8n owner account email (for logging in to n8n)"
 ask N8N_OWNER_PASSWORD "n8n owner password (8+ chars, a number and an uppercase letter)" secret
-ask GOOGLE_OAUTH_CLIENT_ID "Google OAuth client ID (see README 'Gmail OAuth setup'; press Enter to add later)"
-ask GOOGLE_OAUTH_CLIENT_SECRET "Google OAuth client secret (press Enter to add later)" secret
+ask GMAIL_ADDRESS "Gmail address that will SEND the digest"
+ask GMAIL_APP_PASSWORD "Gmail app password for that account (16 characters, from https://myaccount.google.com/apppasswords)" secret
+env_set GMAIL_APP_PASSWORD "$(env_get GMAIL_APP_PASSWORD | tr -d ' ')"   # Google displays it in groups of four
+APPPW="$(env_get GMAIL_APP_PASSWORD)"
+[ "${#APPPW}" -eq 16 ] || warn "GMAIL_APP_PASSWORD is ${#APPPW} characters; Gmail app passwords are 16. Check .env if sending fails."
 
 # ---------------------------------------------------------------- hardware detection
 say "Detecting hardware"
@@ -123,22 +125,20 @@ rm -f .setup/owner.json
 
 say "Importing credentials"
 n8n_cli() { docker compose exec -T -e N8N_RUNNERS_BROKER_PORT=5690 n8n n8n "$@"; }
-if n8n_cli export:credentials --id=dsbGmailOAuth001 --output=/tmp/x.json >/dev/null 2>&1 && [ $REIMPORT_CREDS = 0 ]; then
-  echo "Credentials already exist (use --reimport-credentials to overwrite; you would need to reconnect Gmail)."
-else
-  python3 - "$PGUSER" "$(env_get POSTGRES_PASSWORD)" "$(env_get GOOGLE_OAUTH_CLIENT_ID)" "$(env_get GOOGLE_OAUTH_CLIENT_SECRET)" > .setup/creds.json <<'PY'
+# Both credentials come from .env, so they are re-imported on every run: change .env, then re-run setup.
+python3 - "$PGUSER" "$(env_get POSTGRES_PASSWORD)" "$(env_get GMAIL_ADDRESS)" "$(env_get GMAIL_APP_PASSWORD)" > .setup/creds.json <<'PY'
 import json, sys
-u, pw, cid, cs = sys.argv[1:5]
+u, pw, gaddr, gpw = sys.argv[1:5]
 print(json.dumps([
   {"id": "dsbPostgres00001", "name": "DSB Postgres", "type": "postgres",
    "data": {"host": "postgres", "port": 5432, "database": "dsb", "user": u, "password": pw, "ssl": "disable"}},
-  {"id": "dsbGmailOAuth001", "name": "DSB Gmail OAuth2", "type": "gmailOAuth2", "data": {"clientId": cid, "clientSecret": cs}}]))
+  {"id": "dsbSmtpGmail0001", "name": "DSB Gmail SMTP", "type": "smtp",
+   "data": {"user": gaddr, "password": gpw, "host": "smtp.gmail.com", "port": 465, "secure": True}}]))
 PY
-  chmod 600 .setup/creds.json
-  docker compose cp .setup/creds.json n8n:/tmp/creds.json >/dev/null
-  n8n_cli import:credentials --input=/tmp/creds.json | grep -v -i license || true
-  docker compose exec -T n8n rm -f /tmp/creds.json; rm -f .setup/creds.json
-fi
+chmod 600 .setup/creds.json
+docker compose cp .setup/creds.json n8n:/tmp/creds.json >/dev/null
+n8n_cli import:credentials --input=/tmp/creds.json | grep -v -i license || true
+docker compose exec -T n8n rm -f /tmp/creds.json; rm -f .setup/creds.json
 
 say "Importing and publishing workflows"
 n8n_cli import:workflow --input=/data/workflows/defense-brief-alerts.json | grep -v -i license || true
@@ -153,11 +153,9 @@ say "Setup complete"
 cat <<EOF
 Model: $(env_get OLLAMA_MODEL) (+ $(env_get OLLAMA_EMBED_MODEL) for embeddings) · Schedule: daily 5:00 AM America/Los_Angeles
 
-Remaining manual steps (README "Gmail OAuth setup" has screenshots-level detail):
-  1. Open $BASE and log in as $(env_get N8N_OWNER_EMAIL).
-  2. Credentials > "DSB Gmail OAuth2": paste the client ID/secret if empty, then click "Sign in with Google"
-     (redirect URI to register in Google Cloud: ${PUBLIC_URL}rest/oauth2-credential/callback).
-  3. Optional: add CONGRESS_API_KEY to .env, then run: docker compose up -d n8n
-  4. Test: ./scripts/run-now.sh --dry-run   (writes previews/digest-latest.html)
-     then:  ./scripts/run-now.sh             (sends the email)
+Next steps:
+  1. Optional: add CONGRESS_API_KEY to .env, then run: docker compose up -d n8n
+  2. Test without sending: ./scripts/run-now.sh --dry-run   (writes previews/digest-latest.html)
+  3. Send a real digest:   ./scripts/run-now.sh   (from $(env_get GMAIL_ADDRESS) to $(env_get DIGEST_RECIPIENT))
+  n8n is at $BASE (log in as $(env_get N8N_OWNER_EMAIL)); there is nothing to configure there.
 EOF

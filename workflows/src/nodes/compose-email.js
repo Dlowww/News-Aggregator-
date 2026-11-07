@@ -1,4 +1,4 @@
-// Builds the digest (HTML + plain text), the raw MIME message, the balance check and run stats.
+// Builds the digest (HTML + plain text), the balance check and run stats.
 const cfg = loadConfig($env.DSB_CONFIG_DIR || '/data/config');
 const items = $input.all().map((i) => i.json);
 const stats = Object.assign({}, $('Select stories & fetch article text').first().json.stats);
@@ -55,4 +55,4 @@ const to = $env.DIGEST_RECIPIENT;
 if (!to) throw new Error('DIGEST_RECIPIENT is not set in .env');
 const sent_rows = stories.flatMap((s) => s.citations.map((c) => ({ u: c.url_norm, url: c.url, t: c.title, s: c.source_id })));
 const dry = String($env.DSB_DRY_RUN || '').toLowerCase() === 'true';
-return [{ json: { run_id: stats.run_id, status: dry ? 'dry_run' : 'sent', to, subject, html, text, raw: buildMime({ to, subject, html, text }), stats, sent_rows, dry_run: dry } }];
+return [{ json: { run_id: stats.run_id, status: dry ? 'dry_run' : 'sent', to, subject, html, text, stats, sent_rows, dry_run: dry } }];

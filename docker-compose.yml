@@ -72,6 +72,7 @@ services:
       OLLAMA_MODEL: ${OLLAMA_MODEL:?run ./setup.sh to choose a model}
       OLLAMA_EMBED_MODEL: ${OLLAMA_EMBED_MODEL:-nomic-embed-text}
       DIGEST_RECIPIENT: ${DIGEST_RECIPIENT:?set DIGEST_RECIPIENT in .env}
+      GMAIL_ADDRESS: ${GMAIL_ADDRESS:?set GMAIL_ADDRESS in .env}
       ALERT_RECIPIENT: ${ALERT_RECIPIENT:-}
       CONGRESS_API_KEY: ${CONGRESS_API_KEY:-}
       SCRAPER_USER_AGENT: ${SCRAPER_USER_AGENT:-DefenseStrategyBrief/1.0 (personal news digest; self-hosted n8n)}

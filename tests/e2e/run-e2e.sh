@@ -30,19 +30,22 @@ EOF
 # 2) Mock server.
 node "$ROOT/tests/e2e/mock-server.js" > "$WORK/mock.log" 2>&1 &
 MOCK_PID=$!
-trap 'kill $MOCK_PID 2>/dev/null || true' EXIT
+# Test SMTP server standing in for smtp.gmail.com (needs python with aiosmtpd; set SMTP_PYTHON).
+"${SMTP_PYTHON:-python3}" "$ROOT/tests/e2e/smtp-sink.py" "${SMTP_PORT:-2525}" "$WORK/mail" > "$WORK/smtp.log" 2>&1 &
+SMTP_PID=$!
+trap 'kill $MOCK_PID $SMTP_PID 2>/dev/null || true' EXIT
 sleep 1
 
 # 3) Environment for n8n.
 export DSB_CONFIG_DIR="$WORK/config" DSB_PREVIEW_DIR="$WORK/previews" DSB_DRY_RUN=true
 export OLLAMA_BASE_URL="http://127.0.0.1:$PORT" OLLAMA_MODEL=mock-model OLLAMA_EMBED_MODEL=mock-embed
-export DIGEST_RECIPIENT=test@example.com SCRAPER_USER_AGENT="DefenseStrategyBrief/1.0 (e2e test)"
+export DIGEST_RECIPIENT=test@example.com GMAIL_ADDRESS=sender@example.com SCRAPER_USER_AGENT="DefenseStrategyBrief/1.0 (e2e test)"
 export NODE_FUNCTION_ALLOW_BUILTIN=fs,url N8N_BLOCK_ENV_ACCESS_IN_NODE=false
 export PGHOST="${DSB_PG_HOST:-127.0.0.1}" PGPORT="${DSB_PG_PORT:-5432}" PGUSER="${DSB_PG_USER:-dsb}" PGPASSWORD="${DSB_PG_PASSWORD:-dsb}" PGDATABASE="${DSB_PG_DB:-dsb}"
 
 cat > "$WORK/creds.json" <<EOF
 [{"id":"dsbPostgres00001","name":"DSB Postgres","type":"postgres","data":{"host":"$PGHOST","port":$PGPORT,"database":"$PGDATABASE","user":"$PGUSER","password":"$PGPASSWORD","ssl":"disable"}},
- {"id":"dsbGmailOAuth001","name":"DSB Gmail OAuth2","type":"gmailOAuth2","data":{"clientId":"e2e","clientSecret":"e2e"}}]
+ {"id":"dsbSmtpGmail0001","name":"DSB Gmail SMTP","type":"smtp","data":{"user":"sender@example.com","password":"e2e-app-password","host":"127.0.0.1","port":${SMTP_PORT:-2525},"secure":false,"disableStartTls":true}}]
 EOF
 psql -q -c "TRUNCATE sent_articles, run_log;"
 "$N8N_BIN" import:credentials --input="$WORK/creds.json" >/dev/null 2>&1
@@ -114,6 +117,24 @@ kill $SRV; wait $SRV 2>/dev/null || true
 "$N8N_BIN" unpublish:workflow --id=DSBriefMainTest01 >/dev/null 2>&1 || true
 check "failure alert written by error workflow" 'grep -q "failed and no digest was sent" "$WORK/previews/alert-latest.txt" 2>/dev/null'
 check "alert names the failed node" 'grep -q "Ollama: embeddings" "$WORK/previews/alert-latest.txt" 2>/dev/null'
+
+echo "== Run 5 (real send through the Send Email node to the test SMTP server)"
+psql -q -c "DELETE FROM sent_articles;"
+rm -rf "$WORK/mail"/*.eml 2>/dev/null || true
+DSB_DRY_RUN=false run 5 || { echo "Run 5 FAILED"; grep -v license "$WORK/err-5.txt" | grep -v '^\s*at ' | tail -20; exit 1; }
+EML="$(ls -t "$WORK"/mail/*.eml 2>/dev/null | head -1)"
+check "digest delivered over SMTP" '[ -n "$EML" ]'
+check "email is multipart/alternative with text and HTML parts" 'grep -qi "multipart/alternative" "$EML" && grep -qi "text/plain" "$EML" && grep -qi "text/html" "$EML"'
+check "subject and sender correct" 'python3 -c "import email,sys;m=email.message_from_binary_file(open(sys.argv[1],\"rb\"));import email.header as h;s=str(h.make_header(h.decode_header(m[\"Subject\"])));assert s.startswith(\"Defense Strategy Brief: \"),s;assert \"sender@example.com\" in m[\"From\"];assert m[\"To\"]==\"test@example.com\"" "$EML"'
+check "no n8n attribution footer" '! grep -qi "sent automatically with n8n" "$EML"'
+check "sent URLs recorded after a real send" '[ "$(psql -tAc "select count(*) from sent_articles")" -gt 0 ]'
+check "run logged as sent" '[ "$(psql -tAc "select status from run_log order by started_at desc limit 1")" = "sent" ]'
+
+echo "== Run 6 (real send of an alert: everything already sent -> no-stories alert email)"
+rm -rf "$WORK/mail"/*.eml 2>/dev/null || true
+DSB_DRY_RUN=false run 6 || { echo "Run 6 FAILED"; grep -v license "$WORK/err-6.txt" | grep -v '^\s*at ' | tail -20; exit 1; }
+AEML="$(ls -t "$WORK"/mail/*.eml 2>/dev/null | head -1)"
+check "no-stories alert delivered by email" '[ -n "$AEML" ] && python3 -c "import email,sys,email.header as h;m=email.message_from_binary_file(open(sys.argv[1],\"rb\"));s=str(h.make_header(h.decode_header(m[\"Subject\"])));assert s.startswith(\"[ALERT]\"),s" "$AEML"'
 
 echo "Artifacts in $WORK"
 [ "$FAILED" = 0 ] && echo "ALL E2E CHECKS PASSED" || { echo "SOME E2E CHECKS FAILED"; exit 1; }

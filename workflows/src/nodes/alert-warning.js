@@ -11,4 +11,4 @@ const lines = [intro, '', 'Run: ' + (st.run_id || j.run_id || 'unknown'),
   failed.length ? 'Failed feeds:\n' + failed.join('\n') : 'Failed feeds: none',
   (st.skipped_feeds || []).length ? 'Skipped: ' + st.skipped_feeds.join('; ') : null,
   '', 'If feeds keep failing, a publisher may have moved or dropped its feed. Test URLs with scripts/test-feeds.sh and update config/sources.json.'].filter((l) => l !== null);
-return [{ json: { subject, text: lines.join('\n'), html: '<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#1a1f2b;white-space:pre-wrap">' + escapeHtml(lines.join('\n')) + '</div>' } }];
+return [{ json: { to: $env.ALERT_RECIPIENT || $env.DIGEST_RECIPIENT, subject, text: lines.join('\n'), html: '<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#1a1f2b;white-space:pre-wrap">' + escapeHtml(lines.join('\n')) + '</div>' } }];
